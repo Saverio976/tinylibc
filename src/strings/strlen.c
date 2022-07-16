@@ -15,7 +15,7 @@ size_t x_strlen(const char *s)
     }
     for (int i = 0; true; i++) {
         if (s[i] == 0) {
-            return (i + 1);
+            return (i);
         }
     }
     return (0);

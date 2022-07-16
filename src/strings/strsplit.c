@@ -14,12 +14,14 @@ static int count_nb_split(const char *s, const char *delim)
 {
     int nb_split = 0;
     const char *match = s;
+    size_t len_delim = 0;
 
     do {
         nb_split += 1;
-        s = match;
+        s = match + len_delim;
         match = x_strstr(s, delim);
-    } while (match != NULL);
+        len_delim = (len_delim == 0) ? x_strlen(delim) : len_delim;
+    } while (match != NULL && nb_split < 10);
     return (nb_split);
 }
 

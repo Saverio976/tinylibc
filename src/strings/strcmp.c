@@ -14,9 +14,6 @@ int x_strcmp(const char *s1, const char *s2)
     int max_s2 = 0;
     int sub = 0;
 
-    if (s1 == NULL || s2 == NULL) {
-        return (0);
-    }
     max_s1 = x_strlen(s1);
     max_s2 = x_strlen(s2);
     for (int i = 0; sub == 0 && (i < max_s2 || i < max_s1); i++) {

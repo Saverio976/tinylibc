@@ -13,7 +13,8 @@ char *x_strstr(const char *s, const char *substr)
     int cur_substr = 0;
     int len_substr = 0;
 
-    if (s == NULL || substr == NULL) {
+    if (s == NULL || substr == NULL || x_strlen(substr) == 0 ||
+            x_strlen(s) == 0) {
         return (NULL);
     }
     len_substr = x_strlen(substr);
@@ -25,6 +26,7 @@ char *x_strstr(const char *s, const char *substr)
         if (cur_substr == len_substr) {
             return ((char *) s + i);
         }
+        cur_substr = 0;
     }
     return (NULL);
 }

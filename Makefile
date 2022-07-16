@@ -146,8 +146,8 @@ tests_run:					LDFLAGS	+=	$(CR_TEST_LDFLAGS)
 tests_run:					$(OBJS) $(T_OBJ)
 	@$(CC) $(OBJS) $(T_OBJ) -o $(TTARGET) $(LDFLAGS)
 	./$(TTARGET)
-	$(shell gcovr --exclude tests)
-	$(shell gcovr --exclude tests --branch)
+	gcovr --exclude tests || true
+	gcovr --exclude tests --branch || true
 	@$(RM) $(OBJS)
 	true
 

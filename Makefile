@@ -75,7 +75,7 @@ OBJ_DIR				:=		obj
 OUT_DIRS			:=		$(sort $(dir $(SRC)))
 OUT_DIRS			:=		$(addprefix $(OBJ_DIR)/,$(OUT_DIRS))
 
-# List of as:ll .o
+# List of all .o
 OBJS				:=		$(addprefix $(OBJ_DIR)/,\
 								$(addsuffix .o,\
 									$(basename $(patsubst %,%,$(SRC)))\
@@ -84,13 +84,29 @@ OBJS				:=		$(addprefix $(OBJ_DIR)/,\
 
 SRC					:=		$(addprefix $(SRC_DIR)/,$(SRC))
 
+###################
+## Test
+###################
+
+TTARGET				:=		bin_test
+
+T_DIR				:=		tests
+
+T_SRC				:=		$(shell find $(T_DIR)/ -name '*.c' -type f)
+
+T_OBJ				:=		$(T_SRC:.c=.o)
+
+TFLAGS				:=		-fprofile-arcs -ftest-coverage
+
+CR_TEST_LDFLAGS		:=		-lcriterion -lgcov
+
 #######################################
 #### Rules
 #######################################
 
-all: $(TARGET)
+all:						$(TARGET)
 
-$(TARGET): $(OBJS)
+$(TARGET):					$(OBJS)
 	ar rc $(TARGET) $(OBJS)
 	ranlib $(TARGET)
 
@@ -105,6 +121,10 @@ show:
 	@$(ECHO) $(SRC)
 	@$(ECHO) $(GREEN)"-> OBJS ->"$(RESET)
 	@$(ECHO) $(OBJS)
+	@$(ECHO) $(GREEN)"-> TSRC ->"$(RESET)
+	@$(ECHO) $(T_SRC)
+	@$(ECHO) $(GREEN)"-> TOBJ ->"$(RESET)
+	@$(ECHO) $(T_OBJ)
 	@$(ECHO) $(GREEN)"-> OUT_DIRS ->"$(RESET)
 	@$(ECHO) $(OUT_DIRS)
 	@$(ECHO) $(GREEN)"-> TO_CLEAN_EXT ->"$(RESET)
@@ -113,13 +133,23 @@ show:
 	@$(ECHO) $(TO_CLEAN)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(T_OBJ)
 	$(RM) $(TO_CLEAN)
 
-fclean: clean
-	$(RM) $(TARGET)
+fclean:						clean
+	$(RM) $(TARGET) $(TTARGET)
 
-re: fclean all
+re:							fclean all
+
+tests_run:					CFLAGS	+=	$(TFLAGS)
+tests_run:					LDFLAGS	+=	$(CR_TEST_LDFLAGS)
+tests_run:					$(OBJS) $(T_OBJ)
+	@$(CC) $(OBJS) $(T_OBJ) -o $(TTARGET) $(LDFLAGS)
+	./$(TTARGET)
+	$(shell gcovr --exclude tests)
+	$(shell gcovr --exclude tests --branch)
+	@$(RM) $(OBJS)
+	true
 
 #######################################
 #### Conversion Rules
@@ -127,5 +157,9 @@ re: fclean all
 
 # .c -> .o
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OUT_DIRS)
+	@$(CC) -c $< -o $@ $(CFLAGS)
+	@$(ECHO) $(BLUE)'[compil]: '$(CYAN)'$< '$(RESET)'-> '$(CYAN)'$@'$(RESET)
+
+$(T_DIR)/%.c: $(T_DIR)/%.o
 	@$(CC) -c $< -o $@ $(CFLAGS)
 	@$(ECHO) $(BLUE)'[compil]: '$(CYAN)'$< '$(RESET)'-> '$(CYAN)'$@'$(RESET)

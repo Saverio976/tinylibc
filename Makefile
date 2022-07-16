@@ -48,6 +48,8 @@ SRC_STRINGS			:=		strchr.c									\
 							strcpy.c									\
 							strdup.c									\
 							strlen.c									\
+							strncpy.c									\
+							strndup.c									\
 							strsplit.c									\
 							strstr.c									\
 							strstrip.c

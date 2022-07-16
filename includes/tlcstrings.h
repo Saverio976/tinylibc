@@ -69,6 +69,16 @@ size_t x_strlen(const char *s);
 char *x_strncpy(char *dest, const char *src, size_t n);
 
 /**
+** @brief duplicate `n` char of a string
+**
+** @param s string to duplicate
+** @param n number of char to duplicate
+**
+** @return NULL if (`s` = 0)|(`n` < 0);; ptr to the duplicate
+**/
+char *x_strndup(const char *s, int n);
+
+/**
 ** @brief split a string with delimiter
 **
 ** @param s string to split

@@ -3,3 +3,4 @@ obj/
 *.o
 *.gcno
 *.gcda
+bin_test

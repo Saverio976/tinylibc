@@ -94,7 +94,8 @@ char **x_strsplit(const char *s, const char *delim);
 ** @param s string in which to search for `substr`
 ** @param substr string to search for in `s`
 **
-** @return NULL if (`s` = 0)|(`substr` = 0)(`substr` not found);; ptr to match
+** @return NULL if (`s` = 0)|(`substr` = 0)(`substr` not found)|
+** (`s` = "")|(`substr` = "");; ptr to match
 **/
 char *x_strstr(const char *s, const char *substr);
 

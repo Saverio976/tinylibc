@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "tlcstrings.h"
+#include "tlcstdlibs.h"
 
 static int count_nb_split(const char *s, const char *delim)
 {
@@ -24,7 +25,7 @@ static int count_nb_split(const char *s, const char *delim)
 
 static int fill_arr(char **arr, const char *s, const char *delim)
 {
-    int len_delim = 0;
+    size_t len_delim = 0;
     const char *match = s;
     int cur_arr = 0;
 

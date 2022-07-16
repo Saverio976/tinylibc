@@ -5,16 +5,16 @@
 ** duplicate n char
 */
 
-#include "tlcstrings.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include "tlcstrings.h"
 
 char *x_strndup(const char *s, int n)
 {
     int len = 0;
     char *new = NULL;
 
-    if (s == NULL | n < 0) {
+    if (s == NULL || n < 0) {
         return (NULL);
     }
     len = x_strlen(s);

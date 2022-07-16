@@ -93,6 +93,7 @@ $(TARGET): $(OBJS)
 	ranlib $(TARGET)
 
 $(OUT_DIRS):
+	mkdir -p $(OBJ_DIR)
 	mkdir -p $(OUT_DIRS)
 
 show:

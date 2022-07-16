@@ -33,37 +33,54 @@ RESET				:=		'\033[0m'
 ## Flags
 ###################
 
-CFLAGS				:=		-Wall -Wextra -Wpedantic
+CFLAGS				:=		-Wall -Wextra -Wpedantic -I./includes/
 
 ###################
 ## SRC
 ###################
 
 # Where .c file are
-SRC_DIR				:=		src/
+SRC_DIR				:=		src
 
-# Lib for string
-SRC_LIBSTRING		:=		...
+# Lib for string.h (includes/tlcstrings.h)
+SRC_STRINGS			:=		strchr.c									\
+							strcmp.c									\
+							strcpy.c									\
+							strdup.c									\
+							strlen.c									\
+							strsplit.c									\
+							strstr.c									\
+							strstrip.c
+SRC_STRINGS			:=		$(addprefix strings/,$(SRC_STRINGS))
+
+# Lib for stdlib.h (includes/tlcstdlibs.h)
+SRC_STDLIBS			:=		calloc.c									\
+							ccalloc.c
+SRC_STDLIBS			:=		$(addprefix stdlibs/,$(SRC_STDLIBS))
 
 # List of all .c
-SRC					:=		$(SRC_LIBSTRING)
+SRC					:=		$(SRC_STDLIBS)								\
+							$(SRC_STRINGS)
 
 ###################
 ## OBJ
 ###################
 
 # Where .o goes
-OBJ_DIR				:=		obj/
+OBJ_DIR				:=		obj
 
-# Get all directories
+# Get all directorie
 OUT_DIRS			:=		$(sort $(dir $(SRC)))
+OUT_DIRS			:=		$(addprefix $(OBJ_DIR)/,$(OUT_DIRS))
 
-# List of all .o
-OBJS				:=		$(addprefix $(OBJ_DIR),\
+# List of as:ll .o
+OBJS				:=		$(addprefix $(OBJ_DIR)/,\
 								$(addsuffix .o,\
 									$(basename $(patsubst %,%,$(SRC)))\
 								)\
 							)
+
+SRC					:=		$(addprefix $(SRC_DIR)/,$(SRC))
 
 #######################################
 #### Rules
@@ -76,7 +93,7 @@ $(TARGET): $(OBJS)
 	ranlib $(TARGET)
 
 $(OUT_DIRS):
-	mkdir -p $@
+	mkdir -p $(OUT_DIRS)
 
 show:
 	@$(ECHO) $(GREEN)"-> ECHO ->"$(RESET)
@@ -106,6 +123,6 @@ re: fclean all
 #######################################
 
 # .c -> .o
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OUT_DIRS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OUT_DIRS)
 	@$(CC) -c $< -o $@ $(CFLAGS)
-	@$(ECHO) $(BLUE)'[compil]: '$(CYAN)'$^ '$(RESET)'-> '$(CYAN)'$@'$(RESET)
+	@$(ECHO) $(BLUE)'[compil]: '$(CYAN)'$< '$(RESET)'-> '$(CYAN)'$@'$(RESET)

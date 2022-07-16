@@ -21,7 +21,7 @@ static int count_nb_split(const char *s, const char *delim)
         s = match + len_delim;
         match = x_strstr(s, delim);
         len_delim = (len_delim == 0) ? x_strlen(delim) : len_delim;
-    } while (match != NULL && nb_split < 10);
+    } while (match != NULL);
     return (nb_split);
 }
 

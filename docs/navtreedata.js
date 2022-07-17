@@ -29,7 +29,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -37,7 +38,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dd/d26/tlcstdlibs_8h.html"
+"d5/de2/tlcmaths_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

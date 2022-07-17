@@ -6,6 +6,7 @@
 */
 
 #ifndef TLS_MATHS_H_
+    #define TLS_MATHS_H_
 
     #define X_MAX_MACRO(x, y)   (((x) > (y)) ? (x) : (y))
     #define X_MIN_MACRO(x, y)   (((x) < (y)) ? (x) : (y))

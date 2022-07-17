@@ -6,8 +6,20 @@
 */
 
 #ifndef TLS_STRINGS_H_
+    #define TLS_STRINGS_H_
 
     #include <stddef.h>
+
+/**
+** @brief copy bytes of `src` to `dest`
+**
+** @param dest where bytes will go
+** @param src the bytes source
+** @param n number of bytes to copy
+**
+** @return NULL if (`dest` = 0)|(`src` = 0);; ptr `dest`
+**/
+void *x_memcpy(void *dest, const void *src, size_t n);
 
 /**
 ** @brief search `c` in `s`

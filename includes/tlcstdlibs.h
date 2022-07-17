@@ -6,6 +6,7 @@
 */
 
 #ifndef TLS_STDLIBS_H_
+    #define TLS_STDLIBS_H_
 
 /**
 ** @brief malloc n char and fill with 0

@@ -42,6 +42,18 @@ CFLAGS				:=		-Wall -Wextra -Wpedantic -I./includes/
 # Where .c file are
 SRC_DIR				:=		src
 
+# Lib for math.h (includes/tlcmaths.h)
+SRC_MATHS			:=		max.c										\
+							min.c										\
+							pow.c										\
+							sqrt.c
+SRC_MATHS			:=		$(addprefix maths/,$(SRC_MATHS))
+
+# Lib for stdlib.h (includes/tlcstdlibs.h)
+SRC_STDLIBS			:=		calloc.c									\
+							ccalloc.c
+SRC_STDLIBS			:=		$(addprefix stdlibs/,$(SRC_STDLIBS))
+
 # Lib for string.h (includes/tlcstrings.h)
 SRC_STRINGS			:=		strchr.c									\
 							strcmp.c									\
@@ -55,13 +67,9 @@ SRC_STRINGS			:=		strchr.c									\
 							strstrip.c
 SRC_STRINGS			:=		$(addprefix strings/,$(SRC_STRINGS))
 
-# Lib for stdlib.h (includes/tlcstdlibs.h)
-SRC_STDLIBS			:=		calloc.c									\
-							ccalloc.c
-SRC_STDLIBS			:=		$(addprefix stdlibs/,$(SRC_STDLIBS))
-
 # List of all .c
-SRC					:=		$(SRC_STDLIBS)								\
+SRC					:=		$(SRC_MATHS)								\
+							$(SRC_STDLIBS)								\
 							$(SRC_STRINGS)
 
 ###################
@@ -98,7 +106,7 @@ T_OBJ				:=		$(T_SRC:.c=.o)
 
 TFLAGS				:=		-fprofile-arcs -ftest-coverage
 
-CR_TEST_LDFLAGS		:=		-lcriterion -lgcov
+CR_TEST_LDFLAGS		:=		-lcriterion -lgcov -lm
 
 #######################################
 #### Rules

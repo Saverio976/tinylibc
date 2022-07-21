@@ -21,7 +21,11 @@ list_t *list_append(list_t *list, void *data, void (*destroy)(void *data),
     if (new_node == NULL) {
         return (list);
     }
-    list->end->next = new_node;
+    if (list->len != 0) {
+        list->end->next = new_node;
+    } else {
+        list->start = new_node;
+    }
     list->len += 1;
     list->end = new_node;
     return (list);

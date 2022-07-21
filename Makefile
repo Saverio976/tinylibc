@@ -42,6 +42,17 @@ CFLAGS				:=		-Wall -Wextra -Wpedantic -I./includes/
 # Where .c file are
 SRC_DIR				:=		src
 
+# Lib for list (includes/tlcllists.h)
+SRC_LLISTS			:=		append.c									\
+							create.c									\
+							delete.c									\
+							duplicate.c									\
+							find.c										\
+							index.c										\
+							insert.c									\
+							remove.c
+SRC_LLISTS			:=		$(addprefix llists/,$(SRC_LLISTS))
+
 # Lib for math.h (includes/tlcmaths.h)
 SRC_MATHS			:=		max.c										\
 							min.c										\
@@ -67,10 +78,17 @@ SRC_STRINGS			:=		strchr.c									\
 							strstrip.c
 SRC_STRINGS			:=		$(addprefix strings/,$(SRC_STRINGS))
 
+# Lib for utils (includes/tlcutils.h)
+SRC_UTILS			:=		free_ifnotnull.c							\
+							return_void.c
+SRC_UTILS			:=		$(addprefix utils/,$(SRC_UTILS))
+
 # List of all .c
-SRC					:=		$(SRC_MATHS)								\
+SRC					:=		$(SRC_LLISTS)								\
+							$(SRC_MATHS)								\
 							$(SRC_STDLIBS)								\
-							$(SRC_STRINGS)
+							$(SRC_STRINGS)								\
+							$(SRC_UTILS)
 
 ###################
 ## OBJ
@@ -151,7 +169,7 @@ re:							fclean all
 
 tests_run:					CFLAGS	+=	$(TFLAGS)
 tests_run:					LDFLAGS	+=	$(CR_TEST_LDFLAGS)
-tests_run:					$(OBJS) $(T_OBJ)
+tests_run:					fclean $(OBJS) $(T_OBJ)
 	@$(CC) $(OBJS) $(T_OBJ) -o $(TTARGET) $(LDFLAGS)
 	./$(TTARGET) || exit 1
 	gcovr --exclude tests || true

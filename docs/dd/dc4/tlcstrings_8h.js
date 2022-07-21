@@ -1,5 +1,6 @@
 var tlcstrings_8h =
 [
+    [ "x_memcpy", "dd/dc4/tlcstrings_8h.html#afa208d8ae70ca2f9e212a7efd11f0ebb", null ],
     [ "x_strchr", "dd/dc4/tlcstrings_8h.html#a0537132719e15560c15ee53332a79ee2", null ],
     [ "x_strcmp", "dd/dc4/tlcstrings_8h.html#ac31ad2bfa426a9ae106170ff6d0bdc6a", null ],
     [ "x_strcpy", "dd/dc4/tlcstrings_8h.html#abf3a013600542d2addee5846025e5cc6", null ],

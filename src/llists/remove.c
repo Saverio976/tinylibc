@@ -13,6 +13,9 @@ int list_remove_start(list_t *list)
 {
     node_t *node = NULL;
 
+    if (list == NULL || list->len == 0) {
+        return (0);
+    }
     node = list->start;
     if (list->len == 1) {
         list->start = NULL;
@@ -31,6 +34,9 @@ int list_remove_end(list_t *list)
     node_t *last = NULL;
     node_t *node = NULL;
 
+    if (list == NULL || list->len == 0) {
+        return (0);
+    }
     node = list->end;
     if (list->len == 1) {
         list->start = NULL;

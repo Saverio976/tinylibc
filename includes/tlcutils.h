@@ -7,6 +7,16 @@
 
 #ifndef TLS_UTILS_H_
 
+/**
+** @brief free if `ptr` is not null
+**
+** @param ptr to free
+**/
+void free_ifnotnull(void *ptr);
+
+/**
+** @brief function that do nothing; utils for ternary with one function call
+**/
 void return_void(void);
 
 #endif

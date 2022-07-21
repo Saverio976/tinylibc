@@ -32,7 +32,7 @@ struct llnodesearch {
     int node_index;
 };
 
-    #define LEN(x) ((x != 0) ? (x).len : 0)
+    #define LEN(x) ((x != 0) ? (x)->len : 0)
 
     #define NEXT(x) ((x != 0) ? (x)->next : 0)
     #define PREV(x) ((x != 0) ? (x)->prev : 0)
@@ -175,6 +175,8 @@ list_t *list_insert_start(list_t *list, node_t *node);
 /**
 ** @brief insert `node` at index `index`
 **
+** If `node` = 0, the node will ne be added, and `list` will be returned
+**
 ** @param list list to update
 ** @param node node to add
 ** @param index index where `node` will be in `list`
@@ -183,12 +185,42 @@ list_t *list_insert_start(list_t *list, node_t *node);
 **/
 list_t *list_insert(list_t *list, node_t *node, int index);
 
+/**
+** @brief remove the first node of `list`
+**
+** @param list list to update
+**
+** @return 0 if (`list` = 0)|(`list`->len = 0);; 1
+**/
 int list_remove_start(list_t *list);
 
+/**
+** @brief remove the last node of `list`
+**
+** @param list list to update
+**
+** @return 0 if (`list` = 0)|(`list`->len = 0);; 1
+**/
 int list_remove_end(list_t *list);
 
+/**
+** @brief remove node where its ptr is `node`
+**
+** @param list list to update
+** @param node ptr to the node to remove
+**
+** @return 0 if node not found;; 1
+**/
 int list_remove_ptrnode(list_t *list, node_t *node);
 
+/**
+** @brief remove node where node data is `ptdrdata`
+**
+** @param list list to update
+** @param ptrdata ptr of data where data is in the node to remove
+**
+** @return 0 if node not found;; 1
+**/
 int list_remove_ptrdata(list_t *list, void *ptrdata);
 
 #endif

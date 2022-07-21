@@ -66,7 +66,8 @@ SRC_STDLIBS			:=		calloc.c									\
 SRC_STDLIBS			:=		$(addprefix stdlibs/,$(SRC_STDLIBS))
 
 # Lib for string.h (includes/tlcstrings.h)
-SRC_STRINGS			:=		strchr.c									\
+SRC_STRINGS			:=		memcpy.c									\
+							strchr.c									\
 							strcmp.c									\
 							strcpy.c									\
 							strdup.c									\

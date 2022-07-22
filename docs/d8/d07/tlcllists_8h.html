@@ -24,6 +24,7 @@
   <script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
   <script type="text/javascript">
    DoxygenAwesomeDarkModeToggle.init()
+   DoxygenAwesomeDarkModeToggle.enableDarkMode(true)
   </script>
  </head>
  <body>
@@ -119,8 +120,6 @@ Macros</h2></td></tr>
 <tr class="separator:a3e4545636cef77da4ddab18e3d233101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a184eb1eeb21deade2e180823b4a0e04c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a184eb1eeb21deade2e180823b4a0e04c">NEXT</a>(x)&#160;&#160;&#160;((x != 0) ? (x)-&gt;next : 0)</td></tr>
 <tr class="separator:a184eb1eeb21deade2e180823b4a0e04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7355421c23b2dd22cec3c1ef5bc380e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a7355421c23b2dd22cec3c1ef5bc380e1">PREV</a>(x)&#160;&#160;&#160;((x != 0) ? (x)-&gt;prev : 0)</td></tr>
-<tr class="separator:a7355421c23b2dd22cec3c1ef5bc380e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d91d4bdb40f95002cfa89bd7a2a948"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#ae2d91d4bdb40f95002cfa89bd7a2a948">FIRST</a>(list)&#160;&#160;&#160;((list != 0) ? (list)-&gt;start : 0)</td></tr>
 <tr class="separator:ae2d91d4bdb40f95002cfa89bd7a2a948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a790301a6c76777bad15a5bc30ba1bbbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a790301a6c76777bad15a5bc30ba1bbbc">LAST</a>(list)&#160;&#160;&#160;((list != 0) ? (list)-&gt;end : 0)</td></tr>
@@ -141,8 +140,6 @@ Macros</h2></td></tr>
 <tr class="separator:a782f2247584e2374f578faabf7919c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae12448e014c3a1ea13a1619fe911ebb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8">FOREACH</a>(x,  list)&#160;&#160;&#160;for (<a class="el" href="../../d8/d07/tlcllists_8h.html#a56b85d3c2225581f07944000249eb636">DECL_FIRST</a>(x, list); x != 0; x = <a class="el" href="../../d8/d07/tlcllists_8h.html#a184eb1eeb21deade2e180823b4a0e04c">NEXT</a>(x)) {</td></tr>
 <tr class="separator:ae12448e014c3a1ea13a1619fe911ebb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f7627ae84dbb49c8867bce66ed39253"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a7f7627ae84dbb49c8867bce66ed39253">PFOREACH</a>(x,  list)&#160;&#160;&#160;for (<a class="el" href="../../d8/d07/tlcllists_8h.html#a56b85d3c2225581f07944000249eb636">DECL_FIRST</a>(x, list); x != 0; x = <a class="el" href="../../d8/d07/tlcllists_8h.html#a7355421c23b2dd22cec3c1ef5bc380e1">PREV</a>(x)) {</td></tr>
-<tr class="separator:a7f7627ae84dbb49c8867bce66ed39253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>&#160;&#160;&#160;}</td></tr>
 <tr class="separator:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -233,7 +230,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00045">45</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00044">44</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +250,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00050">50</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00049">49</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +270,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00049">49</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00048">48</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -303,7 +300,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00043">43</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00042">42</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -323,7 +320,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00048">48</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00047">47</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -343,7 +340,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00047">47</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00046">46</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -359,7 +356,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00054">54</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00052">52</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -379,7 +376,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00039">39</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00038">38</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -409,7 +406,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00052">52</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00051">51</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -429,7 +426,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00041">41</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00040">40</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -449,7 +446,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00040">40</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00039">39</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -490,56 +487,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00037">37</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
-
-</div>
-</div>
-<a id="a7f7627ae84dbb49c8867bce66ed39253" name="a7f7627ae84dbb49c8867bce66ed39253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f7627ae84dbb49c8867bce66ed39253">&#9670;&nbsp;</a></span>PFOREACH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PFOREACH</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">list&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;for (<a class="el" href="../../d8/d07/tlcllists_8h.html#a56b85d3c2225581f07944000249eb636">DECL_FIRST</a>(x, list); x != 0; x = <a class="el" href="../../d8/d07/tlcllists_8h.html#a7355421c23b2dd22cec3c1ef5bc380e1">PREV</a>(x)) {</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00053">53</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
-
-</div>
-</div>
-<a id="a7355421c23b2dd22cec3c1ef5bc380e1" name="a7355421c23b2dd22cec3c1ef5bc380e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7355421c23b2dd22cec3c1ef5bc380e1">&#9670;&nbsp;</a></span>PREV</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PREV</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((x != 0) ? (x)-&gt;prev : 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00038">38</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -1184,7 +1131,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="../../d8/d07/tlcllists_8h.html">tlcllists.h</a></li>
-    <li class="footer">Generated on Fri Jul 22 2022 22:04:17 for (my)TinyLibC by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Fri Jul 22 2022 22:30:05 for (my)TinyLibC by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

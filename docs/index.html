@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=11"/>
   <meta name="generator" content="Doxygen 1.9.3"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>(my)TinyLibC: TLC</title>
+  <title>(my)TinyLibC: (my) TinyLibC</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -24,6 +24,7 @@
   <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
   <script type="text/javascript">
    DoxygenAwesomeDarkModeToggle.init()
+   DoxygenAwesomeDarkModeToggle.enableDarkMode(true)
   </script>
  </head>
  <body>
@@ -91,29 +92,70 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">TLC </div></div>
+  <div class="headertitle"><div class="title">(my) TinyLibC </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_README"></a> (my)TinyLibC</p>
-<p >just write some basic function (and why not, some non basic)</p>
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> <b>just some basic functions (and why not, some non basic)</b></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 DOC</h1>
-<p >use doxygen (doxygen doc at <a href="https://saverio976.github.io/-my-TinyLibC">https://saverio976.github.io/-my-TinyLibC</a>)</p><ul>
-<li>doc available at <a href="https://saverio976.github.io/-my-TinyLibC">https://saverio976.github.io/-my-TinyLibC</a></li>
+<p >use doxygen:</p><ul>
+<li>doc available at <a href="https://saverio976.github.io/tinylibc/">doc</a></li>
 <li>each function have doc with the (auto)completion of your IDE</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Example</h1>
+<ul>
+<li>using <b>list</b> <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d8/d07/tlcllists_8h.html">tlcllists.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dd/dc4/tlcstrings_8h.html">tlcstrings.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d9/d38/tlcutils_8h.html">tlcutils.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> *copy_str(<span class="keywordtype">void</span> *ptr)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> (<a class="code hl_function" href="dd/dc4/tlcstrings_8h.html#a7d4990376778620857b93a1590cff04f">x_strdup</a>(ptr));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> ac, cosnt <span class="keywordtype">char</span> *av[])</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_struct" href="d2/dc7/structllist.html">list_t</a> *list = <a class="code hl_function" href="d8/d07/tlcllists_8h.html#a4ede9851b7118653022189547b816781">list_create</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ac; i++) {</div>
+<div class="line">        list = <a class="code hl_function" href="d8/d07/tlcllists_8h.html#a909a5ab1df5895b9b54248f395e7e231">list_append</a>(list, <a class="code hl_function" href="dd/dc4/tlcstrings_8h.html#a7d4990376778620857b93a1590cff04f">x_strdup</a>(av[i]), &amp;<a class="code hl_function" href="d9/d38/tlcutils_8h.html#aef5dbe379bfe67bff3b03d0af7a30be1">free_ifnotnull</a>, &amp;copy_str);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Now, you have a list of av</span></div>
+<div class="line">    <a class="code hl_define" href="d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8">FOREACH</a>(x, list) <span class="comment">// for each node named x in the list list</span></div>
+<div class="line">        <span class="comment">// do something with x</span></div>
+<div class="line">        <span class="comment">// more function and macro to https://saverio976.github.io/tinylibc/d8/d07/tlcllists_8h.html</span></div>
+<div class="line">    <a class="code hl_define" href="d8/d07/tlcllists_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
+<div class="line">}</div>
+<div class="ttc" id="astructllist_html"><div class="ttname"><a href="d2/dc7/structllist.html">llist</a></div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00023">tlcllists.h:23</a></div></div>
+<div class="ttc" id="atlcllists_8h_html"><div class="ttname"><a href="d8/d07/tlcllists_8h.html">tlcllists.h</a></div></div>
+<div class="ttc" id="atlcllists_8h_html_a29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00052">tlcllists.h:52</a></div></div>
+<div class="ttc" id="atlcllists_8h_html_a4ede9851b7118653022189547b816781"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a4ede9851b7118653022189547b816781">list_create</a></div><div class="ttdeci">list_t * list_create(void)</div><div class="ttdoc">create an empty list</div></div>
+<div class="ttc" id="atlcllists_8h_html_a909a5ab1df5895b9b54248f395e7e231"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a909a5ab1df5895b9b54248f395e7e231">list_append</a></div><div class="ttdeci">list_t * list_append(list_t *list, void *data, void(*destroy)(void *data), void *(*copy)(void *data))</div><div class="ttdoc">append new data to list</div></div>
+<div class="ttc" id="atlcllists_8h_html_ae12448e014c3a1ea13a1619fe911ebb8"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8">FOREACH</a></div><div class="ttdeci">#define FOREACH(x, list)</div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00051">tlcllists.h:51</a></div></div>
+<div class="ttc" id="atlcstrings_8h_html"><div class="ttname"><a href="dd/dc4/tlcstrings_8h.html">tlcstrings.h</a></div></div>
+<div class="ttc" id="atlcstrings_8h_html_a7d4990376778620857b93a1590cff04f"><div class="ttname"><a href="dd/dc4/tlcstrings_8h.html#a7d4990376778620857b93a1590cff04f">x_strdup</a></div><div class="ttdeci">char * x_strdup(const char *s)</div><div class="ttdoc">duplicate a string</div></div>
+<div class="ttc" id="atlcutils_8h_html"><div class="ttname"><a href="d9/d38/tlcutils_8h.html">tlcutils.h</a></div></div>
+<div class="ttc" id="atlcutils_8h_html_aef5dbe379bfe67bff3b03d0af7a30be1"><div class="ttname"><a href="d9/d38/tlcutils_8h.html#aef5dbe379bfe67bff3b03d0af7a30be1">free_ifnotnull</a></div><div class="ttdeci">void free_ifnotnull(void *ptr)</div><div class="ttdoc">free if ptr is not null</div></div>
+</div><!-- fragment --></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Build</h1>
 <div class="fragment"><div class="line">make</div>
-</div><!-- fragment --><p >You will have a <code>tinylibc.a</code> archive file</p>
-<p >object are compiled to <code>obj</code> folder (and makefile dont relink !!!) (i'm proud of that xD) </p>
-</div></div><!-- PageDoc -->
+</div><!-- fragment --><p> this will output the file <code>libtinylibc.a</code></p>
+<p ><em>object are compiled to <code>obj</code> folder (and makefile dont relink !!!) (i'm proud of that xD)</em></p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Use it</h1>
+<p >compile your c code (change value of CC to your c compiler and PATHTINYLIBC to the right value): </p><div class="fragment"><div class="line">export CC=gcc</div>
+<div class="line">export PATHTINYLIBC=path/where/libtinylibc.a/is/</div>
+<div class="line">$CC -L $PATHTINYLIBC -ltinylibc -I $PATHTINYLIBC/includes</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 22 2022 22:04:17 for (my)TinyLibC by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Fri Jul 22 2022 22:30:05 for (my)TinyLibC by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

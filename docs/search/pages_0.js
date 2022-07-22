@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tlc_0',['TLC',['../index.html',1,'']]]
+  ['_28my_29_20tinylibc_0',['(my) TinyLibC',['../index.html',1,'']]]
 ];

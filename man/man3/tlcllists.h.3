@@ -34,9 +34,6 @@ includes/tlcllists.h
 .RI "#define \fBNEXT\fP(x)   ((x != 0) ? (x)\->next : 0)"
 .br
 .ti -1c
-.RI "#define \fBPREV\fP(x)   ((x != 0) ? (x)\->prev : 0)"
-.br
-.ti -1c
 .RI "#define \fBFIRST\fP(list)   ((list != 0) ? (list)\->start : 0)"
 .br
 .ti -1c
@@ -65,9 +62,6 @@ includes/tlcllists.h
 .br
 .ti -1c
 .RI "#define \fBFOREACH\fP(x,  list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBNEXT\fP(x)) {"
-.br
-.ti -1c
-.RI "#define \fBPFOREACH\fP(x,  list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBPREV\fP(x)) {"
 .br
 .ti -1c
 .RI "#define \fBEND\fP   }"
@@ -159,47 +153,47 @@ includes/tlcllists.h
 .SS "#define CHECK_EXEC(c, e)   ((c) ? e : \fBreturn_void\fP())"
 
 .PP
-Definition at line \fB45\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB44\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define COPY(x)   ((\fBCOPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
 
 .PP
-Definition at line \fB50\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB49\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define COPY_CHECK(x)   (x != 0 && (x)\->copy != 0)"
 
 .PP
-Definition at line \fB49\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define DECL_FIRST(x, list)   \fBnode_t\fP *x = \fBFIRST\fP(list)"
 
 .PP
-Definition at line \fB43\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB42\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define DESTROY(x)   (\fBCHECK_EXEC\fP(\fBDESTROY_CHECK\fP(x), (x)\->destroy((x)\->data)))"
 
 .PP
-Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB47\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define DESTROY_CHECK(x)   (x != 0 && (x)\->destroy != 0)"
 
 .PP
-Definition at line \fB47\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB46\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define END   }"
 
 .PP
-Definition at line \fB54\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB52\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define FIRST(list)   ((list != 0) ? (list)\->start : 0)"
 
 .PP
-Definition at line \fB39\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB38\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define FOREACH(x, list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBNEXT\fP(x)) {"
 
 .PP
-Definition at line \fB52\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB51\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define GETDATA(x)   ((x != 0) ? (x)\->data : 0)"
 
 .PP
-Definition at line \fB41\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB40\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define LAST(list)   ((list != 0) ? (list)\->end : 0)"
 
 .PP
-Definition at line \fB40\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB39\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define LEN(x)   ((x != 0) ? (x)\->len : 0)"
 
 .PP
@@ -208,14 +202,6 @@ Definition at line \fB35\fP of file \fBtlcllists\&.h\fP\&.
 
 .PP
 Definition at line \fB37\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define PFOREACH(x, list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBPREV\fP(x)) {"
-
-.PP
-Definition at line \fB53\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define PREV(x)   ((x != 0) ? (x)\->prev : 0)"
-
-.PP
-Definition at line \fB38\fP of file \fBtlcllists\&.h\fP\&.
 .SH "Typedef Documentation"
 .PP 
 .SS "typedef struct \fBllist\fP \fBlist_t\fP"

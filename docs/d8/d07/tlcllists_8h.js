@@ -16,8 +16,6 @@ var tlcllists_8h =
     [ "LAST", "d8/d07/tlcllists_8h.html#a790301a6c76777bad15a5bc30ba1bbbc", null ],
     [ "LEN", "d8/d07/tlcllists_8h.html#a3e4545636cef77da4ddab18e3d233101", null ],
     [ "NEXT", "d8/d07/tlcllists_8h.html#a184eb1eeb21deade2e180823b4a0e04c", null ],
-    [ "PFOREACH", "d8/d07/tlcllists_8h.html#a7f7627ae84dbb49c8867bce66ed39253", null ],
-    [ "PREV", "d8/d07/tlcllists_8h.html#a7355421c23b2dd22cec3c1ef5bc380e1", null ],
     [ "list_t", "d8/d07/tlcllists_8h.html#aa1ecdebc22ecd4694000b6eb4efd6ba3", null ],
     [ "node_result_t", "d8/d07/tlcllists_8h.html#ac2e003919b4b4484dd268f2013bfb921", null ],
     [ "node_t", "d8/d07/tlcllists_8h.html#a276604b000c0554ba5254b2924cc3b76", null ],

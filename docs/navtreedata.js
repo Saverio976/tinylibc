@@ -25,9 +25,11 @@
 var NAVTREE =
 [
   [ "(my)TinyLibC", "index.html", [
-    [ "TLC", "index.html", [
+    [ "(my) TinyLibC", "index.html", [
       [ "DOC", "index.html#autotoc_md1", null ],
-      [ "Build", "index.html#autotoc_md2", null ]
+      [ "Example", "index.html#autotoc_md2", null ],
+      [ "Build", "index.html#autotoc_md3", null ],
+      [ "Use it", "index.html#autotoc_md4", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],

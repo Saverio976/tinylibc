@@ -2,6 +2,10 @@
 
 **just some basic functions (and why not, some non basic)**
 
+## Source
+
+[github repo](https://github.com/Saverio976/tinylibc)
+
 ## DOC
 
 use doxygen:
@@ -34,6 +38,13 @@ int main(int ac, cosnt char *av[])
         // more function and macro to https://saverio976.github.io/tinylibc/d8/d07/tlcllists_8h.html
     END
 }
+```
+
+## Install
+
+```bash
+git clone https://github.com/Saverio976/tinylibc.git
+cd tinylibc
 ```
 
 ## Build

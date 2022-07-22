@@ -103,12 +103,15 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> <b>just some basic functions (and why not, some non basic)</b></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
+Source</h1>
+<p ><a href="https://github.com/Saverio976/tinylibc">github repo</a></p>
+<h1><a class="anchor" id="autotoc_md2"></a>
 DOC</h1>
 <p >use doxygen:</p><ul>
 <li>doc available at <a href="https://saverio976.github.io/tinylibc/">doc</a></li>
 <li>each function have doc with the (auto)completion of your IDE</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Example</h1>
 <ul>
 <li>using <b>list</b> <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d8/d07/tlcllists_8h.html">tlcllists.h</a>&quot;</span></div>
@@ -144,12 +147,16 @@ Example</h1>
 <div class="ttc" id="atlcutils_8h_html_aef5dbe379bfe67bff3b03d0af7a30be1"><div class="ttname"><a href="d9/d38/tlcutils_8h.html#aef5dbe379bfe67bff3b03d0af7a30be1">free_ifnotnull</a></div><div class="ttdeci">void free_ifnotnull(void *ptr)</div><div class="ttdoc">free if ptr is not null</div></div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Install</h1>
+<div class="fragment"><div class="line">git clone https://github.com/Saverio976/tinylibc.git</div>
+<div class="line">cd tinylibc</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
 Build</h1>
 <div class="fragment"><div class="line">make</div>
 </div><!-- fragment --><p> this will output the file <code>libtinylibc.a</code></p>
 <p ><em>object are compiled to <code>obj</code> folder (and makefile dont relink !!!) (i'm proud of that xD)</em></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Use it</h1>
 <p >compile your c code (change value of CC to your c compiler and PATHTINYLIBC to the right value): </p><div class="fragment"><div class="line">export CC=gcc</div>
 <div class="line">export PATHTINYLIBC=path/where/libtinylibc.a/is/</div>

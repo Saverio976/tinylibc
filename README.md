@@ -4,6 +4,7 @@
 
 ## Source
 
+[![Makefile Check](https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml/badge.svg?branch=main)](https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml)
 [github repo](https://github.com/Saverio976/tinylibc)
 
 ## DOC

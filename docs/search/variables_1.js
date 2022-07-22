@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['data_0',['data',['../d1/db2/structllnode.html#a9c4c25f6e497c28da3120c35a34e77a7',1,'llnode']]],
-  ['destroy_1',['destroy',['../d1/db2/structllnode.html#a96ce290a6ff6d734cd238e26120a83b0',1,'llnode']]]
+  ['data_0',['data',['../d1/db2/structllnode.html#aa69340d9d81a183ddfbfec74a7524966',1,'llnode']]],
+  ['destroy_1',['destroy',['../d1/db2/structllnode.html#a77578a02abdc17631882f0b8f66d42c1',1,'llnode']]]
 ];

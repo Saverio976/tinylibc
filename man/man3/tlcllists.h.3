@@ -15,13 +15,13 @@ includes/tlcllists.h
 
 .in +1c
 .ti -1c
-.RI "struct \fBllnode\fP"
+.RI "struct \fBnode_t\fP"
 .br
 .ti -1c
-.RI "struct \fBllist\fP"
+.RI "struct \fBlist_t\fP"
 .br
 .ti -1c
-.RI "struct \fBllnodesearch\fP"
+.RI "struct \fBnode_result_t\fP"
 .br
 .in -1c
 .SS "Macros"
@@ -43,7 +43,7 @@ includes/tlcllists.h
 .RI "#define \fBGETDATA\fP(x)   ((x != 0) ? (x)\->data : 0)"
 .br
 .ti -1c
-.RI "#define \fBDECL_FIRST\fP(x,  list)   \fBnode_t\fP *x = \fBFIRST\fP(list)"
+.RI "#define \fBDECL_FIRST\fP(x,  list)   node_t *x = \fBFIRST\fP(list)"
 .br
 .ti -1c
 .RI "#define \fBCHECK_EXEC\fP(c,  e)   ((c) ? e : \fBreturn_void\fP())"
@@ -67,84 +67,71 @@ includes/tlcllists.h
 .RI "#define \fBEND\fP   }"
 .br
 .in -1c
-.SS "Typedefs"
-
-.in +1c
-.ti -1c
-.RI "typedef struct \fBllnode\fP \fBnode_t\fP"
-.br
-.ti -1c
-.RI "typedef struct \fBllist\fP \fBlist_t\fP"
-.br
-.ti -1c
-.RI "typedef struct \fBllnodesearch\fP \fBnode_result_t\fP"
-.br
-.in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBlist_t\fP * \fBlist_append\fP (\fBlist_t\fP *list, void *data, void(*destroy)(void *data), void *(*copy)(void *data))"
+.RI "list_t * \fBlist_append\fP (list_t *list, void *data, void(*destroy)(void *data), void *(*copy)(void *data))"
 .br
 .RI "append new data to \fClist\fP "
 .ti -1c
-.RI "\fBlist_t\fP * \fBlist_create\fP (void)"
+.RI "list_t * \fBlist_create\fP (void)"
 .br
 .RI "create an empty list "
 .ti -1c
-.RI "\fBnode_t\fP * \fBnode_create\fP (void *data, void(*destroy)(void *data), void *(*copy)(void *data))"
+.RI "node_t * \fBnode_create\fP (void *data, void(*destroy)(void *data), void *(*copy)(void *data))"
 .br
 .RI "create a node "
 .ti -1c
-.RI "void \fBlist_delete\fP (\fBlist_t\fP *list)"
+.RI "void \fBlist_delete\fP (list_t *list)"
 .br
 .RI "delete the \fClist\fP "
 .ti -1c
-.RI "\fBlist_t\fP * \fBlist_duplicate\fP (\fBlist_t\fP *list)"
+.RI "list_t * \fBlist_duplicate\fP (list_t *list)"
 .br
 .RI "duplicate \fClist\fP "
 .ti -1c
-.RI "\fBnode_result_t\fP \fBlist_find_ptrdata\fP (\fBlist_t\fP *list, void *data)"
+.RI "node_result_t \fBlist_find_ptrdata\fP (list_t *list, void *data)"
 .br
 .RI "find node that have a node->data == \fCdata\fP "
 .ti -1c
-.RI "int \fBlist_find_ptrnode\fP (\fBlist_t\fP *list, \fBnode_t\fP *node_ptr)"
+.RI "int \fBlist_find_ptrnode\fP (list_t *list, node_t *node_ptr)"
 .br
 .RI "find node index that have node == \fCnode_ptr\fP "
 .ti -1c
-.RI "\fBnode_result_t\fP \fBlist_find_f\fP (\fBlist_t\fP *list, bool(is_this_result)(void *node_data, void *param), void *param)"
+.RI "node_result_t \fBlist_find_f\fP (list_t *list, bool(is_this_result)(void *node_data, void *param), void *param)"
 .br
 .RI "find node where is_this_result(node->data, \fCparam\fP) = 1 "
 .ti -1c
-.RI "\fBnode_t\fP * \fBlist_index\fP (\fBlist_t\fP *list, int index)"
+.RI "node_t * \fBlist_index\fP (list_t *list, int index)"
 .br
 .RI "return node at index \fCindex\fP "
 .ti -1c
-.RI "\fBlist_t\fP * \fBlist_insert_end\fP (\fBlist_t\fP *list, \fBnode_t\fP *node)"
+.RI "list_t * \fBlist_insert_end\fP (list_t *list, node_t *node)"
 .br
 .RI "insert \fCnode\fP at end of \fClist\fP "
 .ti -1c
-.RI "\fBlist_t\fP * \fBlist_insert_start\fP (\fBlist_t\fP *list, \fBnode_t\fP *node)"
+.RI "list_t * \fBlist_insert_start\fP (list_t *list, node_t *node)"
 .br
 .RI "insert \fCnode\fP at start of \fClist\fP "
 .ti -1c
-.RI "\fBlist_t\fP * \fBlist_insert\fP (\fBlist_t\fP *list, \fBnode_t\fP *node, int index)"
+.RI "list_t * \fBlist_insert\fP (list_t *list, node_t *node, int index)"
 .br
 .RI "insert \fCnode\fP at index \fCindex\fP "
 .ti -1c
-.RI "int \fBlist_remove_start\fP (\fBlist_t\fP *list)"
+.RI "int \fBlist_remove_start\fP (list_t *list)"
 .br
 .RI "remove the first node of \fClist\fP "
 .ti -1c
-.RI "int \fBlist_remove_end\fP (\fBlist_t\fP *list)"
+.RI "int \fBlist_remove_end\fP (list_t *list)"
 .br
 .RI "remove the last node of \fClist\fP "
 .ti -1c
-.RI "int \fBlist_remove_ptrnode\fP (\fBlist_t\fP *list, \fBnode_t\fP *node)"
+.RI "int \fBlist_remove_ptrnode\fP (list_t *list, node_t *node)"
 .br
 .RI "remove node where its ptr is \fCnode\fP "
 .ti -1c
-.RI "int \fBlist_remove_ptrdata\fP (\fBlist_t\fP *list, void *ptrdata)"
+.RI "int \fBlist_remove_ptrdata\fP (list_t *list, void *ptrdata)"
 .br
 .RI "remove node where node data is \fCptdrdata\fP "
 .in -1c
@@ -162,7 +149,7 @@ Definition at line \fB49\fP of file \fBtlcllists\&.h\fP\&.
 
 .PP
 Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define DECL_FIRST(x, list)   \fBnode_t\fP *x = \fBFIRST\fP(list)"
+.SS "#define DECL_FIRST(x, list)   node_t *x = \fBFIRST\fP(list)"
 
 .PP
 Definition at line \fB42\fP of file \fBtlcllists\&.h\fP\&.
@@ -202,23 +189,9 @@ Definition at line \fB35\fP of file \fBtlcllists\&.h\fP\&.
 
 .PP
 Definition at line \fB37\fP of file \fBtlcllists\&.h\fP\&.
-.SH "Typedef Documentation"
-.PP 
-.SS "typedef struct \fBllist\fP \fBlist_t\fP"
-
-.PP
-Definition at line \fB22\fP of file \fBtlcllists\&.h\fP\&.
-.SS "typedef struct \fBllnodesearch\fP \fBnode_result_t\fP"
-
-.PP
-Definition at line \fB29\fP of file \fBtlcllists\&.h\fP\&.
-.SS "typedef struct \fBllnode\fP \fBnode_t\fP"
-
-.PP
-Definition at line \fB14\fP of file \fBtlcllists\&.h\fP\&.
 .SH "Function Documentation"
 .PP 
-.SS "\fBlist_t\fP * list_append (\fBlist_t\fP * list, void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"
+.SS "list_t * list_append (list_t * list, void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"
 
 .PP
 append new data to \fClist\fP If \fCdestroy\fP is NULL, the \fCdata\fP will not be freed when the node is deleted If \fCcopy\fP is NULL, the node will not be copied if you duplicate the list
@@ -240,7 +213,7 @@ NULL if \fClist\fP = 0;; the \fClist\fP
 .RE
 .PP
 
-.SS "\fBlist_t\fP * list_create (void)"
+.SS "list_t * list_create (void)"
 
 .PP
 create an empty list 
@@ -251,7 +224,7 @@ NULL if malloc failed;; the new created list
 .RE
 .PP
 
-.SS "void list_delete (\fBlist_t\fP * list)"
+.SS "void list_delete (list_t * list)"
 
 .PP
 delete the \fClist\fP 
@@ -262,7 +235,7 @@ delete the \fClist\fP
 .RE
 .PP
 
-.SS "\fBlist_t\fP * list_duplicate (\fBlist_t\fP * list)"
+.SS "list_t * list_duplicate (list_t * list)"
 
 .PP
 duplicate \fClist\fP 
@@ -278,7 +251,7 @@ NULL if \fClist\fP = 0;; the new duplicated list
 .RE
 .PP
 
-.SS "\fBnode_result_t\fP list_find_f (\fBlist_t\fP * list, bool(is_this_result)(void *node_data, void *param), void * param)"
+.SS "node_result_t list_find_f (list_t * list, bool(is_this_result)(void *node_data, void *param), void * param)"
 
 .PP
 find node where is_this_result(node->data, \fCparam\fP) = 1 
@@ -298,7 +271,7 @@ find node where is_this_result(node->data, \fCparam\fP) = 1
 .RE
 .PP
 
-.SS "\fBnode_result_t\fP list_find_ptrdata (\fBlist_t\fP * list, void * data)"
+.SS "node_result_t list_find_ptrdata (list_t * list, void * data)"
 
 .PP
 find node that have a node->data == \fCdata\fP 
@@ -316,7 +289,7 @@ find node that have a node->data == \fCdata\fP
 .RE
 .PP
 
-.SS "int list_find_ptrnode (\fBlist_t\fP * list, \fBnode_t\fP * node_ptr)"
+.SS "int list_find_ptrnode (list_t * list, node_t * node_ptr)"
 
 .PP
 find node index that have node == \fCnode_ptr\fP 
@@ -334,7 +307,7 @@ find node index that have node == \fCnode_ptr\fP
 .RE
 .PP
 
-.SS "\fBnode_t\fP * list_index (\fBlist_t\fP * list, int index)"
+.SS "node_t * list_index (list_t * list, int index)"
 
 .PP
 return node at index \fCindex\fP If the index <= 0, it return the first node If the index is out of range, it return the last node
@@ -352,7 +325,7 @@ NULL if \fClist\fP = 0;; the node
 .RE
 .PP
 
-.SS "\fBlist_t\fP * list_insert (\fBlist_t\fP * list, \fBnode_t\fP * node, int index)"
+.SS "list_t * list_insert (list_t * list, node_t * node, int index)"
 
 .PP
 insert \fCnode\fP at index \fCindex\fP If \fCnode\fP = 0, the node will ne be added, and \fClist\fP will be returned
@@ -372,7 +345,7 @@ NULL if \fClist\fP = 0;; \fClist\fP
 .RE
 .PP
 
-.SS "\fBlist_t\fP * list_insert_end (\fBlist_t\fP * list, \fBnode_t\fP * node)"
+.SS "list_t * list_insert_end (list_t * list, node_t * node)"
 
 .PP
 insert \fCnode\fP at end of \fClist\fP 
@@ -390,7 +363,7 @@ NULL if \fClist\fP = 0;; \fClist\fP
 .RE
 .PP
 
-.SS "\fBlist_t\fP * list_insert_start (\fBlist_t\fP * list, \fBnode_t\fP * node)"
+.SS "list_t * list_insert_start (list_t * list, node_t * node)"
 
 .PP
 insert \fCnode\fP at start of \fClist\fP 
@@ -408,7 +381,7 @@ NULL if \fClist\fP = 0;; \fClist\fP
 .RE
 .PP
 
-.SS "int list_remove_end (\fBlist_t\fP * list)"
+.SS "int list_remove_end (list_t * list)"
 
 .PP
 remove the last node of \fClist\fP 
@@ -424,7 +397,7 @@ remove the last node of \fClist\fP
 .RE
 .PP
 
-.SS "int list_remove_ptrdata (\fBlist_t\fP * list, void * ptrdata)"
+.SS "int list_remove_ptrdata (list_t * list, void * ptrdata)"
 
 .PP
 remove node where node data is \fCptdrdata\fP 
@@ -442,7 +415,7 @@ remove node where node data is \fCptdrdata\fP
 .RE
 .PP
 
-.SS "int list_remove_ptrnode (\fBlist_t\fP * list, \fBnode_t\fP * node)"
+.SS "int list_remove_ptrnode (list_t * list, node_t * node)"
 
 .PP
 remove node where its ptr is \fCnode\fP 
@@ -460,7 +433,7 @@ remove node where its ptr is \fCnode\fP
 .RE
 .PP
 
-.SS "int list_remove_start (\fBlist_t\fP * list)"
+.SS "int list_remove_start (list_t * list)"
 
 .PP
 remove the first node of \fClist\fP 
@@ -476,7 +449,7 @@ remove the first node of \fClist\fP
 .RE
 .PP
 
-.SS "\fBnode_t\fP * node_create (void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"
+.SS "node_t * node_create (void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"
 
 .PP
 create a node If \fCdestroy\fP is NULL, the \fCdata\fP will not be freed when the node is deleted If \fCcopy\fP is NULL, the node will not be copied if you duplicate the list

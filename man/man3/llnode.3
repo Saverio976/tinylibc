@@ -1,8 +1,8 @@
-.TH "llnode" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "node_t" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-llnode
+node_t
 .SH SYNOPSIS
 .br
 .PP
@@ -12,7 +12,7 @@ llnode
 
 .in +1c
 .ti -1c
-.RI "\fBnode_t\fP * \fBnext\fP"
+.RI "node_t * \fBnext\fP"
 .br
 .ti -1c
 .RI "void * \fBdata\fP"
@@ -29,19 +29,19 @@ llnode
 Definition at line \fB15\fP of file \fBtlcllists\&.h\fP\&.
 .SH "Field Documentation"
 .PP 
-.SS "void *(* llnode::copy) (void *\fBdata\fP)"
+.SS "void *(* node_t::copy) (void *\fBdata\fP)"
 
 .PP
 Definition at line \fB19\fP of file \fBtlcllists\&.h\fP\&.
-.SS "void* llnode::data"
+.SS "void* node_t::data"
 
 .PP
 Definition at line \fB17\fP of file \fBtlcllists\&.h\fP\&.
-.SS "void(* llnode::destroy) (void *\fBdata\fP)"
+.SS "void(* node_t::destroy) (void *\fBdata\fP)"
 
 .PP
 Definition at line \fB18\fP of file \fBtlcllists\&.h\fP\&.
-.SS "\fBnode_t\fP* llnode::next"
+.SS "node_t* node_t::next"
 
 .PP
 Definition at line \fB16\fP of file \fBtlcllists\&.h\fP\&.

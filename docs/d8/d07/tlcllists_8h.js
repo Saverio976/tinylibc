@@ -1,8 +1,8 @@
 var tlcllists_8h =
 [
-    [ "llnode", "d1/db2/structllnode.html", "d1/db2/structllnode" ],
-    [ "llist", "d2/dc7/structllist.html", "d2/dc7/structllist" ],
-    [ "llnodesearch", "dc/dc2/structllnodesearch.html", "dc/dc2/structllnodesearch" ],
+    [ "node_t", "d1/db2/structllnode.html", "d1/db2/structllnode" ],
+    [ "list_t", "d2/dc7/structllist.html", "d2/dc7/structllist" ],
+    [ "node_result_t", "dc/dc2/structllnodesearch.html", "dc/dc2/structllnodesearch" ],
     [ "CHECK_EXEC", "d8/d07/tlcllists_8h.html#ace3e448aef45be5b75f35ad0776768f8", null ],
     [ "COPY", "d8/d07/tlcllists_8h.html#a782f2247584e2374f578faabf7919c1b", null ],
     [ "COPY_CHECK", "d8/d07/tlcllists_8h.html#aa294def90252465fb4b95345ad0c4b37", null ],
@@ -16,9 +16,6 @@ var tlcllists_8h =
     [ "LAST", "d8/d07/tlcllists_8h.html#a790301a6c76777bad15a5bc30ba1bbbc", null ],
     [ "LEN", "d8/d07/tlcllists_8h.html#a3e4545636cef77da4ddab18e3d233101", null ],
     [ "NEXT", "d8/d07/tlcllists_8h.html#a184eb1eeb21deade2e180823b4a0e04c", null ],
-    [ "list_t", "d8/d07/tlcllists_8h.html#aa1ecdebc22ecd4694000b6eb4efd6ba3", null ],
-    [ "node_result_t", "d8/d07/tlcllists_8h.html#ac2e003919b4b4484dd268f2013bfb921", null ],
-    [ "node_t", "d8/d07/tlcllists_8h.html#a276604b000c0554ba5254b2924cc3b76", null ],
     [ "list_append", "d8/d07/tlcllists_8h.html#a909a5ab1df5895b9b54248f395e7e231", null ],
     [ "list_create", "d8/d07/tlcllists_8h.html#a4ede9851b7118653022189547b816781", null ],
     [ "list_delete", "d8/d07/tlcllists_8h.html#a6455f9dc85148234142492c950041d06", null ],

@@ -35,7 +35,6 @@ struct llnodesearch {
     #define LEN(x) ((x != 0) ? (x)->len : 0)
 
     #define NEXT(x) ((x != 0) ? (x)->next : 0)
-    #define PREV(x) ((x != 0) ? (x)->prev : 0)
     #define FIRST(list) ((list != 0) ? (list)->start : 0)
     #define LAST(list) ((list != 0) ? (list)->end : 0)
     #define GETDATA(x) ((x != 0) ? (x)->data : 0)
@@ -50,7 +49,6 @@ struct llnodesearch {
     #define COPY(x) ((COPY_CHECK(x)) ? (x)->copy((x)->data) : 0)
 
     #define FOREACH(x, list) for (DECL_FIRST(x, list); x != 0; x = NEXT(x)) {
-    #define PFOREACH(x, list) for (DECL_FIRST(x, list); x != 0; x = PREV(x)) {
     #define END }
 
 /**

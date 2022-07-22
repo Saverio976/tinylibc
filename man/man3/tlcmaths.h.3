@@ -1,0 +1,353 @@
+.TH "includes/tlcmaths.h" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcmaths.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBX_MAX_MACRO\fP(x,  y)   (((x) > (y)) ? (x) : (y))"
+.br
+.ti -1c
+.RI "#define \fBX_MIN_MACRO\fP(x,  y)   (((x) < (y)) ? (x) : (y))"
+.br
+.ti -1c
+.RI "#define \fBX_E\fP   2\&.7182818284"
+.br
+.ti -1c
+.RI "#define \fBX_PI\fP   3\&.1415926535"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBx_max\fP (int a, int b)"
+.br
+.RI "get max int between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "double \fBx_maxd\fP (double a, double b)"
+.br
+.RI "get max double between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "float \fBx_maxf\fP (float a, float b)"
+.br
+.RI "get max float between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "long double \fBx_maxl\fP (long double a, long double b)"
+.br
+.RI "get max long double between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "int \fBx_min\fP (int a, int b)"
+.br
+.RI "get min int between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "double \fBx_mind\fP (double a, double b)"
+.br
+.RI "get min double between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "float \fBx_minf\fP (float a, float b)"
+.br
+.RI "get min float between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "long double \fBx_minl\fP (long double a, long double b)"
+.br
+.RI "get min long double between \fCa\fP and \fCb\fP "
+.ti -1c
+.RI "double \fBx_pow\fP (double x, double y)"
+.br
+.RI "\fCx\fP raise to the power of \fCy\fP "
+.ti -1c
+.RI "float \fBx_powf\fP (float x, float y)"
+.br
+.RI "\fCx\fP raise to the power of \fCy\fP "
+.ti -1c
+.RI "long double \fBx_powl\fP (long double x, long double y)"
+.br
+.RI "\fCx\fP raise to the power of \fCy\fP "
+.ti -1c
+.RI "double \fBx_sqrt\fP (double x)"
+.br
+.RI "compute the square root of \fCx\fP "
+.ti -1c
+.RI "float \fBx_sqrtf\fP (float x)"
+.br
+.RI "compute the square root of \fCx\fP "
+.ti -1c
+.RI "long double \fBx_sqrtl\fP (long double x)"
+.br
+.RI "compute the square root of \fCx\fP "
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define X_E   2\&.7182818284"
+
+.PP
+Definition at line \fB14\fP of file \fBtlcmaths\&.h\fP\&.
+.SS "#define X_MAX_MACRO(x, y)   (((x) > (y)) ? (x) : (y))"
+
+.PP
+Definition at line \fB11\fP of file \fBtlcmaths\&.h\fP\&.
+.SS "#define X_MIN_MACRO(x, y)   (((x) < (y)) ? (x) : (y))"
+
+.PP
+Definition at line \fB12\fP of file \fBtlcmaths\&.h\fP\&.
+.SS "#define X_PI   3\&.1415926535"
+
+.PP
+Definition at line \fB15\fP of file \fBtlcmaths\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int x_max (int a, int b)"
+
+.PP
+get max int between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP integer \fCa\fP 
+.br
+\fIb\fP integer \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "double x_maxd (double a, double b)"
+
+.PP
+get max double between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP double \fCa\fP 
+.br
+\fIb\fP double \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "float x_maxf (float a, float b)"
+
+.PP
+get max float between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP float \fCa\fP 
+.br
+\fIb\fP float \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "long double x_maxl (long double a, long double b)"
+
+.PP
+get max long double between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP long double \fCa\fP 
+.br
+\fIb\fP long double \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "int x_min (int a, int b)"
+
+.PP
+get min int between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP integer \fCa\fP 
+.br
+\fIb\fP integer \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "double x_mind (double a, double b)"
+
+.PP
+get min double between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP double \fCa\fP 
+.br
+\fIb\fP double \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "float x_minf (float a, float b)"
+
+.PP
+get min float between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP float \fCa\fP 
+.br
+\fIb\fP float \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "long double x_minl (long double a, long double b)"
+
+.PP
+get min long double between \fCa\fP and \fCb\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP long double \fCa\fP 
+.br
+\fIb\fP long double \fCb\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCa\fP or \fCb\fP 
+.RE
+.PP
+
+.SS "double x_pow (double x, double y)"
+
+.PP
+\fCx\fP raise to the power of \fCy\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP double 
+.br
+\fIy\fP double
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCx\fP raise to the power of \fCy\fP 
+.RE
+.PP
+
+.SS "float x_powf (float x, float y)"
+
+.PP
+\fCx\fP raise to the power of \fCy\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP float 
+.br
+\fIy\fP float
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCx\fP raise to the power of \fCy\fP 
+.RE
+.PP
+
+.SS "long double x_powl (long double x, long double y)"
+
+.PP
+\fCx\fP raise to the power of \fCy\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP long double 
+.br
+\fIy\fP long double
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fCx\fP raise to the power of \fCy\fP 
+.RE
+.PP
+
+.SS "double x_sqrt (double x)"
+
+.PP
+compute the square root of \fCx\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP double
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+x if (x <= 1);; square root of \fCx\fP 
+.RE
+.PP
+
+.SS "float x_sqrtf (float x)"
+
+.PP
+compute the square root of \fCx\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP float
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+x if (x <= 1);; square root of \fCx\fP 
+.RE
+.PP
+
+.SS "long double x_sqrtl (long double x)"
+
+.PP
+compute the square root of \fCx\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP long double
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+x if (x <= 1);; square root of \fCx\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

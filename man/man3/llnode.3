@@ -1,0 +1,51 @@
+.TH "llnode" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+llnode
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tlcllists\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBnode_t\fP * \fBnext\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "void(* \fBdestroy\fP )(void *\fBdata\fP)"
+.br
+.ti -1c
+.RI "void *(* \fBcopy\fP )(void *\fBdata\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB15\fP of file \fBtlcllists\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "void *(* llnode::copy) (void *\fBdata\fP)"
+
+.PP
+Definition at line \fB19\fP of file \fBtlcllists\&.h\fP\&.
+.SS "void* llnode::data"
+
+.PP
+Definition at line \fB17\fP of file \fBtlcllists\&.h\fP\&.
+.SS "void(* llnode::destroy) (void *\fBdata\fP)"
+
+.PP
+Definition at line \fB18\fP of file \fBtlcllists\&.h\fP\&.
+.SS "\fBnode_t\fP* llnode::next"
+
+.PP
+Definition at line \fB16\fP of file \fBtlcllists\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

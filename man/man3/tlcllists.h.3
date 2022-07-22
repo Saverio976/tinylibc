@@ -1,0 +1,515 @@
+.TH "includes/tlcllists.h" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcllists.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include 'tlcutils\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBllnode\fP"
+.br
+.ti -1c
+.RI "struct \fBllist\fP"
+.br
+.ti -1c
+.RI "struct \fBllnodesearch\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLEN\fP(x)   ((x != 0) ? (x)\->len : 0)"
+.br
+.ti -1c
+.RI "#define \fBNEXT\fP(x)   ((x != 0) ? (x)\->next : 0)"
+.br
+.ti -1c
+.RI "#define \fBPREV\fP(x)   ((x != 0) ? (x)\->prev : 0)"
+.br
+.ti -1c
+.RI "#define \fBFIRST\fP(list)   ((list != 0) ? (list)\->start : 0)"
+.br
+.ti -1c
+.RI "#define \fBLAST\fP(list)   ((list != 0) ? (list)\->end : 0)"
+.br
+.ti -1c
+.RI "#define \fBGETDATA\fP(x)   ((x != 0) ? (x)\->data : 0)"
+.br
+.ti -1c
+.RI "#define \fBDECL_FIRST\fP(x,  list)   \fBnode_t\fP *x = \fBFIRST\fP(list)"
+.br
+.ti -1c
+.RI "#define \fBCHECK_EXEC\fP(c,  e)   ((c) ? e : \fBreturn_void\fP())"
+.br
+.ti -1c
+.RI "#define \fBDESTROY_CHECK\fP(x)   (x != 0 && (x)\->destroy != 0)"
+.br
+.ti -1c
+.RI "#define \fBDESTROY\fP(x)   (\fBCHECK_EXEC\fP(\fBDESTROY_CHECK\fP(x), (x)\->destroy((x)\->data)))"
+.br
+.ti -1c
+.RI "#define \fBCOPY_CHECK\fP(x)   (x != 0 && (x)\->copy != 0)"
+.br
+.ti -1c
+.RI "#define \fBCOPY\fP(x)   ((\fBCOPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
+.br
+.ti -1c
+.RI "#define \fBFOREACH\fP(x,  list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBNEXT\fP(x)) {"
+.br
+.ti -1c
+.RI "#define \fBPFOREACH\fP(x,  list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBPREV\fP(x)) {"
+.br
+.ti -1c
+.RI "#define \fBEND\fP   }"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBllnode\fP \fBnode_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBllist\fP \fBlist_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBllnodesearch\fP \fBnode_result_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlist_t\fP * \fBlist_append\fP (\fBlist_t\fP *list, void *data, void(*destroy)(void *data), void *(*copy)(void *data))"
+.br
+.RI "append new data to \fClist\fP "
+.ti -1c
+.RI "\fBlist_t\fP * \fBlist_create\fP (void)"
+.br
+.RI "create an empty list "
+.ti -1c
+.RI "\fBnode_t\fP * \fBnode_create\fP (void *data, void(*destroy)(void *data), void *(*copy)(void *data))"
+.br
+.RI "create a node "
+.ti -1c
+.RI "void \fBlist_delete\fP (\fBlist_t\fP *list)"
+.br
+.RI "delete the \fClist\fP "
+.ti -1c
+.RI "\fBlist_t\fP * \fBlist_duplicate\fP (\fBlist_t\fP *list)"
+.br
+.RI "duplicate \fClist\fP "
+.ti -1c
+.RI "\fBnode_result_t\fP \fBlist_find_ptrdata\fP (\fBlist_t\fP *list, void *data)"
+.br
+.RI "find node that have a node->data == \fCdata\fP "
+.ti -1c
+.RI "int \fBlist_find_ptrnode\fP (\fBlist_t\fP *list, \fBnode_t\fP *node_ptr)"
+.br
+.RI "find node index that have node == \fCnode_ptr\fP "
+.ti -1c
+.RI "\fBnode_result_t\fP \fBlist_find_f\fP (\fBlist_t\fP *list, bool(is_this_result)(void *node_data, void *param), void *param)"
+.br
+.RI "find node where is_this_result(node->data, \fCparam\fP) = 1 "
+.ti -1c
+.RI "\fBnode_t\fP * \fBlist_index\fP (\fBlist_t\fP *list, int index)"
+.br
+.RI "return node at index \fCindex\fP "
+.ti -1c
+.RI "\fBlist_t\fP * \fBlist_insert_end\fP (\fBlist_t\fP *list, \fBnode_t\fP *node)"
+.br
+.RI "insert \fCnode\fP at end of \fClist\fP "
+.ti -1c
+.RI "\fBlist_t\fP * \fBlist_insert_start\fP (\fBlist_t\fP *list, \fBnode_t\fP *node)"
+.br
+.RI "insert \fCnode\fP at start of \fClist\fP "
+.ti -1c
+.RI "\fBlist_t\fP * \fBlist_insert\fP (\fBlist_t\fP *list, \fBnode_t\fP *node, int index)"
+.br
+.RI "insert \fCnode\fP at index \fCindex\fP "
+.ti -1c
+.RI "int \fBlist_remove_start\fP (\fBlist_t\fP *list)"
+.br
+.RI "remove the first node of \fClist\fP "
+.ti -1c
+.RI "int \fBlist_remove_end\fP (\fBlist_t\fP *list)"
+.br
+.RI "remove the last node of \fClist\fP "
+.ti -1c
+.RI "int \fBlist_remove_ptrnode\fP (\fBlist_t\fP *list, \fBnode_t\fP *node)"
+.br
+.RI "remove node where its ptr is \fCnode\fP "
+.ti -1c
+.RI "int \fBlist_remove_ptrdata\fP (\fBlist_t\fP *list, void *ptrdata)"
+.br
+.RI "remove node where node data is \fCptdrdata\fP "
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CHECK_EXEC(c, e)   ((c) ? e : \fBreturn_void\fP())"
+
+.PP
+Definition at line \fB45\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define COPY(x)   ((\fBCOPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
+
+.PP
+Definition at line \fB50\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define COPY_CHECK(x)   (x != 0 && (x)\->copy != 0)"
+
+.PP
+Definition at line \fB49\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define DECL_FIRST(x, list)   \fBnode_t\fP *x = \fBFIRST\fP(list)"
+
+.PP
+Definition at line \fB43\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define DESTROY(x)   (\fBCHECK_EXEC\fP(\fBDESTROY_CHECK\fP(x), (x)\->destroy((x)\->data)))"
+
+.PP
+Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define DESTROY_CHECK(x)   (x != 0 && (x)\->destroy != 0)"
+
+.PP
+Definition at line \fB47\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define END   }"
+
+.PP
+Definition at line \fB54\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define FIRST(list)   ((list != 0) ? (list)\->start : 0)"
+
+.PP
+Definition at line \fB39\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define FOREACH(x, list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBNEXT\fP(x)) {"
+
+.PP
+Definition at line \fB52\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define GETDATA(x)   ((x != 0) ? (x)\->data : 0)"
+
+.PP
+Definition at line \fB41\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define LAST(list)   ((list != 0) ? (list)\->end : 0)"
+
+.PP
+Definition at line \fB40\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define LEN(x)   ((x != 0) ? (x)\->len : 0)"
+
+.PP
+Definition at line \fB35\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define NEXT(x)   ((x != 0) ? (x)\->next : 0)"
+
+.PP
+Definition at line \fB37\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define PFOREACH(x, list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBPREV\fP(x)) {"
+
+.PP
+Definition at line \fB53\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define PREV(x)   ((x != 0) ? (x)\->prev : 0)"
+
+.PP
+Definition at line \fB38\fP of file \fBtlcllists\&.h\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBllist\fP \fBlist_t\fP"
+
+.PP
+Definition at line \fB22\fP of file \fBtlcllists\&.h\fP\&.
+.SS "typedef struct \fBllnodesearch\fP \fBnode_result_t\fP"
+
+.PP
+Definition at line \fB29\fP of file \fBtlcllists\&.h\fP\&.
+.SS "typedef struct \fBllnode\fP \fBnode_t\fP"
+
+.PP
+Definition at line \fB14\fP of file \fBtlcllists\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBlist_t\fP * list_append (\fBlist_t\fP * list, void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"
+
+.PP
+append new data to \fClist\fP If \fCdestroy\fP is NULL, the \fCdata\fP will not be freed when the node is deleted If \fCcopy\fP is NULL, the node will not be copied if you duplicate the list
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list to update 
+.br
+\fIdata\fP the data to append 
+.br
+\fIdestroy\fP the function called when need to destroy \fCdata\fP (can be NULL) 
+.br
+\fIcopy\fP the function called when need to copy \fCdata\fP (can be NULL)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fClist\fP = 0;; the \fClist\fP 
+.RE
+.PP
+
+.SS "\fBlist_t\fP * list_create (void)"
+
+.PP
+create an empty list 
+.PP
+\fBReturns\fP
+.RS 4
+NULL if malloc failed;; the new created list 
+.RE
+.PP
+
+.SS "void list_delete (\fBlist_t\fP * list)"
+
+.PP
+delete the \fClist\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to delete 
+.RE
+.PP
+
+.SS "\fBlist_t\fP * list_duplicate (\fBlist_t\fP * list)"
+
+.PP
+duplicate \fClist\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list to duplicate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fClist\fP = 0;; the new duplicated list 
+.RE
+.PP
+
+.SS "\fBnode_result_t\fP list_find_f (\fBlist_t\fP * list, bool(is_this_result)(void *node_data, void *param), void * param)"
+
+.PP
+find node where is_this_result(node->data, \fCparam\fP) = 1 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list in which to search 
+.br
+\fIis_this_result\fP function that return 1 when the item is found 
+.br
+\fIparam\fP additional parameter to is_this_result
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(node_index = -1 & node_ptr = 0) if not found;; the good info 
+.RE
+.PP
+
+.SS "\fBnode_result_t\fP list_find_ptrdata (\fBlist_t\fP * list, void * data)"
+
+.PP
+find node that have a node->data == \fCdata\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list in which to search 
+.br
+\fIdata\fP the ptr to search in \fClist\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(node_index = -1 & node_ptr = 0) if not found;; the good info 
+.RE
+.PP
+
+.SS "int list_find_ptrnode (\fBlist_t\fP * list, \fBnode_t\fP * node_ptr)"
+
+.PP
+find node index that have node == \fCnode_ptr\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list in which to search 
+.br
+\fInode_ptr\fP the ptr to search in \fClist\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+-1 if not found;; the index 
+.RE
+.PP
+
+.SS "\fBnode_t\fP * list_index (\fBlist_t\fP * list, int index)"
+
+.PP
+return node at index \fCindex\fP If the index <= 0, it return the first node If the index is out of range, it return the last node
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list in which to search 
+.br
+\fIindex\fP the index of the node
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fClist\fP = 0;; the node 
+.RE
+.PP
+
+.SS "\fBlist_t\fP * list_insert (\fBlist_t\fP * list, \fBnode_t\fP * node, int index)"
+
+.PP
+insert \fCnode\fP at index \fCindex\fP If \fCnode\fP = 0, the node will ne be added, and \fClist\fP will be returned
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update 
+.br
+\fInode\fP node to add 
+.br
+\fIindex\fP index where \fCnode\fP will be in \fClist\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fClist\fP = 0;; \fClist\fP 
+.RE
+.PP
+
+.SS "\fBlist_t\fP * list_insert_end (\fBlist_t\fP * list, \fBnode_t\fP * node)"
+
+.PP
+insert \fCnode\fP at end of \fClist\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update 
+.br
+\fInode\fP node to add
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fClist\fP = 0;; \fClist\fP 
+.RE
+.PP
+
+.SS "\fBlist_t\fP * list_insert_start (\fBlist_t\fP * list, \fBnode_t\fP * node)"
+
+.PP
+insert \fCnode\fP at start of \fClist\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update 
+.br
+\fInode\fP node to add
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fClist\fP = 0;; \fClist\fP 
+.RE
+.PP
+
+.SS "int list_remove_end (\fBlist_t\fP * list)"
+
+.PP
+remove the last node of \fClist\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if (\fClist\fP = 0)|(\fClist\fP->len = 0);; 1 
+.RE
+.PP
+
+.SS "int list_remove_ptrdata (\fBlist_t\fP * list, void * ptrdata)"
+
+.PP
+remove node where node data is \fCptdrdata\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update 
+.br
+\fIptrdata\fP ptr of data where data is in the node to remove
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if node not found;; 1 
+.RE
+.PP
+
+.SS "int list_remove_ptrnode (\fBlist_t\fP * list, \fBnode_t\fP * node)"
+
+.PP
+remove node where its ptr is \fCnode\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update 
+.br
+\fInode\fP ptr to the node to remove
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if node not found;; 1 
+.RE
+.PP
+
+.SS "int list_remove_start (\fBlist_t\fP * list)"
+
+.PP
+remove the first node of \fClist\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP list to update
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if (\fClist\fP = 0)|(\fClist\fP->len = 0);; 1 
+.RE
+.PP
+
+.SS "\fBnode_t\fP * node_create (void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"
+
+.PP
+create a node If \fCdestroy\fP is NULL, the \fCdata\fP will not be freed when the node is deleted If \fCcopy\fP is NULL, the node will not be copied if you duplicate the list
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP data to set 
+.br
+\fIdestroy\fP function to destroy \fCdata\fP when needed (can be NULL) 
+.br
+\fIcopy\fP function to copy \fCdata\fP when needed (can be NULL)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if malloc failed;; the new node created 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

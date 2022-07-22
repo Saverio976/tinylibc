@@ -1,0 +1,57 @@
+.TH "includes/tlcstdlibs.h" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcstdlibs.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBx_calloc\fP (int n)"
+.br
+.RI "malloc n char and fill with 0 "
+.ti -1c
+.RI "char ** \fBx_ccalloc\fP (int n)"
+.br
+.RI "malloc n char * and fill with 0 "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * x_calloc (int n)"
+
+.PP
+malloc n char and fill with 0 
+.PP
+\fBParameters\fP
+.RS 4
+\fIn\fP number to alloc
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+ptr to the first n allocated 
+.RE
+.PP
+
+.SS "char ** x_ccalloc (int n)"
+
+.PP
+malloc n char * and fill with 0 
+.PP
+\fBParameters\fP
+.RS 4
+\fIn\fP number to alloc
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+ptr to the first n allocated 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

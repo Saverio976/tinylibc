@@ -16,9 +16,9 @@ char *ptr_specifier(va_list ap, const char *res, int *index);
 
 char *i_specifier(va_list ap, const char *rest, int *index);
 
-char *x_low_specifer(va_list ap, const char *rest, int *index);
+char *x_low_specifier(va_list ap, const char *rest, int *index);
 
-char *x_up_specifer(va_list ap, const char *rest, int *index);
+char *x_up_specifier(va_list ap, const char *rest, int *index);
 
 char *c_specifier(va_list ap, const char *rest, int *index);
 

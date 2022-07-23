@@ -29,8 +29,8 @@ static char *(*fptrs[])(va_list ap, const char *rest, int *index) = {
     mod_specifier,
     i_specifier,
     i_specifier,
-    x_low_specifer,
-    x_up_specifer,
+    x_low_specifier,
+    x_up_specifier,
     s_specifier,
     c_specifier,
     ptr_specifier
@@ -60,8 +60,8 @@ static char *transform_index_to_str(va_list ap, const char *format, int *index)
     char *str = NULL;
 
     for (int i = 0; key[i][0] != '\0'; i++) {
-        if (x_strstr(format + i, key[i]) == format + i) {
-            str = fptrs[i](ap, format + i, index);
+        if (x_strstr(format + *index, key[i]) == format + *index) {
+            str = fptrs[i](ap, format + *index, index);
             *index += x_strlen(key[i]) - 1;
             return (str);
         }
@@ -83,7 +83,7 @@ char *x_vsprintf(const char *format, va_list ap)
     if (list == NULL) {
         return (NULL);
     }
-    for (int i = 0; format[i] != '\0'; i++) {
+    for (int i = 0; (size_t) i < x_strlen(format); i++) {
         list_append(list, transform_index_to_str(ap, format, &i),
             free_ifnotnull, NULL);
     }

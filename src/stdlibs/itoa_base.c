@@ -28,10 +28,10 @@ static char *dup_and_cat(char *dest, char c, int *cap)
     return (dest);
 }
 
-static void do_zero_special_case(int nb, char *result)
+static void do_zero_special_case(int nb, char *result, const char *base)
 {
     if (nb == 0 && result != NULL) {
-        result[0] = '0';
+        result[0] = base[0];
     }
 }
 
@@ -42,8 +42,11 @@ char *itoa_base(int nb, char const *base)
     int is_neg = nb < 0;
     char *result = x_calloc(max_cap);
 
+    if (x_strlen(base) <= 1) {
+        return (NULL);
+    }
     nb = (nb < 0) ? nb * -1 : nb;
-    do_zero_special_case(nb, result);
+    do_zero_special_case(nb, result, base);
     for (; nb != 0 && base != NULL && result != NULL; i++) {
         result = dup_and_cat(result, base[nb % x_strlen(base)], &max_cap);
         nb /= x_strlen(base);

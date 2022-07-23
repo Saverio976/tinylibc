@@ -19,7 +19,7 @@ Test(atoi_base, ok_neg)
     cr_assert_eq(atoi_base("-A", "0123456789ABCDEF"), -10);
 }
 
-Test(x_atoi, ok_pos)
+Test(atoi_base, ok_pos)
 {
     cr_assert_eq(atoi_base("41", "0123456789ABCDEF"), 65);
 }

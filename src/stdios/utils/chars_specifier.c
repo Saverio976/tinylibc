@@ -17,7 +17,7 @@ char *c_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
     char *str = NULL;
 
     c = va_arg(ap, int);
-    tab[1] = c;
+    tab[0] = c;
     str = x_strdup(tab);
     return (str);
 }

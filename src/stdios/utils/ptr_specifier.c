@@ -22,12 +22,12 @@ char *ptrtohexa(void *ptr, const char *base_16)
     if (result == NULL || ptr == NULL || x_strlen(base_16) != 16) {
         return ((ptr == NULL) ? x_strcpy(result, "(nil)") : NULL);
     }
-    for (; nb < 0; i++) {
+    for (; nb > 0; i++) {
         result[i] = base_16[nb % 16];
         nb /= 16;
     }
-    result[x_strlen(result)] = (base_16[15] == 'F') ? 'X' : 'x';
-    result[x_strlen(result)] = '0';
+    result[i++] = (base_16[15] == 'F') ? 'X' : 'x';
+    result[i++] = '0';
     result = x_strrev(result);
     return (result);
 }

@@ -17,5 +17,5 @@ Test(x_printf, null)
 Test(x_printf, ok, .init=cr_redirect_stdout)
 {
     x_printf("ok %d %c %s %% %p", 4, 'c', "okidoki", NULL);
-    cr_assert_stdout_eq_str("ok 4 c okidoki (nil)");
+    cr_assert_stdout_eq_str("ok 4 c okidoki % (nil)");
 }

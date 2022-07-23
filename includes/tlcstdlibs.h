@@ -20,6 +20,8 @@ int x_atoi(const char *x);
 /**
 ** @brief string (in custom base) to int
 **
+** len(`base`) must be > 1
+**
 ** @param nb string to convert
 ** @param base base to use (ex for base 10: "0123456789")
 **
@@ -56,6 +58,8 @@ char *x_itoa(int x);
 
 /**
 ** @brief int to string (malloc'd) in base len(`base`) (`base`)
+**
+** len(`base`) must be > 1
 **
 ** @param nb
 ** @param base

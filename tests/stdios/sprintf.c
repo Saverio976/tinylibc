@@ -47,7 +47,7 @@ Test(x_sprintf, x)
     char *str = NULL;
 
     str = x_sprintf("%x%X %x", 10, 11, 2);
-    cr_assert_str_eq(str, "0xA0XB 0x2");
+    cr_assert_str_eq(str, "0xa0XB 0x2");
     free(str);
 }
 
@@ -65,7 +65,7 @@ Test(x_sprintf, mod)
     char *str = NULL;
 
     str = x_sprintf("%%%%, %%");
-    cr_assert_str_eq(str, "%% %");
+    cr_assert_str_eq(str, "%%, %");
     free(str);
 }
 

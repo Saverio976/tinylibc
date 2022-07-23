@@ -60,9 +60,22 @@ SRC_MATHS			:=		max.c										\
 							sqrt.c
 SRC_MATHS			:=		$(addprefix maths/,$(SRC_MATHS))
 
+SRC_STDIOS			:=		printf.c									\
+							putc.c										\
+							puts.c										\
+							sprintf.c									\
+							utils/chars_specifier.c						\
+							utils/nb_specifier.c						\
+							utils/ptr_specifier.c
+SRC_STDIOS			:=		$(addprefix stdios/,$(SRC_STDIOS))
+
 # Lib for stdlib.h (includes/tlcstdlibs.h)
-SRC_STDLIBS			:=		calloc.c									\
-							ccalloc.c
+SRC_STDLIBS			:=		atoi.c										\
+							atoi_base.c									\
+							calloc.c									\
+							ccalloc.c									\
+							itoa.c										\
+							itoa_base.c
 SRC_STDLIBS			:=		$(addprefix stdlibs/,$(SRC_STDLIBS))
 
 # Lib for string.h (includes/tlcstrings.h)
@@ -74,6 +87,7 @@ SRC_STRINGS			:=		memcpy.c									\
 							strlen.c									\
 							strncpy.c									\
 							strndup.c									\
+							strrev.c									\
 							strsplit.c									\
 							strstr.c									\
 							strstrip.c
@@ -87,6 +101,7 @@ SRC_UTILS			:=		$(addprefix utils/,$(SRC_UTILS))
 # List of all .c
 SRC					:=		$(SRC_LLISTS)								\
 							$(SRC_MATHS)								\
+							$(SRC_STDIOS)								\
 							$(SRC_STDLIBS)								\
 							$(SRC_STRINGS)								\
 							$(SRC_UTILS)

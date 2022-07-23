@@ -9,7 +9,7 @@
 #######################################
 
 # The lib path
-TARGET				:=		tinylibc.a
+TARGET				:=		libtinylibc.a
 
 # Command used to print ()
 ECHO				:=		echo -e

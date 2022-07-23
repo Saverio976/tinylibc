@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['first_0',['FIRST',['../d8/d07/tlcllists_8h.html#ae2d91d4bdb40f95002cfa89bd7a2a948',1,'tlcllists.h']]],
-  ['foreach_1',['FOREACH',['../d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8',1,'tlcllists.h']]],
-  ['free_5fifnotnull_2',['free_ifnotnull',['../d9/d38/tlcutils_8h.html#aef5dbe379bfe67bff3b03d0af7a30be1',1,'tlcutils.h']]]
+  ['data_0',['data',['../d1/db2/structllnode.html#aa69340d9d81a183ddfbfec74a7524966',1,'llnode']]],
+  ['decl_5ffirst_1',['DECL_FIRST',['../d8/d07/tlcllists_8h.html#a56b85d3c2225581f07944000249eb636',1,'tlcllists.h']]],
+  ['destroy_2',['destroy',['../d1/db2/structllnode.html#a77578a02abdc17631882f0b8f66d42c1',1,'llnode']]],
+  ['destroy_3',['DESTROY',['../d8/d07/tlcllists_8h.html#ad136e4f3c5ca43df199c1230dbbcafa7',1,'tlcllists.h']]]
 ];

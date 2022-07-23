@@ -123,7 +123,7 @@ Example</h1>
 <div class="line">    <span class="keywordflow">return</span> (<a class="code hl_function" href="dd/dc4/tlcstrings_8h.html#a7d4990376778620857b93a1590cff04f">x_strdup</a>(ptr));</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> ac, cosnt <span class="keywordtype">char</span> *av[])</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> ac, <span class="keyword">const</span> <span class="keywordtype">char</span> *av[])</div>
 <div class="line">{</div>
 <div class="line">    list_t *list = <a class="code hl_function" href="d8/d07/tlcllists_8h.html#a4ede9851b7118653022189547b816781">list_create</a>();</div>
 <div class="line"> </div>
@@ -133,14 +133,16 @@ Example</h1>
 <div class="line">    <span class="comment">// Now, you have a list of av</span></div>
 <div class="line">    <a class="code hl_define" href="d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8">FOREACH</a>(x, list) <span class="comment">// for each node named x in the list list</span></div>
 <div class="line">        <span class="comment">// do something with x</span></div>
-<div class="line">        <span class="comment">// more function and macro to https://saverio976.github.io/tinylibc/d8/d07/tlcllists_8h.html</span></div>
+<div class="line">        <span class="comment">// more function and macro to</span></div>
+<div class="line">        <span class="comment">// https://saverio976.github.io/tinylibc/d8/d07/tlcllists_8h.html</span></div>
 <div class="line">    <a class="code hl_define" href="d8/d07/tlcllists_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
+<div class="line">    <span class="keywordflow">return</span> (0);</div>
 <div class="line">}</div>
 <div class="ttc" id="atlcllists_8h_html"><div class="ttname"><a href="d8/d07/tlcllists_8h.html">tlcllists.h</a></div></div>
-<div class="ttc" id="atlcllists_8h_html_a29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00052">tlcllists.h:52</a></div></div>
+<div class="ttc" id="atlcllists_8h_html_a29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00056">tlcllists.h:56</a></div></div>
 <div class="ttc" id="atlcllists_8h_html_a4ede9851b7118653022189547b816781"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a4ede9851b7118653022189547b816781">list_create</a></div><div class="ttdeci">list_t * list_create(void)</div><div class="ttdoc">create an empty list</div></div>
 <div class="ttc" id="atlcllists_8h_html_a909a5ab1df5895b9b54248f395e7e231"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#a909a5ab1df5895b9b54248f395e7e231">list_append</a></div><div class="ttdeci">list_t * list_append(list_t *list, void *data, void(*destroy)(void *data), void *(*copy)(void *data))</div><div class="ttdoc">append new data to list</div></div>
-<div class="ttc" id="atlcllists_8h_html_ae12448e014c3a1ea13a1619fe911ebb8"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8">FOREACH</a></div><div class="ttdeci">#define FOREACH(x, list)</div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00051">tlcllists.h:51</a></div></div>
+<div class="ttc" id="atlcllists_8h_html_ae12448e014c3a1ea13a1619fe911ebb8"><div class="ttname"><a href="d8/d07/tlcllists_8h.html#ae12448e014c3a1ea13a1619fe911ebb8">FOREACH</a></div><div class="ttdeci">#define FOREACH(x, list)</div><div class="ttdef"><b>Definition:</b> <a href="d8/d07/tlcllists_8h_source.html#l00055">tlcllists.h:55</a></div></div>
 <div class="ttc" id="atlcstrings_8h_html"><div class="ttname"><a href="dd/dc4/tlcstrings_8h.html">tlcstrings.h</a></div></div>
 <div class="ttc" id="atlcstrings_8h_html_a7d4990376778620857b93a1590cff04f"><div class="ttname"><a href="dd/dc4/tlcstrings_8h.html#a7d4990376778620857b93a1590cff04f">x_strdup</a></div><div class="ttdeci">char * x_strdup(const char *s)</div><div class="ttdoc">duplicate a string</div></div>
 <div class="ttc" id="atlcutils_8h_html"><div class="ttname"><a href="d9/d38/tlcutils_8h.html">tlcutils.h</a></div></div>

@@ -1,4 +1,4 @@
-.TH "includes/tlcstdlibs.h" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcstdlibs.h" 3 "Sat Jul 23 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,6 +10,14 @@ includes/tlcstdlibs.h
 
 .in +1c
 .ti -1c
+.RI "int \fBx_atoi\fP (const char *x)"
+.br
+.RI "string (in base 10) to int "
+.ti -1c
+.RI "int \fBatoi_base\fP (const char *nb, const char *base)"
+.br
+.RI "string (in custom base) to int "
+.ti -1c
 .RI "char * \fBx_calloc\fP (int n)"
 .br
 .RI "malloc n char and fill with 0 "
@@ -17,9 +25,69 @@ includes/tlcstdlibs.h
 .RI "char ** \fBx_ccalloc\fP (int n)"
 .br
 .RI "malloc n char * and fill with 0 "
+.ti -1c
+.RI "char * \fBx_itoa\fP (int x)"
+.br
+.RI "int to string (malloc'd) in base 10 (0123456789) "
+.ti -1c
+.RI "char * \fBitoa_base\fP (int nb, char const *base)"
+.br
+.RI "int to string (malloc'd) in base len(\fCbase\fP) (\fCbase\fP) "
 .in -1c
 .SH "Function Documentation"
 .PP 
+.SS "int atoi_base (const char * nb, const char * base)"
+
+.PP
+string (in custom base) to int len(\fCbase\fP) must be > 1
+.PP
+\fBParameters\fP
+.RS 4
+\fInb\fP string to convert 
+.br
+\fIbase\fP base to use (ex for base 10: '0123456789')
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if any error;; the number (could be 0 too) 
+.RE
+.PP
+
+.SS "char * itoa_base (int nb, char const * base)"
+
+.PP
+int to string (malloc'd) in base len(\fCbase\fP) (\fCbase\fP) len(\fCbase\fP) must be > 1
+.PP
+\fBParameters\fP
+.RS 4
+\fInb\fP 
+.br
+\fIbase\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if any error;; the string 
+.RE
+.PP
+
+.SS "int x_atoi (const char * x)"
+
+.PP
+string (in base 10) to int 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP string to convert
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if any error;; the number (could be 0 too) 
+.RE
+.PP
+
 .SS "char * x_calloc (int n)"
 
 .PP
@@ -49,6 +117,22 @@ malloc n char * and fill with 0
 \fBReturns\fP
 .RS 4
 ptr to the first n allocated 
+.RE
+.PP
+
+.SS "char * x_itoa (int x)"
+
+.PP
+int to string (malloc'd) in base 10 (0123456789) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP number to convert
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if any error;; the string 
 .RE
 .PP
 

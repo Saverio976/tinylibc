@@ -1,0 +1,131 @@
+.TH "includes/tlcstdios.h" 3 "Sat Jul 23 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcstdios.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBx_putc\fP (char c, bool newline)"
+.br
+.RI "put \fCc\fP to stdout "
+.ti -1c
+.RI "int \fBx_puts\fP (const char *str, bool newline)"
+.br
+.RI "put \fCstr\fP to stdout (nothing if \fCstr\fP = 0) "
+.ti -1c
+.RI "int \fBx_printf\fP (const char *format,\&.\&.\&.)"
+.br
+.RI "put a formated string to stdout (nothing if \fCformat\fP = 0) "
+.ti -1c
+.RI "char * \fBx_sprintf\fP (const char *format,\&.\&.\&.)"
+.br
+.RI "like printf but not output the string to stdout, put it in a string "
+.ti -1c
+.RI "char * \fBx_vsprintf\fP (const char *format, va_list ap)"
+.br
+.RI "same as x_sprintf but take a va_list "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int x_printf (const char * format,  \&.\&.\&.)"
+
+.PP
+put a formated string to stdout (nothing if \fCformat\fP = 0) in formated string: va arg: output %% : (nothing) : % d : int : (the number) i : int : (the number) x : int : (the number in hexa lower case) X : int : (the number in hexa upper case) s : char * : (the string) c : char : (the character) p : void * : (the ptr address in hexa lower case)
+.PP
+\fBParameters\fP
+.RS 4
+\fIformat\fP formated string 
+.br
+\fI\&.\&.\&.\fP (va arg)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.SS "int x_putc (char c, bool newline)"
+
+.PP
+put \fCc\fP to stdout 
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP character to put 
+.br
+\fInewline\fP if put a newline after \fCc\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+number of character put 
+.RE
+.PP
+
+.SS "int x_puts (const char * str, bool newline)"
+
+.PP
+put \fCstr\fP to stdout (nothing if \fCstr\fP = 0) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to put 
+.br
+\fInewline\fP if put a newline after \fCstr\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+number of character put 
+.RE
+.PP
+
+.SS "char * x_sprintf (const char * format,  \&.\&.\&.)"
+
+.PP
+like printf but not output the string to stdout, put it in a string same format as \fBx_printf()\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIformat\fP (like \fBx_printf()\fP) 
+.br
+\fI\&.\&.\&.\fP (like \fBx_printf()\fP)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fCformat\fP = 0;; the string formated 
+.RE
+.PP
+
+.SS "char * x_vsprintf (const char * format, va_list ap)"
+
+.PP
+same as x_sprintf but take a va_list same format as \fBx_printf()\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIformat\fP (like \fBx_printf()\fP) 
+.br
+\fIap\fP va_list from stdarg\&.h
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if \fCformat\fP = 0;; the string formated 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

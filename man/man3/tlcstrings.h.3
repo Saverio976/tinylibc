@@ -1,4 +1,4 @@
-.TH "includes/tlcstrings.h" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcstrings.h" 3 "Sat Jul 23 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -44,6 +44,10 @@ includes/tlcstrings.h
 .RI "char * \fBx_strndup\fP (const char *s, int n)"
 .br
 .RI "duplicate \fCn\fP char of a string "
+.ti -1c
+.RI "char * \fBx_strrev\fP (char *str)"
+.br
+.RI "reverse a string "
 .ti -1c
 .RI "char ** \fBx_strsplit\fP (const char *s, const char *delim)"
 .br
@@ -200,6 +204,22 @@ duplicate \fCn\fP char of a string
 \fBReturns\fP
 .RS 4
 NULL if (\fCs\fP = 0)|(\fCn\fP < 0);; ptr to the duplicate 
+.RE
+.PP
+
+.SS "char * x_strrev (char * str)"
+
+.PP
+reverse a string 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to update
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL if (\fCstr\fP = 0);; \fCstr\fP 
 .RE
 .PP
 

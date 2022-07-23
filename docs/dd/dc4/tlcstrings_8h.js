@@ -8,6 +8,7 @@ var tlcstrings_8h =
     [ "x_strlen", "dd/dc4/tlcstrings_8h.html#a75f731134ac5e7ac2d98ca5bce4d69c9", null ],
     [ "x_strncpy", "dd/dc4/tlcstrings_8h.html#a7dcb0c7e9d1069e7e984cdda48acbbb6", null ],
     [ "x_strndup", "dd/dc4/tlcstrings_8h.html#a0640fc521f67271be25016675a9d005a", null ],
+    [ "x_strrev", "dd/dc4/tlcstrings_8h.html#a7d3ecf649dbeb63c3fc03420d62d37ab", null ],
     [ "x_strsplit", "dd/dc4/tlcstrings_8h.html#a203b2d0754041b8996ecb99d1dc85304", null ],
     [ "x_strstr", "dd/dc4/tlcstrings_8h.html#a5697792e1f26e329a8b34c002d04b631", null ],
     [ "x_strstrip", "dd/dc4/tlcstrings_8h.html#af78fb8422dfeca72d7db40507e1de270", null ]

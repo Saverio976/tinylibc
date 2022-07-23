@@ -1,4 +1,4 @@
-.TH "includes/tlcutils.h" 3 "Fri Jul 22 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcutils.h" 3 "Sat Jul 23 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,13 @@ includes/tlcutils.h
 .SH SYNOPSIS
 .br
 .PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUNUSED\fP   __attribute__((unused))"
+.br
+.in -1c
 .SS "Functions"
 
 .in +1c
@@ -18,6 +25,12 @@ includes/tlcutils.h
 .br
 .RI "function that do nothing; utils for ternary with one function call "
 .in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define UNUSED   __attribute__((unused))"
+
+.PP
+Definition at line \fB11\fP of file \fBtlcutils\&.h\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "void free_ifnotnull (void * ptr)"

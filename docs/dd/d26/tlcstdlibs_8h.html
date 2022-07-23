@@ -108,14 +108,131 @@ $(document).ready(function(){initNavTree('dd/d26/tlcstdlibs_8h.html','../../'); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8c4a12d97c46dfb4bec1ba6898eaa4c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/tlcstdlibs_8h.html#a8c4a12d97c46dfb4bec1ba6898eaa4c9">x_atoi</a> (const char *x)</td></tr>
+<tr class="memdesc:a8c4a12d97c46dfb4bec1ba6898eaa4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">string (in base 10) to int  <a href="../../dd/d26/tlcstdlibs_8h.html#a8c4a12d97c46dfb4bec1ba6898eaa4c9">More...</a><br /></td></tr>
+<tr class="separator:a8c4a12d97c46dfb4bec1ba6898eaa4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68cc1573cfd1422eb7792346160b1cac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/tlcstdlibs_8h.html#a68cc1573cfd1422eb7792346160b1cac">atoi_base</a> (const char *nb, const char *base)</td></tr>
+<tr class="memdesc:a68cc1573cfd1422eb7792346160b1cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">string (in custom base) to int  <a href="../../dd/d26/tlcstdlibs_8h.html#a68cc1573cfd1422eb7792346160b1cac">More...</a><br /></td></tr>
+<tr class="separator:a68cc1573cfd1422eb7792346160b1cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8e9d64295b3f48f5d3f7ff254fd1517"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/tlcstdlibs_8h.html#ae8e9d64295b3f48f5d3f7ff254fd1517">x_calloc</a> (int n)</td></tr>
 <tr class="memdesc:ae8e9d64295b3f48f5d3f7ff254fd1517"><td class="mdescLeft">&#160;</td><td class="mdescRight">malloc n char and fill with 0  <a href="../../dd/d26/tlcstdlibs_8h.html#ae8e9d64295b3f48f5d3f7ff254fd1517">More...</a><br /></td></tr>
 <tr class="separator:ae8e9d64295b3f48f5d3f7ff254fd1517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad601f69d86c293c37207201e9efe5354"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/tlcstdlibs_8h.html#ad601f69d86c293c37207201e9efe5354">x_ccalloc</a> (int n)</td></tr>
 <tr class="memdesc:ad601f69d86c293c37207201e9efe5354"><td class="mdescLeft">&#160;</td><td class="mdescRight">malloc n char * and fill with 0  <a href="../../dd/d26/tlcstdlibs_8h.html#ad601f69d86c293c37207201e9efe5354">More...</a><br /></td></tr>
 <tr class="separator:ad601f69d86c293c37207201e9efe5354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2431e4e9dc5d731da38331f78c176a1a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/tlcstdlibs_8h.html#a2431e4e9dc5d731da38331f78c176a1a">x_itoa</a> (int x)</td></tr>
+<tr class="memdesc:a2431e4e9dc5d731da38331f78c176a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">int to string (malloc'd) in base 10 (0123456789)  <a href="../../dd/d26/tlcstdlibs_8h.html#a2431e4e9dc5d731da38331f78c176a1a">More...</a><br /></td></tr>
+<tr class="separator:a2431e4e9dc5d731da38331f78c176a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5962c3ba1d3fafe7c21d6894d0166496"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/tlcstdlibs_8h.html#a5962c3ba1d3fafe7c21d6894d0166496">itoa_base</a> (int nb, char const *base)</td></tr>
+<tr class="memdesc:a5962c3ba1d3fafe7c21d6894d0166496"><td class="mdescLeft">&#160;</td><td class="mdescRight">int to string (malloc'd) in base len(<code>base</code>) (<code>base</code>)  <a href="../../dd/d26/tlcstdlibs_8h.html#a5962c3ba1d3fafe7c21d6894d0166496">More...</a><br /></td></tr>
+<tr class="separator:a5962c3ba1d3fafe7c21d6894d0166496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a68cc1573cfd1422eb7792346160b1cac" name="a68cc1573cfd1422eb7792346160b1cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68cc1573cfd1422eb7792346160b1cac">&#9670;&nbsp;</a></span>atoi_base()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int atoi_base </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>string (in custom base) to int </p>
+<p >len(<code>base</code>) must be &gt; 1</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb</td><td>string to convert </td></tr>
+    <tr><td class="paramname">base</td><td>base to use (ex for base 10: "0123456789")</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if any error;; the number (could be 0 too) </dd></dl>
+
+</div>
+</div>
+<a id="a5962c3ba1d3fafe7c21d6894d0166496" name="a5962c3ba1d3fafe7c21d6894d0166496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5962c3ba1d3fafe7c21d6894d0166496">&#9670;&nbsp;</a></span>itoa_base()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * itoa_base </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>int to string (malloc'd) in base len(<code>base</code>) (<code>base</code>) </p>
+<p >len(<code>base</code>) must be &gt; 1</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb</td><td></td></tr>
+    <tr><td class="paramname">base</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL if any error;; the string </dd></dl>
+
+</div>
+</div>
+<a id="a8c4a12d97c46dfb4bec1ba6898eaa4c9" name="a8c4a12d97c46dfb4bec1ba6898eaa4c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c4a12d97c46dfb4bec1ba6898eaa4c9">&#9670;&nbsp;</a></span>x_atoi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int x_atoi </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>string (in base 10) to int </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>string to convert</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if any error;; the number (could be 0 too) </dd></dl>
+
+</div>
+</div>
 <a id="ae8e9d64295b3f48f5d3f7ff254fd1517" name="ae8e9d64295b3f48f5d3f7ff254fd1517"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8e9d64295b3f48f5d3f7ff254fd1517">&#9670;&nbsp;</a></span>x_calloc()</h2>
 
@@ -167,6 +284,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ptr to the first n allocated </dd></dl>
+
+</div>
+</div>
+<a id="a2431e4e9dc5d731da38331f78c176a1a" name="a2431e4e9dc5d731da38331f78c176a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2431e4e9dc5d731da38331f78c176a1a">&#9670;&nbsp;</a></span>x_itoa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * x_itoa </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>int to string (malloc'd) in base 10 (0123456789) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>number to convert</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL if any error;; the string </dd></dl>
 
 </div>
 </div>

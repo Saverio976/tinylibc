@@ -133,6 +133,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0640fc521f67271be25016675a9d005a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc4/tlcstrings_8h.html#a0640fc521f67271be25016675a9d005a">x_strndup</a> (const char *s, int n)</td></tr>
 <tr class="memdesc:a0640fc521f67271be25016675a9d005a"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate <code>n</code> char of a string  <a href="../../dd/dc4/tlcstrings_8h.html#a0640fc521f67271be25016675a9d005a">More...</a><br /></td></tr>
 <tr class="separator:a0640fc521f67271be25016675a9d005a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3ecf649dbeb63c3fc03420d62d37ab"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc4/tlcstrings_8h.html#a7d3ecf649dbeb63c3fc03420d62d37ab">x_strrev</a> (char *str)</td></tr>
+<tr class="memdesc:a7d3ecf649dbeb63c3fc03420d62d37ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">reverse a string  <a href="../../dd/dc4/tlcstrings_8h.html#a7d3ecf649dbeb63c3fc03420d62d37ab">More...</a><br /></td></tr>
+<tr class="separator:a7d3ecf649dbeb63c3fc03420d62d37ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a203b2d0754041b8996ecb99d1dc85304"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc4/tlcstrings_8h.html#a203b2d0754041b8996ecb99d1dc85304">x_strsplit</a> (const char *s, const char *delim)</td></tr>
 <tr class="memdesc:a203b2d0754041b8996ecb99d1dc85304"><td class="mdescLeft">&#160;</td><td class="mdescRight">split a string with delimiter  <a href="../../dd/dc4/tlcstrings_8h.html#a203b2d0754041b8996ecb99d1dc85304">More...</a><br /></td></tr>
 <tr class="separator:a203b2d0754041b8996ecb99d1dc85304"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,6 +440,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>NULL if (<code>s</code> = 0)|(<code>n</code> &lt; 0);; ptr to the duplicate </dd></dl>
+
+</div>
+</div>
+<a id="a7d3ecf649dbeb63c3fc03420d62d37ab" name="a7d3ecf649dbeb63c3fc03420d62d37ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3ecf649dbeb63c3fc03420d62d37ab">&#9670;&nbsp;</a></span>x_strrev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * x_strrev </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>reverse a string </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>string to update</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL if (<code>str</code> = 0);; <code>str</code> </dd></dl>
 
 </div>
 </div>

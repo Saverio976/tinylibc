@@ -16,6 +16,7 @@ use doxygen:
 ## Example
 
 - using **list**
+`./examples/reamde.c`
 ```c
 #include "tlcllists.h"
 #include "tlcstrings.h"
@@ -39,6 +40,11 @@ int main(int ac, const char *av[])
     END
     return (0);
 }
+```
+
+```bash
+gcc examples/reamde.c -Iincludes/ -L. -ltinylibc
+./a.out
 ```
 
 ## Install

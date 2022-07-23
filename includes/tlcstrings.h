@@ -91,6 +91,15 @@ char *x_strncpy(char *dest, const char *src, size_t n);
 char *x_strndup(const char *s, int n);
 
 /**
+** @brief reverse a string
+**
+** @param str string to update
+**
+** @return NULL if (`str` = 0);; `str`
+**/
+char *x_strrev(char *str);
+
+/**
 ** @brief split a string with delimiter
 **
 ** @param s string to split

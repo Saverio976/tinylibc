@@ -6,6 +6,9 @@
 */
 
 #ifndef TLS_UTILS_H_
+    #define TLS_UTILS_H_
+
+    #define UNUSED __attribute__((unused))
 
 /**
 ** @brief free if `ptr` is not null

@@ -23,7 +23,7 @@ int list_remove_start(list_t *list)
     } else {
         list->start = node->next;
     }
-    DESTROY(node);
+    L_DESTROY(node);
     free(node);
     list->len -= 1;
     return (1);
@@ -45,7 +45,7 @@ int list_remove_end(list_t *list)
         list->end = last;
     }
     last->next = NULL;
-    DESTROY(node);
+    L_DESTROY(node);
     free(node);
     list->len -= 1;
     return (1);
@@ -62,7 +62,7 @@ static int list_remove_node_index(list_t *list, node_t *node, int index)
     }
     last = list_index(list, index - 1);
     last->next = node->next;
-    DESTROY(node);
+    L_DESTROY(node);
     free(node);
     list->len -= 1;
     return (1);

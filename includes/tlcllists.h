@@ -32,28 +32,21 @@ struct llnodesearch {
     int node_index;
 };
 
-    #define LEN(x) ((x != 0) ? (x)->len : 0)
-
-    #define NEXT(x) ((x != 0) ? (x)->next : 0)
-    #define FIRST(list) ((list != 0) ? (list)->start : 0)
-    #define LAST(list) ((list != 0) ? (list)->end : 0)
-    #define GETDATA(x) ((x != 0) ? (x)->data : 0)
-    #define _GETI(x, i, type) ((x != 0) ? ((type) (x))[i] : 0)
-    #define GETDATAINDEX(x, i, type) ((x != 0) ? _GETI((x)->data, i, type) : 0)
-    #define _GETCHARIND(x, i) ((x != 0) ? ((char *) (x))[i] : '\0')
-    #define GETDATACHAR(x, i) ((x != 0) ?_GETCHARIND((x)->data, i) : '\0')
-
-    #define DECL_FIRST(x, list) node_t *x = FIRST(list)
-
-    #define CHECK_EXEC(c, e) ((c) ? e : return_void())
-
-    #define _DESTROY_CHECK(x) (x != 0 && (x)->destroy != 0)
-    #define DESTROY(x) (CHECK_EXEC(_DESTROY_CHECK(x), (x)->destroy((x)->data)))
     #define _COPY_CHECK(x) (x != 0 && (x)->copy != 0)
-    #define COPY(x) ((_COPY_CHECK(x)) ? (x)->copy((x)->data) : 0)
+    #define _DESTROY_CHECK(x) (x != 0 && (x)->destroy != 0)
+    #define _VOID(c, e) ((c) ? e : return_void())
 
-    #define FOREACH(x, list) for (DECL_FIRST(x, list); x != 0; x = NEXT(x)) {
-    #define END }
+    #define L_LEN(x) ((x != 0) ? (x)->len : 0)
+    #define L_NEXT(x) ((x != 0) ? (x)->next : 0)
+    #define L_FIRST(list) ((list != 0) ? (list)->start : 0)
+    #define L_LAST(list) ((list != 0) ? (list)->end : 0)
+    #define L_COPY(x) ((_COPY_CHECK(x)) ? (x)->copy((x)->data) : 0)
+    #define L_DATA(x) ((x != 0) ? (x)->data : 0)
+    #define L_DESTROY(x) (_VOID(_DESTROY_CHECK(x), (x)->destroy(L_DATA(x))))
+
+    #define L_DECL_FIRST(x, list) node_t *x = L_FIRST(list)
+    #define L_DECL_LAST(x, list) node_t *x = L_LAST(list)
+    #define L_EACH(x, list) L_DECL_FIRST(x, list); x != 0; x = L_NEXT(x)
 
 /**
 ** @brief append new data to `list`

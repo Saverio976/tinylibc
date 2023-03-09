@@ -20,11 +20,11 @@ list_t *list_duplicate(list_t *list)
     if (new == NULL) {
         return (NULL);
     }
-    FOREACH(node, list)
+    for (L_EACH(node, list)) {
         if (node->copy != NULL) {
-            tmp = COPY(node);
+            tmp = L_COPY(node);
             list_append(new, tmp, node->destroy, node->copy);
         }
-    END
+    }
     return (new);
 }

@@ -42,15 +42,15 @@ static char *convert_list(list_t *list)
     char *str = NULL;
     int index = 0;
 
-    FOREACH(node, list)
-        len += x_strlen(GETDATA(node));
-    END
+    for (L_EACH(node, list)) {
+        len += x_strlen(L_DATA(node));
+    }
     str = x_calloc(len + 1);
-    FOREACH(node, list)
-        for (int i = 0; GETDATACHAR(node, i) != '\0'; i++) {
-            str[index++] = GETDATACHAR(node, i);
+    for (L_EACH(node, list)) {
+        for (int i = 0; ((char *) L_DATA(node))[i] != '\0'; i++) {
+            str[index++] = ((char *) L_DATA(node))[i];
         }
-    END
+    }
     return (str);
 }
 

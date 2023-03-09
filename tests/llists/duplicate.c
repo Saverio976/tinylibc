@@ -49,7 +49,7 @@ Test(list_duplicate, elemnt_not_copy_mixed)
     list = list_append(list, ok[1], NULL, x_strdup_void);
     list = list_append(list, "ta", NULL, NULL);
     new = list_duplicate(list);
-    cr_assert_str_eq(GETDATA(FIRST(new)), ok[0]);
-    cr_assert_str_eq(GETDATA(NEXT(FIRST(new))), ok[1]);
-    cr_assert_eq(LEN(new), 2);
+    cr_assert_str_eq(L_DATA(L_FIRST(new)), ok[0]);
+    cr_assert_str_eq(L_DATA(L_NEXT(L_FIRST(new))), ok[1]);
+    cr_assert_eq(L_LEN(new), 2);
 }

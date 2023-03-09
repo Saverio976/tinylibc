@@ -16,10 +16,10 @@ void list_delete(list_t *list)
     if (list == NULL) {
         return;
     }
-    curr = FIRST(list);
+    curr = L_FIRST(list);
     for (node_t *tmp = NULL; curr != NULL; curr = tmp) {
-        tmp = NEXT(curr);
-        DESTROY(curr);
+        tmp = L_NEXT(curr);
+        L_DESTROY(curr);
         free(curr);
     }
     free(list);

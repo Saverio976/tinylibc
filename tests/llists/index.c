@@ -25,7 +25,7 @@ Test(list_index, first_of_one)
     list = list_create();
     list = list_append(list, NULL, NULL, NULL);
     node = list_index(list, 0);
-    cr_assert_eq(node, FIRST(list));
+    cr_assert_eq(node, L_FIRST(list));
 }
 
 Test(list_index, first_of_two)
@@ -37,7 +37,7 @@ Test(list_index, first_of_two)
     list = list_append(list, NULL, NULL, NULL);
     list = list_append(list, NULL, NULL, NULL);
     node = list_index(list, 0);
-    cr_assert_eq(node, FIRST(list));
+    cr_assert_eq(node, L_FIRST(list));
 }
 
 Test(list_index, second_of_two)
@@ -49,7 +49,7 @@ Test(list_index, second_of_two)
     list = list_append(list, NULL, NULL, NULL);
     list = list_append(list, NULL, NULL, NULL);
     node = list_index(list, 1);
-    cr_assert_eq(node, NEXT(FIRST(list)));
+    cr_assert_eq(node, L_NEXT(L_FIRST(list)));
 }
 
 
@@ -62,7 +62,7 @@ Test(list_index, first_of_two_neg)
     list = list_append(list, NULL, NULL, NULL);
     list = list_append(list, NULL, NULL, NULL);
     node = list_index(list, -1);
-    cr_assert_eq(node, FIRST(list));
+    cr_assert_eq(node, L_FIRST(list));
 }
 
 Test(list_index, second_of_two_overflow)
@@ -74,5 +74,5 @@ Test(list_index, second_of_two_overflow)
     list = list_append(list, NULL, NULL, NULL);
     list = list_append(list, NULL, NULL, NULL);
     node = list_index(list, 4);
-    cr_assert_eq(node, NEXT(FIRST(list)));
+    cr_assert_eq(node, L_NEXT(L_FIRST(list)));
 }

@@ -28,7 +28,7 @@ Test(list_insert, start)
     list = list_append(list, NULL, NULL, NULL);
     node = node_create("ok", NULL, NULL);
     list = list_insert(list, node, 0);
-    cr_assert_str_eq(GETDATA(FIRST(list)), "ok");
+    cr_assert_str_eq(L_DATA(L_FIRST(list)), "ok");
     cr_assert_eq((list->end)->data, NULL);
     cr_assert_eq(list->len, 2);
 }
@@ -66,7 +66,7 @@ Test(list_insert_start, empty)
     node = node_create("ok", NULL, NULL);
     list = list_insert_start(list, node);
     cr_assert_eq(list->len, 1);
-    cr_assert_str_eq(GETDATA(FIRST(list)), "ok");
+    cr_assert_str_eq(L_DATA(L_FIRST(list)), "ok");
 }
 
 Test(list_insert_start, one)
@@ -79,7 +79,7 @@ Test(list_insert_start, one)
     node = node_create("ok", NULL, NULL);
     list = list_insert_start(list, node);
     cr_assert_eq(list->len, 2);
-    cr_assert_str_eq(GETDATA(FIRST(list)), "ok");
+    cr_assert_str_eq(L_DATA(L_FIRST(list)), "ok");
     cr_assert_eq(list->end->data, NULL);
 }
 
@@ -102,7 +102,7 @@ Test(list_insert_end, empty)
     node = node_create("ok", NULL, NULL);
     list = list_insert_end(list, node);
     cr_assert_eq(list->len, 1);
-    cr_assert_str_eq(GETDATA(FIRST(list)), "ok");
+    cr_assert_str_eq(L_DATA(L_FIRST(list)), "ok");
 }
 
 Test(list_insert_end, two)
@@ -117,7 +117,7 @@ Test(list_insert_end, two)
     node = node_create("ok", NULL, NULL);
     list = list_insert_end(list, node);
     cr_assert_eq(list->len, 3);
-    cr_assert_str_eq(GETDATA(LAST(list)), "ok");
+    cr_assert_str_eq(L_DATA(L_LAST(list)), "ok");
     cr_assert_str_eq(list->start->data, "bb");
     cr_assert_str_eq(list->start->next->data, "aa");
 }

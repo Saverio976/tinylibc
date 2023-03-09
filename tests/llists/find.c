@@ -29,7 +29,7 @@ Test(list_find_ptrdata, ok)
     list = list_create();
     list = list_append(list, NULL, NULL, NULL);
     node = list_find_ptrdata(list, NULL);
-    cr_assert_eq(node.node_ptr, FIRST(list));
+    cr_assert_eq(node.node_ptr, L_FIRST(list));
     cr_assert_eq(node.node_index, 0);
 }
 
@@ -60,7 +60,7 @@ Test(list_find_ptrnode, ok)
 
     list = list_create();
     list = list_append(list, NULL, NULL, NULL);
-    node = list_find_ptrnode(list, FIRST(list));
+    node = list_find_ptrnode(list, L_FIRST(list));
     cr_assert_eq(node, 0);
 }
 
@@ -100,9 +100,9 @@ Test(list_find_f, ok)
     list = list_create();
     list = list_append(list, "bh", NULL, NULL);
     list = list_append(list, "ok", NULL, NULL);
-    cr_assert_eq(LEN(list), 2);
+    cr_assert_eq(L_LEN(list), 2);
     node = list_find_f(list, compare, "ok");
-    cr_assert_eq(node.node_ptr, NEXT(FIRST(list)));
+    cr_assert_eq(node.node_ptr, L_NEXT(L_FIRST(list)));
     cr_assert_eq(node.node_index, 1);
 }
 

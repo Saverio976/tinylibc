@@ -1,3 +1,10 @@
+##
+## EPITECH PROJECT, 2023
+## TinyLibC
+## File description:
+## make
+##
+
 ##############################################################################
 ##                                                                          ##
 ##                              (my) Tiny Lib C                             ##
@@ -192,6 +199,16 @@ tests_run:					fclean $(OBJS) $(T_OBJ)
 	gcovr --exclude tests --branch || true
 	@$(RM) $(OBJS)
 	true
+
+release:					fclean
+	rm -rf scripts/
+	rm -rf tests/
+	rm -rf examples/
+	rm -rf man/
+	rm -rf doxygen-awesome-css/
+	rm -rf docs/
+	rm -rf assets/
+	rm -rf .github/
 
 #######################################
 #### Conversion Rules

@@ -210,6 +210,9 @@ release:					fclean
 	rm -rf assets/
 	rm -rf .github/
 
+doxygen:
+	doxygen Doxyfile
+
 #######################################
 #### Conversion Rules
 #######################################

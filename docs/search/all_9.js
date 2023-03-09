@@ -1,24 +1,7 @@
 var searchData=
 [
-  ['last_0',['LAST',['../d8/d07/tlcllists_8h.html#a790301a6c76777bad15a5bc30ba1bbbc',1,'tlcllists.h']]],
-  ['len_1',['len',['../d2/dc7/structllist.html#a6220645092b0ab325c9064a97b696216',1,'llist']]],
-  ['len_2',['LEN',['../d8/d07/tlcllists_8h.html#a3e4545636cef77da4ddab18e3d233101',1,'tlcllists.h']]],
-  ['list_5fappend_3',['list_append',['../d8/d07/tlcllists_8h.html#a909a5ab1df5895b9b54248f395e7e231',1,'tlcllists.h']]],
-  ['list_5fcreate_4',['list_create',['../d8/d07/tlcllists_8h.html#a4ede9851b7118653022189547b816781',1,'tlcllists.h']]],
-  ['list_5fdelete_5',['list_delete',['../d8/d07/tlcllists_8h.html#a6455f9dc85148234142492c950041d06',1,'tlcllists.h']]],
-  ['list_5fduplicate_6',['list_duplicate',['../d8/d07/tlcllists_8h.html#a2528a26f332fb5bf2bbcdb522bc6471c',1,'tlcllists.h']]],
-  ['list_5ffind_5ff_7',['list_find_f',['../d8/d07/tlcllists_8h.html#a46a6a1b0b58a43af804e4974541d8c2a',1,'tlcllists.h']]],
-  ['list_5ffind_5fptrdata_8',['list_find_ptrdata',['../d8/d07/tlcllists_8h.html#aa17eb7d1de53d99cdf8ffd016a51f87a',1,'tlcllists.h']]],
-  ['list_5ffind_5fptrnode_9',['list_find_ptrnode',['../d8/d07/tlcllists_8h.html#a42c40dc484699e9ad29e2f34137f56b8',1,'tlcllists.h']]],
-  ['list_5findex_10',['list_index',['../d8/d07/tlcllists_8h.html#a916ae0dcc3aaef47451fb27e17bc7469',1,'tlcllists.h']]],
-  ['list_5finsert_11',['list_insert',['../d8/d07/tlcllists_8h.html#a8c5b2dd0fbf48fc7c4f4cf83fa28aad4',1,'tlcllists.h']]],
-  ['list_5finsert_5fend_12',['list_insert_end',['../d8/d07/tlcllists_8h.html#a9baff6e318b0a2841adfcc196dbee736',1,'tlcllists.h']]],
-  ['list_5finsert_5fstart_13',['list_insert_start',['../d8/d07/tlcllists_8h.html#a4de04c4d4fc04d00ef82974439ddcff8',1,'tlcllists.h']]],
-  ['list_5fremove_5fend_14',['list_remove_end',['../d8/d07/tlcllists_8h.html#ae82638d0da0594dd04cddc9431f96e8c',1,'tlcllists.h']]],
-  ['list_5fremove_5fptrdata_15',['list_remove_ptrdata',['../d8/d07/tlcllists_8h.html#a28bf988532eb52ff60789953eb77f82d',1,'tlcllists.h']]],
-  ['list_5fremove_5fptrnode_16',['list_remove_ptrnode',['../d8/d07/tlcllists_8h.html#a3ee3e6289cf64f72b70b12b33642cdeb',1,'tlcllists.h']]],
-  ['list_5fremove_5fstart_17',['list_remove_start',['../d8/d07/tlcllists_8h.html#a457980dcb2fe72596eb6c78a63558211',1,'tlcllists.h']]],
-  ['llist_18',['llist',['../d2/dc7/structllist.html',1,'']]],
-  ['llnode_19',['llnode',['../d1/db2/structllnode.html',1,'']]],
-  ['llnodesearch_20',['llnodesearch',['../dc/dc2/structllnodesearch.html',1,'']]]
+  ['next_0',['next',['../d1/db2/structllnode.html#a3eaaa938f4adef906b28c0afcaf511d6',1,'llnode']]],
+  ['node_5fcreate_1',['node_create',['../d8/d07/tlcllists_8h.html#aceea9f36d97ea19e41d6185f31bf8414',1,'tlcllists.h']]],
+  ['node_5findex_2',['node_index',['../dc/dc2/structllnodesearch.html#a3cf6b1f3037329fe0b96f426595bef35',1,'llnodesearch']]],
+  ['node_5fptr_3',['node_ptr',['../dc/dc2/structllnodesearch.html#ac741458517b83e63d17f9888d387a51f',1,'llnodesearch']]]
 ];

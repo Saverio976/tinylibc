@@ -1,4 +1,4 @@
-.TH "includes/tlcllists.h" 3 "Sat Jul 23 2022" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcllists.h" 3 "Thu Mar 9 2023" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -28,55 +28,43 @@ includes/tlcllists.h
 
 .in +1c
 .ti -1c
-.RI "#define \fBLEN\fP(x)   ((x != 0) ? (x)\->len : 0)"
-.br
-.ti -1c
-.RI "#define \fBNEXT\fP(x)   ((x != 0) ? (x)\->next : 0)"
-.br
-.ti -1c
-.RI "#define \fBFIRST\fP(list)   ((list != 0) ? (list)\->start : 0)"
-.br
-.ti -1c
-.RI "#define \fBLAST\fP(list)   ((list != 0) ? (list)\->end : 0)"
-.br
-.ti -1c
-.RI "#define \fBGETDATA\fP(x)   ((x != 0) ? (x)\->data : 0)"
-.br
-.ti -1c
-.RI "#define \fB_GETI\fP(x,  i,  type)   ((x != 0) ? ((type) (x))[i] : 0)"
-.br
-.ti -1c
-.RI "#define \fBGETDATAINDEX\fP(x,  i,  type)   ((x != 0) ? \fB_GETI\fP((x)\->data, i, type) : 0)"
-.br
-.ti -1c
-.RI "#define \fB_GETCHARIND\fP(x,  i)   ((x != 0) ? ((char *) (x))[i] : '\\0')"
-.br
-.ti -1c
-.RI "#define \fBGETDATACHAR\fP(x,  i)   ((x != 0) ?\fB_GETCHARIND\fP((x)\->data, i) : '\\0')"
-.br
-.ti -1c
-.RI "#define \fBDECL_FIRST\fP(x,  list)   node_t *x = \fBFIRST\fP(list)"
-.br
-.ti -1c
-.RI "#define \fBCHECK_EXEC\fP(c,  e)   ((c) ? e : \fBreturn_void\fP())"
+.RI "#define \fB_COPY_CHECK\fP(x)   (x != 0 && (x)\->copy != 0)"
 .br
 .ti -1c
 .RI "#define \fB_DESTROY_CHECK\fP(x)   (x != 0 && (x)\->destroy != 0)"
 .br
 .ti -1c
-.RI "#define \fBDESTROY\fP(x)   (\fBCHECK_EXEC\fP(\fB_DESTROY_CHECK\fP(x), (x)\->destroy((x)\->data)))"
+.RI "#define \fB_VOID\fP(c,  e)   ((c) ? e : \fBreturn_void\fP())"
 .br
 .ti -1c
-.RI "#define \fB_COPY_CHECK\fP(x)   (x != 0 && (x)\->copy != 0)"
+.RI "#define \fBL_LEN\fP(x)   ((x != 0) ? (x)\->len : 0)"
 .br
 .ti -1c
-.RI "#define \fBCOPY\fP(x)   ((\fB_COPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
+.RI "#define \fBL_NEXT\fP(x)   ((x != 0) ? (x)\->next : 0)"
 .br
 .ti -1c
-.RI "#define \fBFOREACH\fP(x,  list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBNEXT\fP(x)) {"
+.RI "#define \fBL_FIRST\fP(list)   ((list != 0) ? (list)\->start : 0)"
 .br
 .ti -1c
-.RI "#define \fBEND\fP   }"
+.RI "#define \fBL_LAST\fP(list)   ((list != 0) ? (list)\->end : 0)"
+.br
+.ti -1c
+.RI "#define \fBL_COPY\fP(x)   ((\fB_COPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
+.br
+.ti -1c
+.RI "#define \fBL_DATA\fP(x)   ((x != 0) ? (x)\->data : 0)"
+.br
+.ti -1c
+.RI "#define \fBL_DESTROY\fP(x)   (\fB_VOID\fP(\fB_DESTROY_CHECK\fP(x), (x)\->destroy(\fBL_DATA\fP(x))))"
+.br
+.ti -1c
+.RI "#define \fBL_DECL_FIRST\fP(x,  list)   node_t *x = \fBL_FIRST\fP(list)"
+.br
+.ti -1c
+.RI "#define \fBL_DECL_LAST\fP(x,  list)   node_t *x = \fBL_LAST\fP(list)"
+.br
+.ti -1c
+.RI "#define \fBL_EACH\fP(x,  list)   \fBL_DECL_FIRST\fP(x, list); x != 0; x = \fBL_NEXT\fP(x)"
 .br
 .in -1c
 .SS "Functions"
@@ -152,71 +140,55 @@ includes/tlcllists.h
 .SS "#define _COPY_CHECK(x)   (x != 0 && (x)\->copy != 0)"
 
 .PP
-Definition at line \fB52\fP of file \fBtlcllists\&.h\fP\&.
+Definition at line \fB35\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define _DESTROY_CHECK(x)   (x != 0 && (x)\->destroy != 0)"
 
 .PP
-Definition at line \fB50\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define _GETCHARIND(x, i)   ((x != 0) ? ((char *) (x))[i] : '\\0')"
-
-.PP
-Definition at line \fB43\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define _GETI(x, i, type)   ((x != 0) ? ((type) (x))[i] : 0)"
-
-.PP
-Definition at line \fB41\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define CHECK_EXEC(c, e)   ((c) ? e : \fBreturn_void\fP())"
-
-.PP
-Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define COPY(x)   ((\fB_COPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
-
-.PP
-Definition at line \fB53\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define DECL_FIRST(x, list)   node_t *x = \fBFIRST\fP(list)"
-
-.PP
-Definition at line \fB46\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define DESTROY(x)   (\fBCHECK_EXEC\fP(\fB_DESTROY_CHECK\fP(x), (x)\->destroy((x)\->data)))"
-
-.PP
-Definition at line \fB51\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define END   }"
-
-.PP
-Definition at line \fB56\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define FIRST(list)   ((list != 0) ? (list)\->start : 0)"
-
-.PP
-Definition at line \fB38\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define FOREACH(x, list)   for (\fBDECL_FIRST\fP(x, list); x != 0; x = \fBNEXT\fP(x)) {"
-
-.PP
-Definition at line \fB55\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define GETDATA(x)   ((x != 0) ? (x)\->data : 0)"
-
-.PP
-Definition at line \fB40\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define GETDATACHAR(x, i)   ((x != 0) ?\fB_GETCHARIND\fP((x)\->data, i) : '\\0')"
-
-.PP
-Definition at line \fB44\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define GETDATAINDEX(x, i, type)   ((x != 0) ? \fB_GETI\fP((x)\->data, i, type) : 0)"
-
-.PP
-Definition at line \fB42\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define LAST(list)   ((list != 0) ? (list)\->end : 0)"
-
-.PP
-Definition at line \fB39\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define LEN(x)   ((x != 0) ? (x)\->len : 0)"
-
-.PP
-Definition at line \fB35\fP of file \fBtlcllists\&.h\fP\&.
-.SS "#define NEXT(x)   ((x != 0) ? (x)\->next : 0)"
+Definition at line \fB36\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define _VOID(c, e)   ((c) ? e : \fBreturn_void\fP())"
 
 .PP
 Definition at line \fB37\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_COPY(x)   ((\fB_COPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
+
+.PP
+Definition at line \fB43\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_DATA(x)   ((x != 0) ? (x)\->data : 0)"
+
+.PP
+Definition at line \fB44\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_DECL_FIRST(x, list)   node_t *x = \fBL_FIRST\fP(list)"
+
+.PP
+Definition at line \fB47\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_DECL_LAST(x, list)   node_t *x = \fBL_LAST\fP(list)"
+
+.PP
+Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_DESTROY(x)   (\fB_VOID\fP(\fB_DESTROY_CHECK\fP(x), (x)\->destroy(\fBL_DATA\fP(x))))"
+
+.PP
+Definition at line \fB45\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_EACH(x, list)   \fBL_DECL_FIRST\fP(x, list); x != 0; x = \fBL_NEXT\fP(x)"
+
+.PP
+Definition at line \fB49\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_FIRST(list)   ((list != 0) ? (list)\->start : 0)"
+
+.PP
+Definition at line \fB41\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_LAST(list)   ((list != 0) ? (list)\->end : 0)"
+
+.PP
+Definition at line \fB42\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_LEN(x)   ((x != 0) ? (x)\->len : 0)"
+
+.PP
+Definition at line \fB39\fP of file \fBtlcllists\&.h\fP\&.
+.SS "#define L_NEXT(x)   ((x != 0) ? (x)\->next : 0)"
+
+.PP
+Definition at line \fB40\fP of file \fBtlcllists\&.h\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "list_t * list_append (list_t * list, void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"

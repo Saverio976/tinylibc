@@ -62,7 +62,12 @@ SRC_FILESYSTEM		:=		fs_get_content.c							\
 							fs_open_ronly.c
 SRC_FILESYSTEM		:=		$(addprefix filesystem/,$(SRC_FILESYSTEM))
 
-SRC_JSONC			:=		get/get.c									\
+SRC_JSONC			:=		creator/create_empty_json.c					\
+							creator/creator_add_any.c					\
+							creator/creator_add_list.c					\
+							creator/creator_add_number.c				\
+							creator/creator_add_string.c				\
+							get/get.c									\
 							get/get_from_array.c						\
 							parser/destroy_any.c						\
 							parser/parse.c								\

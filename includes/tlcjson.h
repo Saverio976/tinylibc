@@ -146,7 +146,7 @@ void destroy_any(void *data);
 ** @return {
 ** NULL : array is NULL,
 ** NULL : array contains other than char *,
-** char **: the values asked
+** char **: the values asked (array of char *)
 ** }
 **/
 char **get_any_string_array(any_t *array);
@@ -159,7 +159,7 @@ char **get_any_string_array(any_t *array);
 ** @return {
 ** NULL : array is NULL,
 ** NULL : array contains other than int
-** int *: the values asked
+** int *: the values asked (array of int)
 ** }
 **/
 int *get_any_int_array(any_t *array);
@@ -172,9 +172,60 @@ int *get_any_int_array(any_t *array);
 ** @return {
 ** NULL : array is NULL,
 ** NULL : array contains other than float,
-** float *: the values asked
+** float *: the values asked (array of float)
 ** }
 **/
 float *get_any_float_array(any_t *array);
+
+/**
+** @brief create an empty any (useful to build a json)
+**
+** @return NULL if error; any_t * otherwise
+**/
+any_t *create_empty_json(void);
+
+/**
+** @brief add an any_t to the any dico
+**
+** @param root the root of the dico
+** @param key the key
+** @param any the any (take ownership of this parameter)
+**
+** @return the root
+**/
+any_t *creator_add_any(any_t *root, const char *key, any_t *any);
+
+/**
+** @brief add a number to the any dico
+**
+** @param root the root of the dico
+** @param key the key
+** @param number the number
+**
+** @return the root
+**/
+any_t *creator_add_int(any_t *root, const char *key, int number);
+
+/**
+** @brief add a number to the any dico
+**
+** @param root the root of the dico
+** @param key the key
+** @param number the number
+**
+** @return the root
+**/
+any_t *creator_add_float(any_t *root, const char *key, float number);
+
+/**
+** @brief add a string to the any dico
+**
+** @param root the root of the dico
+** @param key the key
+** @param number the number
+**
+** @return the root
+**/
+any_t *creator_add_string(any_t *root, const char *key, const char *string);
 
 #endif

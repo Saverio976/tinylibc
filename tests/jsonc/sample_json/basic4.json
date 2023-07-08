@@ -1,0 +1,5 @@
+{
+    "status": 200,
+    "message": {"users": ["Brice", "Xavier", "Raph"]},
+    "timestamp": 1681680387
+}

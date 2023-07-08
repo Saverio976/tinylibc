@@ -10,12 +10,12 @@
 static const int accurency = 100;
 
 static long double x_sqrtl_find(long double x, long double lower,
-    long double higher, int accurency)
+    long double higher, int a_accurency)
 {
     long double mid = 0;
     long double tmp = 0;
 
-    for (int i = 0; i < accurency; i++) {
+    for (int i = 0; i < a_accurency; i++) {
         mid = (lower + higher) / 2;
         tmp = x_powl(mid, 2);
         if (tmp == x) {

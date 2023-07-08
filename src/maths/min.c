@@ -9,20 +9,20 @@
 
 int x_min(int a, int b)
 {
-    return (X_MIN_MACRO(a, b));
+    return (X_MIN(a, b));
 }
 
 double x_mind(double a, double b)
 {
-    return (X_MIN_MACRO(a, b));
+    return (X_MIN(a, b));
 }
 
 float x_minf(float a, float b)
 {
-    return (X_MIN_MACRO(a, b));
+    return (X_MIN(a, b));
 }
 
 long double x_minl(long double a, long double b)
 {
-    return (X_MIN_MACRO(a, b));
+    return (X_MIN(a, b));
 }

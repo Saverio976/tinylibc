@@ -49,6 +49,38 @@ CFLAGS				:=		-Wall -Wextra -Wpedantic -I./includes/
 # Where .c file are
 SRC_DIR				:=		src
 
+SRC_DICO			:=		add.c										\
+							create.c									\
+							delete.c									\
+							get.c										\
+							pop.c										\
+							rem.c
+SRC_DICO			:=		$(addprefix dico/,$(SRC_DICO))
+
+SRC_FILESYSTEM		:=		fs_get_content.c							\
+							fs_get_size.c								\
+							fs_open_ronly.c
+SRC_FILESYSTEM		:=		$(addprefix filesystem/,$(SRC_FILESYSTEM))
+
+SRC_JSONC			:=		get/get.c									\
+							get/get_from_array.c						\
+							parser/destroy_any.c						\
+							parser/parse.c								\
+							parser/parse_array.c						\
+							parser/parse_array_is_empty.c				\
+							parser/parse_dico.c							\
+							parser/parse_dico_is_empty.c				\
+							parser/parse_number.c						\
+							parser/parse_string.c						\
+							parser/parse_unknow.c						\
+							printer/prety_print.c						\
+							printer/print_dico.c						\
+							printer/print_array.c						\
+							printer/print_string.c						\
+							printer/print_number.c						\
+							writer/write_json.c
+SRC_JSONC			:=		$(addprefix jsonc/,$(SRC_JSONC))
+
 # Lib for list (includes/tlcllists.h)
 SRC_LLISTS			:=		append.c									\
 							create.c									\
@@ -77,7 +109,11 @@ SRC_STDIOS			:=		printf.c									\
 SRC_STDIOS			:=		$(addprefix stdios/,$(SRC_STDIOS))
 
 # Lib for stdlib.h (includes/tlcstdlibs.h)
-SRC_STDLIBS			:=		atoi.c										\
+SRC_STDLIBS			:=		atod.c										\
+							atod_err.c									\
+							atof.c										\
+							atof_err.c									\
+							atoi.c										\
 							atoi_base.c									\
 							calloc.c									\
 							ccalloc.c									\
@@ -89,8 +125,10 @@ SRC_STDLIBS			:=		$(addprefix stdlibs/,$(SRC_STDLIBS))
 SRC_STRINGS			:=		memcpy.c									\
 							strchr.c									\
 							strcmp.c									\
+							strcontainc.c								\
 							strcpy.c									\
 							strdup.c									\
+							strendswith.c								\
 							strlen.c									\
 							strncpy.c									\
 							strndup.c									\
@@ -101,12 +139,16 @@ SRC_STRINGS			:=		memcpy.c									\
 SRC_STRINGS			:=		$(addprefix strings/,$(SRC_STRINGS))
 
 # Lib for utils (includes/tlcutils.h)
-SRC_UTILS			:=		free_ifnotnull.c							\
+SRC_UTILS			:=		free_char_2d.c								\
+							free_ifnotnull.c							\
 							return_void.c
 SRC_UTILS			:=		$(addprefix utils/,$(SRC_UTILS))
 
 # List of all .c
-SRC					:=		$(SRC_LLISTS)								\
+SRC					:=		$(SRC_DICO)									\
+							$(SRC_FILESYSTEM)							\
+							$(SRC_JSONC)								\
+							$(SRC_LLISTS)								\
 							$(SRC_MATHS)								\
 							$(SRC_STDIOS)								\
 							$(SRC_STDLIBS)								\
@@ -201,14 +243,15 @@ tests_run:					fclean $(OBJS) $(T_OBJ)
 	true
 
 release:					fclean
-	rm -rf scripts/
-	rm -rf tests/
-	rm -rf examples/
-	rm -rf man/
-	rm -rf doxygen-awesome-css/
-	rm -rf docs/
-	rm -rf assets/
-	rm -rf .github/
+	$(RM) -r scripts/
+	$(RM) -r tests/
+	$(RM) -r examples/
+	$(RM) -r man/
+	$(RM) -r doxygen-awesome-css/
+	$(RM) -r docs/
+	$(RM) -r assets/
+	$(RM) -r .github/
+	$(RM) .gitmodules
 
 doxygen:
 	doxygen Doxyfile

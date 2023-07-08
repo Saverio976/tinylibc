@@ -8,11 +8,11 @@
 #ifndef TLS_MATHS_H_
     #define TLS_MATHS_H_
 
-    #define X_MAX_MACRO(x, y)   (((x) > (y)) ? (x) : (y))
-    #define X_MIN_MACRO(x, y)   (((x) < (y)) ? (x) : (y))
+    #define X_MAX(x, y)   (((x) > (y)) ? (x) : (y))
+    #define X_MIN(x, y)   (((x) < (y)) ? (x) : (y))
 
-    #define X_E                 2.7182818284
-    #define X_PI                3.1415926535
+    #define X_E           2.7182818284
+    #define X_PI          3.1415926535
 
 /**
 ** @brief get max int between `a` and `b`

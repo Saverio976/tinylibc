@@ -1,0 +1,5 @@
+{
+    "status": 200,
+    "message": {"team": "Team uuid", "channel": "Channel UUID", "thread": "thread uuid"},
+    "timestamp": 1681680387
+}

@@ -1,0 +1,5 @@
+{
+    "status": 200,
+    "message": {"teams": ["Team1", "Team2", "Team3"]},
+    "timestamp": 1681680387
+}

@@ -7,13 +7,19 @@
 
 #include <stdbool.h>
 #include <unistd.h>
+#include "tlcstdios.h"
 
 int x_putc(char c, bool newline)
+{
+    return x_putcd(1, c, newline);
+}
+
+int x_putcd(int fd, char c, bool newline)
 {
     int len = 0;
     char nl = '\n';
 
-    len = write(1, &c, 1);
+    len = write(fd, &c, 1);
     if (newline == true) {
         len += write(1, &nl, 1);
     }

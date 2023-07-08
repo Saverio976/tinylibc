@@ -5,6 +5,8 @@
 ** power function
 */
 
+#include "tlcmaths.h"
+
 double x_pow(double x, double y)
 {
     double res = 1;

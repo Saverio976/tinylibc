@@ -68,4 +68,42 @@ char *x_itoa(int x);
 **/
 char *itoa_base(int nb, char const *base);
 
+/**
+** @brief string (in base 10) to double
+**
+** @param str string to convert
+**
+** @return 0 if any error;; the number (could be 0 too)
+**/
+double x_atod(char const *str);
+
+/**
+** @brief string (in base 10) to double
+**
+** @param str string to convert
+** @param is_error if any error (is_error > 0 is an error)
+**
+** @return 0 if any error;; the number (could be 0 too)
+**/
+double x_atod_err(char const *str, int *is_error);
+
+/**
+** @brief string (in base 10) to float
+**
+** @param str string to convert
+**
+** @return 0 if any error;; the number (could be 0 too)
+**/
+float x_atof(const char *str);
+
+/**
+** @brief string (in base 10) to float
+**
+** @param str string to convert
+** @param is_error if any error (is_error > 0 is an error)
+**
+** @return 0 if any error;; the number (could be 0 too)
+**/
+float x_atof_err(char const *str, int *is_error);
+
 #endif

@@ -75,4 +75,37 @@ char *x_sprintf(const char *format, ...);
 **/
 char *x_vsprintf(const char *format, va_list ap);
 
+/**
+** @brief Print to fd the str and put newline if bool true
+**
+** @param fd file descriptor
+** @param str string
+** @param newline need to put newline ?
+**
+** @return number of character put
+**/
+int x_putsd(int fd, const char *str, bool newline);
+
+/**
+** @brief Print to fd the c and put newline if bool true
+**
+** @param fd file descriptor
+** @param c character
+** @param newline put newline ?
+**
+** @return number of character put
+**/
+int x_putcd(int fd, char c, bool newline);
+
+/**
+** @brief Print to fd the str format and put newline if bool true
+**
+** @param fd file descriptor
+** @param format format as printf
+** @param ...
+**
+** @return number of character put
+**/
+int x_dprintf(int fd, const char *format, ...);
+
 #endif

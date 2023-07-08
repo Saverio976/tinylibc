@@ -130,4 +130,24 @@ char *x_strstr(const char *s, const char *substr);
 **/
 char *x_strstrip(const char *s, const char *chars);
 
+/**
+** @brief check if str contain c
+**
+** @param str string where `c` can be
+** @param c character to check
+**
+** @return 1 if c is in str; 0 otherwise
+**/
+int x_strcontainc(char const *str, char const c);
+
+/**
+** @brief check if `str` ends with `needle`
+**
+** @param str string where `needle` can be
+** @param needle string to check
+**
+** @return 1 if `str` ends with `needle`; else 0
+**/
+int x_strendswith(const char *str, const char *needle);
+
 #endif

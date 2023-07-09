@@ -222,7 +222,7 @@ any_t *creator_add_float(any_t *root, const char *key, float number);
 **
 ** @param root the root of the dico
 ** @param key the key
-** @param number the number
+** @param string the string
 **
 ** @return the root
 **/

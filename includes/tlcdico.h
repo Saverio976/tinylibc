@@ -77,7 +77,7 @@ void *dico_pop_value(dico_t *dico, char const *key);
 **
 ** @return node
 **/
-dico_node_t *dico_pop_elem(dico_t *elem, char const *key);
+dico_node_t *dico_pop_elem(dico_t *dico, char const *key);
 
 /**
 ** @brief Get value of pair key

@@ -1,0 +1,427 @@
+.TH "includes/tlcjson.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcjson.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'tlcllists\&.h'\fP
+.br
+\fC#include 'tlcdico\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBany_t\fP"
+.br
+.ti -1c
+.RI "union \fBany_t::value_s\fP"
+.br
+.ti -1c
+.RI "struct \fBjson_t\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fBany_type_e\fP \fBany_type_t\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBjson_status_err_e\fP { \fBJS_OK\fP = 0, \fBJS_ERR_PATH\fP = 1, \fBJS_ERR_MALLOC\fP = 2, \fBJS_ERR_INPUT\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBany_type_e\fP { \fBSTR\fP = 0, \fBINT\fP = 1, \fBFLOAT\fP = 2, \fBARRAY\fP = 3, \fBDICT\fP = 4 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "any_t * \fBparse_json_file\fP (char const path[])"
+.br
+.RI "parse a json file to any_t "
+.ti -1c
+.RI "any_t * \fBparse_json_str\fP (char const *str)"
+.br
+.RI "parse a char * to any_t "
+.ti -1c
+.RI "int \fBprety_print\fP (any_t *any, int fd)"
+.br
+.RI "print any_t to the file descriptor "
+.ti -1c
+.RI "any_t * \fBget_from_any\fP (any_t *any, char const *format,\&.\&.\&.)"
+.br
+.RI "get unlimited nested data "
+.ti -1c
+.RI "any_t * \fBdico_t_get_any\fP (dico_t *dico, char const *key)"
+.br
+.RI "get any_t from a dico_t (cast void * of dico_t value) "
+.ti -1c
+.RI "enum \fBjson_status_err_e\fP \fBwrite_json\fP (any_t *any, char const *path)"
+.br
+.RI "write any_t to a json file "
+.ti -1c
+.RI "void \fBdestroy_any\fP (void *data)"
+.br
+.RI "destroy any "
+.ti -1c
+.RI "char ** \fBget_any_string_array\fP (any_t *array)"
+.br
+.RI "parse any_t to a char ** "
+.ti -1c
+.RI "int * \fBget_any_int_array\fP (any_t *array)"
+.br
+.RI "parse any_t to a int * "
+.ti -1c
+.RI "float * \fBget_any_float_array\fP (any_t *array)"
+.br
+.RI "parse any_t to a float * "
+.ti -1c
+.RI "any_t * \fBcreate_empty_json\fP (void)"
+.br
+.RI "create an empty any (useful to build a json) "
+.ti -1c
+.RI "any_t * \fBcreator_add_any\fP (any_t *root, const char *key, any_t *any)"
+.br
+.RI "add an any_t to the any dico "
+.ti -1c
+.RI "any_t * \fBcreator_add_int\fP (any_t *root, const char *key, int number)"
+.br
+.RI "add a number to the any dico "
+.ti -1c
+.RI "any_t * \fBcreator_add_float\fP (any_t *root, const char *key, float number)"
+.br
+.RI "add a number to the any dico "
+.ti -1c
+.RI "any_t * \fBcreator_add_string\fP (any_t *root, const char *key, const char *string)"
+.br
+.RI "add a string to the any dico "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum \fBany_type_e\fP \fBany_type_t\fP"
+
+.PP
+Definition at line \fB28\fP of file \fBtlcjson\&.h\fP\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBany_type_e\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISTR \fP\fP
+.TP
+\fB\fIINT \fP\fP
+.TP
+\fB\fIFLOAT \fP\fP
+.TP
+\fB\fIARRAY \fP\fP
+.TP
+\fB\fIDICT \fP\fP
+.PP
+Definition at line \fB21\fP of file \fBtlcjson\&.h\fP\&..PP
+.nf
+21                 {
+22     STR = 0,
+23     INT = 1,
+24     FLOAT = 2,
+25     ARRAY = 3,
+26     DICT = 4
+27 };
+.fi
+
+.SS "enum \fBjson_status_err_e\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIJS_OK \fP\fP
+.TP
+\fB\fIJS_ERR_PATH \fP\fP
+.TP
+\fB\fIJS_ERR_MALLOC \fP\fP
+.TP
+\fB\fIJS_ERR_INPUT \fP\fP
+.PP
+Definition at line \fB14\fP of file \fBtlcjson\&.h\fP\&..PP
+.nf
+14                        {
+15     JS_OK = 0,
+16     JS_ERR_PATH = 1,
+17     JS_ERR_MALLOC = 2,
+18     JS_ERR_INPUT = 3
+19 };
+.fi
+
+.SH "Function Documentation"
+.PP 
+.SS "any_t * create_empty_json (void)"
+
+.PP
+create an empty any (useful to build a json) 
+.PP
+\fBReturns\fP
+.RS 4
+NULL if error; any_t * otherwise 
+.RE
+.PP
+
+.SS "any_t * creator_add_any (any_t * root, const char * key, any_t * any)"
+
+.PP
+add an any_t to the any dico 
+.PP
+\fBParameters\fP
+.RS 4
+\fIroot\fP the root of the dico 
+.br
+\fIkey\fP the key 
+.br
+\fIany\fP the any (take ownership of this parameter)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the root 
+.RE
+.PP
+
+.SS "any_t * creator_add_float (any_t * root, const char * key, float number)"
+
+.PP
+add a number to the any dico 
+.PP
+\fBParameters\fP
+.RS 4
+\fIroot\fP the root of the dico 
+.br
+\fIkey\fP the key 
+.br
+\fInumber\fP the number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the root 
+.RE
+.PP
+
+.SS "any_t * creator_add_int (any_t * root, const char * key, int number)"
+
+.PP
+add a number to the any dico 
+.PP
+\fBParameters\fP
+.RS 4
+\fIroot\fP the root of the dico 
+.br
+\fIkey\fP the key 
+.br
+\fInumber\fP the number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the root 
+.RE
+.PP
+
+.SS "any_t * creator_add_string (any_t * root, const char * key, const char * string)"
+
+.PP
+add a string to the any dico 
+.PP
+\fBParameters\fP
+.RS 4
+\fIroot\fP the root of the dico 
+.br
+\fIkey\fP the key 
+.br
+\fIstring\fP the string
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the root 
+.RE
+.PP
+
+.SS "void destroy_any (void * data)"
+
+.PP
+destroy any 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP any_t to destroy 
+.RE
+.PP
+
+.SS "any_t * dico_t_get_any (dico_t * dico, char const * key)"
+
+.PP
+get any_t from a dico_t (cast void * of dico_t value) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico in which the key are 
+.br
+\fIkey\fP key to represent the value
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : dico or key is NULL, NULL : the key don't exists any_t *: the value asked } 
+.RE
+.PP
+
+.SS "float * get_any_float_array (any_t * array)"
+
+.PP
+parse any_t to a float * 
+.PP
+\fBParameters\fP
+.RS 4
+\fIarray\fP any_t in which the array float is
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : array is NULL, NULL : array contains other than float, float *: the values asked (array of float) } 
+.RE
+.PP
+
+.SS "int * get_any_int_array (any_t * array)"
+
+.PP
+parse any_t to a int * 
+.PP
+\fBParameters\fP
+.RS 4
+\fIarray\fP any_t in which the array int is
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : array is NULL, NULL : array contains other than int int *: the values asked (array of int) } 
+.RE
+.PP
+
+.SS "char ** get_any_string_array (any_t * array)"
+
+.PP
+parse any_t to a char ** 
+.PP
+\fBParameters\fP
+.RS 4
+\fIarray\fP any_t in which the array of char * is
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : array is NULL, NULL : array contains other than char *, char **: the values asked (array of char *) } 
+.RE
+.PP
+
+.SS "any_t * get_from_any (any_t * any, char const * format,  \&.\&.\&.)"
+
+.PP
+get unlimited nested data to get value of a dico : 'd', 'key' to get specific index array : 'a', 2 you can mix the two (any, 'da', 'key', 2)
+.PP
+\fBParameters\fP
+.RS 4
+\fIany\fP any in wich the values are 
+.br
+\fIformat\fP format to use 
+.br
+\fI\&.\&.\&.\fP unlimited arguments
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : any or format is NULL, NULL : the value don't exists, any_t *: the value asked } 
+.RE
+.PP
+
+.SS "any_t * parse_json_file (char const path[])"
+
+.PP
+parse a json file to any_t 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP path to the json file
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : path is NULL, NULL : path is bad, NULL : malloc failed, any_t *: the file has been parsed } 
+.RE
+.PP
+
+.SS "any_t * parse_json_str (char const * str)"
+
+.PP
+parse a char * to any_t 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP char * to parse
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ NULL : str is NULL, NULL : malloc failed, any_t *: the char * has been parsed } 
+.RE
+.PP
+
+.SS "int prety_print (any_t * any, int fd)"
+
+.PP
+print any_t to the file descriptor 
+.PP
+\fBParameters\fP
+.RS 4
+\fIany\fP the any_t to print 
+.br
+\fIfd\fP filedescriptor to use
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+{ int : number of char writed } 
+.RE
+.PP
+
+.SS "enum \fBjson_status_err_e\fP write_json (any_t * any, char const * path)"
+
+.PP
+write any_t to a json file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIany\fP any to write 
+.br
+\fIpath\fP path to a file that will be override
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+status under the form of the enum 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

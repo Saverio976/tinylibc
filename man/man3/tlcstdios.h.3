@@ -1,4 +1,4 @@
-.TH "includes/tlcstdios.h" 3 "Thu Mar 9 2023" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcstdios.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -34,9 +34,41 @@ includes/tlcstdios.h
 .RI "char * \fBx_vsprintf\fP (const char *format, va_list ap)"
 .br
 .RI "same as x_sprintf but take a va_list "
+.ti -1c
+.RI "int \fBx_putsd\fP (int fd, const char *str, bool newline)"
+.br
+.RI "Print to fd the str and put newline if bool true\&. "
+.ti -1c
+.RI "int \fBx_putcd\fP (int fd, char c, bool newline)"
+.br
+.RI "Print to fd the c and put newline if bool true\&. "
+.ti -1c
+.RI "int \fBx_dprintf\fP (int fd, const char *format,\&.\&.\&.)"
+.br
+.RI "Print to fd the str format and put newline if bool true\&. "
 .in -1c
 .SH "Function Documentation"
 .PP 
+.SS "int x_dprintf (int fd, const char * format,  \&.\&.\&.)"
+
+.PP
+Print to fd the str format and put newline if bool true\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfd\fP file descriptor 
+.br
+\fIformat\fP format as printf 
+.br
+\fI\&.\&.\&.\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+number of character put 
+.RE
+.PP
+
 .SS "int x_printf (const char * format,  \&.\&.\&.)"
 
 .PP
@@ -72,6 +104,26 @@ number of character put
 .RE
 .PP
 
+.SS "int x_putcd (int fd, char c, bool newline)"
+
+.PP
+Print to fd the c and put newline if bool true\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfd\fP file descriptor 
+.br
+\fIc\fP character 
+.br
+\fInewline\fP put newline ?
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+number of character put 
+.RE
+.PP
+
 .SS "int x_puts (const char * str, bool newline)"
 
 .PP
@@ -82,6 +134,26 @@ put \fCstr\fP to stdout (nothing if \fCstr\fP = 0)
 \fIstr\fP string to put 
 .br
 \fInewline\fP if put a newline after \fCstr\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+number of character put 
+.RE
+.PP
+
+.SS "int x_putsd (int fd, const char * str, bool newline)"
+
+.PP
+Print to fd the str and put newline if bool true\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfd\fP file descriptor 
+.br
+\fIstr\fP string 
+.br
+\fInewline\fP need to put newline ?
 .RE
 .PP
 \fBReturns\fP

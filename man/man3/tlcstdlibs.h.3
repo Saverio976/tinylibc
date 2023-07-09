@@ -1,4 +1,4 @@
-.TH "includes/tlcstdlibs.h" 3 "Thu Mar 9 2023" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcstdlibs.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -33,6 +33,22 @@ includes/tlcstdlibs.h
 .RI "char * \fBitoa_base\fP (int nb, char const *base)"
 .br
 .RI "int to string (malloc'd) in base len(\fCbase\fP) (\fCbase\fP) "
+.ti -1c
+.RI "double \fBx_atod\fP (char const *str)"
+.br
+.RI "string (in base 10) to double "
+.ti -1c
+.RI "double \fBx_atod_err\fP (char const *str, int *is_error)"
+.br
+.RI "string (in base 10) to double "
+.ti -1c
+.RI "float \fBx_atof\fP (const char *str)"
+.br
+.RI "string (in base 10) to float "
+.ti -1c
+.RI "float \fBx_atof_err\fP (char const *str, int *is_error)"
+.br
+.RI "string (in base 10) to float "
 .in -1c
 .SH "Function Documentation"
 .PP 
@@ -69,6 +85,74 @@ int to string (malloc'd) in base len(\fCbase\fP) (\fCbase\fP) len(\fCbase\fP) mu
 \fBReturns\fP
 .RS 4
 NULL if any error;; the string 
+.RE
+.PP
+
+.SS "double x_atod (char const * str)"
+
+.PP
+string (in base 10) to double 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to convert
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if any error;; the number (could be 0 too) 
+.RE
+.PP
+
+.SS "double x_atod_err (char const * str, int * is_error)"
+
+.PP
+string (in base 10) to double 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to convert 
+.br
+\fIis_error\fP if any error (is_error > 0 is an error)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if any error;; the number (could be 0 too) 
+.RE
+.PP
+
+.SS "float x_atof (const char * str)"
+
+.PP
+string (in base 10) to float 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to convert
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if any error;; the number (could be 0 too) 
+.RE
+.PP
+
+.SS "float x_atof_err (char const * str, int * is_error)"
+
+.PP
+string (in base 10) to float 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to convert 
+.br
+\fIis_error\fP if any error (is_error > 0 is an error)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if any error;; the number (could be 0 too) 
 .RE
 .PP
 

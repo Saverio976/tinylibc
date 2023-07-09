@@ -1,8 +1,8 @@
 var tlcmaths_8h =
 [
     [ "X_E", "d5/de2/tlcmaths_8h.html#a571861f1affd37d10e062a6984999c4f", null ],
-    [ "X_MAX_MACRO", "d5/de2/tlcmaths_8h.html#a620f624acd12274b9bfca249f182cd14", null ],
-    [ "X_MIN_MACRO", "d5/de2/tlcmaths_8h.html#a9a65e4bd79c911a765863787a8fdfdfe", null ],
+    [ "X_MAX", "d5/de2/tlcmaths_8h.html#abf88a7b67ac48fd548df48f4ad1a0045", null ],
+    [ "X_MIN", "d5/de2/tlcmaths_8h.html#a7357147ef2ba39fc4cabfead3097cb3f", null ],
     [ "X_PI", "d5/de2/tlcmaths_8h.html#a108ef35416fd2ab7af028b643b814dc5", null ],
     [ "x_max", "d5/de2/tlcmaths_8h.html#a665a42cc8f1880a53e063966c33162a4", null ],
     [ "x_maxd", "d5/de2/tlcmaths_8h.html#a686e8c6bec7e354664e540d3d6690a89", null ],

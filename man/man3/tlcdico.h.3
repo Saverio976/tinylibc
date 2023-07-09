@@ -1,0 +1,262 @@
+.TH "includes/tlcdico.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcdico.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <tlcllists\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdico_t\fP"
+.br
+.ti -1c
+.RI "struct \fBdico_node_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "dico_t * \fBdico_create\fP (void)"
+.br
+.RI "create a new dico "
+.ti -1c
+.RI "void \fBdico_destroy\fP (dico_t *dico)"
+.br
+.RI "delete a dico "
+.ti -1c
+.RI "dico_t * \fBdico_add\fP (dico_t *dico, char const *key, void *value, void(*destroy)(void *value))"
+.br
+.RI "add a key/value "
+.ti -1c
+.RI "dico_t * \fBdico_add_elem\fP (dico_t *dico, dico_node_t *elem)"
+.br
+.RI "add an elem (key/value/destroy) "
+.ti -1c
+.RI "void * \fBdico_pop_value\fP (dico_t *dico, char const *key)"
+.br
+.RI "remove a key and return the value "
+.ti -1c
+.RI "dico_node_t * \fBdico_pop_elem\fP (dico_t *dico, char const *key)"
+.br
+.RI "remove a key and return the node "
+.ti -1c
+.RI "void * \fBdico_get_value\fP (dico_t *dico, char const *key)"
+.br
+.RI "Get value of pair key\&. "
+.ti -1c
+.RI "dico_node_t * \fBdico_get_elem\fP (dico_t *dico, char const *key)"
+.br
+.RI "Get node of pair key\&. "
+.ti -1c
+.RI "dico_node_t * \fBdico_get_elem_ptr\fP (dico_t *dico, void *value)"
+.br
+.RI "Get node where value equal value in node\&. "
+.ti -1c
+.RI "dico_t * \fBdico_rem\fP (dico_t *dico, char const *key)"
+.br
+.RI "Rem a key and its value\&. "
+.ti -1c
+.RI "dico_t * \fBdico_rem_ptr\fP (dico_t *dico, void *value)"
+.br
+.RI "Rem a key and its value\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "dico_t * dico_add (dico_t * dico, char const * key, void * value, void(*)(void *value) destroy)"
+
+.PP
+add a key/value 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIkey\fP key 
+.br
+\fIvalue\fP value 
+.br
+\fIdestroy\fP destroy function to free the value (could be null)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+dico 
+.RE
+.PP
+
+.SS "dico_t * dico_add_elem (dico_t * dico, dico_node_t * elem)"
+
+.PP
+add an elem (key/value/destroy) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIelem\fP elem
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+dico 
+.RE
+.PP
+
+.SS "dico_t * dico_create (void)"
+
+.PP
+create a new dico 
+.PP
+\fBReturns\fP
+.RS 4
+dico 
+.RE
+.PP
+
+.SS "void dico_destroy (dico_t * dico)"
+
+.PP
+delete a dico 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP to delete 
+.RE
+.PP
+
+.SS "dico_node_t * dico_get_elem (dico_t * dico, char const * key)"
+
+.PP
+Get node of pair key\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIkey\fP key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+node 
+.RE
+.PP
+
+.SS "dico_node_t * dico_get_elem_ptr (dico_t * dico, void * value)"
+
+.PP
+Get node where value equal value in node\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIvalue\fP value
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+node 
+.RE
+.PP
+
+.SS "void * dico_get_value (dico_t * dico, char const * key)"
+
+.PP
+Get value of pair key\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIkey\fP key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+value 
+.RE
+.PP
+
+.SS "dico_node_t * dico_pop_elem (dico_t * dico, char const * key)"
+
+.PP
+remove a key and return the node 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIkey\fP key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+node 
+.RE
+.PP
+
+.SS "void * dico_pop_value (dico_t * dico, char const * key)"
+
+.PP
+remove a key and return the value 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIkey\fP key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+value 
+.RE
+.PP
+
+.SS "dico_t * dico_rem (dico_t * dico, char const * key)"
+
+.PP
+Rem a key and its value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIkey\fP key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+dico 
+.RE
+.PP
+
+.SS "dico_t * dico_rem_ptr (dico_t * dico, void * value)"
+
+.PP
+Rem a key and its value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdico\fP dico 
+.br
+\fIvalue\fP value of key/value pair
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+dico 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

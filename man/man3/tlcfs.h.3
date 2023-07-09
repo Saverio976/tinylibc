@@ -1,0 +1,77 @@
+.TH "includes/tlcfs.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlcfs.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBfs_get_content\fP (char const *path)"
+.br
+.RI "get the entire content of file path (if readable) "
+.ti -1c
+.RI "int \fBfs_get_size\fP (char const *path)"
+.br
+.RI "get size of the content of filepath (if stat can) "
+.ti -1c
+.RI "int \fBfs_open_ronly\fP (char const *path)"
+.br
+.RI "open file path with read only "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char * fs_get_content (char const * path)"
+
+.PP
+get the entire content of file path (if readable) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+null if path is not readable; otherwise the content 
+.RE
+.PP
+
+.SS "int fs_get_size (char const * path)"
+
+.PP
+get size of the content of filepath (if stat can) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+-1 if stat cant get size; the size else 
+.RE
+.PP
+
+.SS "int fs_open_ronly (char const * path)"
+
+.PP
+open file path with read only 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+-1 if cant open; the file descriptor else 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

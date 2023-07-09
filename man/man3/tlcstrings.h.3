@@ -1,4 +1,4 @@
-.TH "includes/tlcstrings.h" 3 "Thu Mar 9 2023" "Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.TH "includes/tlcstrings.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -60,6 +60,14 @@ includes/tlcstrings.h
 .RI "char * \fBx_strstrip\fP (const char *s, const char *chars)"
 .br
 .RI "remove character at start and end "
+.ti -1c
+.RI "int \fBx_strcontainc\fP (char const *str, char const c)"
+.br
+.RI "check if str contain c "
+.ti -1c
+.RI "int \fBx_strendswith\fP (const char *str, const char *needle)"
+.br
+.RI "check if \fCstr\fP ends with \fCneedle\fP "
 .in -1c
 .SH "Function Documentation"
 .PP 
@@ -119,6 +127,24 @@ compare two strings
 .RE
 .PP
 
+.SS "int x_strcontainc (char const * str, char const c)"
+
+.PP
+check if str contain c 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string where \fCc\fP can be 
+.br
+\fIc\fP character to check
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if c is in str; 0 otherwise 
+.RE
+.PP
+
 .SS "char * x_strcpy (char * dest, const char * src)"
 
 .PP
@@ -150,6 +176,24 @@ duplicate a string
 \fBReturns\fP
 .RS 4
 NULL if \fCs\fP = 0;; ptr to the new duplicate string 
+.RE
+.PP
+
+.SS "int x_strendswith (const char * str, const char * needle)"
+
+.PP
+check if \fCstr\fP ends with \fCneedle\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string where \fCneedle\fP can be 
+.br
+\fIneedle\fP string to check
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if \fCstr\fP ends with \fCneedle\fP; else 0 
 .RE
 .PP
 

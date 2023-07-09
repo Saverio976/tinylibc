@@ -49,6 +49,14 @@ CFLAGS				:=		-Wall -Wextra -Wpedantic -I./includes/
 # Where .c file are
 SRC_DIR				:=		src
 
+SRC_CIRC_BUF_INF	:=		create.c									\
+							destroy.c									\
+							empty.c										\
+							read.c										\
+							read_multiple.c								\
+							write.c
+SRC_CIRC_BUF_INF	:=		$(addprefix circ_buf_inf/,$(SRC_CIRC_BUF_INF))
+
 SRC_DICO			:=		add.c										\
 							create.c									\
 							delete.c									\
@@ -150,7 +158,8 @@ SRC_UTILS			:=		free_char_2d.c								\
 SRC_UTILS			:=		$(addprefix utils/,$(SRC_UTILS))
 
 # List of all .c
-SRC					:=		$(SRC_DICO)									\
+SRC					:=		$(SRC_CIRC_BUF_INF)							\
+							$(SRC_DICO)									\
 							$(SRC_FILESYSTEM)							\
 							$(SRC_JSONC)								\
 							$(SRC_LLISTS)								\

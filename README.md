@@ -5,18 +5,15 @@
 ## Source
 
 [![Makefile Check](https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml/badge.svg?branch=main)](https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml)
+
 [github repo](https://github.com/Saverio976/tinylibc)
 
-## DOC
-
-use doxygen:
-- doc available at [doc](https://saverio976.github.io/tinylibc/)
-- each function have doc with the (auto)completion of your IDE
+[docs](https://saverio976.github.io/tinylibc/) [docs headers](https://saverio976.github.io/tinylibc/files.html)
 
 ## Example
 
 - using **list**
-`./examples/reamde.c`
+`./examples/readme.c`
 ```c
 #include "tlcllists.h"
 #include "tlcstrings.h"

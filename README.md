@@ -8,7 +8,11 @@
 
 [github repo](https://github.com/Saverio976/tinylibc)
 
-[docs](https://saverio976.github.io/tinylibc/) [docs headers](https://saverio976.github.io/tinylibc/files.html)
+[docs](https://saverio976.github.io/tinylibc/)
+
+[docs headers](https://saverio976.github.io/tinylibc/files.html)
+
+[all func/macro](https://saverio976.github.io/tinylibc/globals.html)
 
 ## Example
 

@@ -71,3 +71,10 @@ export CC=gcc
 export PATHTINYLIBC=path/where/libtinylibc.a/is/
 $CC -L $PATHTINYLIBC -ltinylibc -I $PATHTINYLIBC/includes
 ```
+
+## Utils
+
+there is rule in the makefile that remove some files uneeded for use only:
+```bash
+make release
+```

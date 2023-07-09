@@ -9,6 +9,7 @@
 #include <stddef.h>
 #include "tlcdico.h"
 #include "tlcjson.h"
+#include "tlcllists.h"
 #include "tlcstdios.h"
 
 int prety_print_rec(int fd, any_t *any, int indent);
@@ -18,7 +19,7 @@ static int close_dico(int fd, int indent, int nb, const dico_t *dict)
     for (int i = 0; dict->interns->start != NULL && i < indent - 4; i++) {
         nb += x_putcd(fd, ' ', false);
     }
-    nb += x_putsd(fd, "}", false);
+    nb += x_putcd(fd, '}', false);
     return nb;
 }
 
@@ -38,26 +39,41 @@ static int print_dico_key_value(int nb, int fd, int indent, node_t *elem)
     return nb;
 }
 
+static bool do_init(node_t **elem, any_t *dico, int *nb, int fd)
+{
+    if (elem == NULL || dico == NULL || dico->type != DICT) {
+        return false;
+    }
+    if (dico->value.dict->interns->len == 0) {
+        *nb += x_putsd(fd, "{}", false);
+        return false;
+    }
+    *elem = dico->value.dict->interns->start;
+    if (*elem == NULL) {
+        return false;
+    }
+    *nb += x_putcd(fd, '{', true);
+    return true;
+}
+
 int do_print_dico(int fd, any_t *any, int indent)
 {
     int nb = 0;
     node_t *elem = NULL;
 
-    if (any == NULL || any->type != DICT) {
-        return (0);
+    if (!do_init(&elem, any, &nb, fd)) {
+        return nb;
     }
-    elem = any->value.dict->interns->start;
-    nb += x_putsd(fd, "{", elem != NULL);
     do {
-        for (int i = 0; elem != NULL && i < indent; i++) {
+        for (int i = 0; i < indent; i++) {
             nb += x_putcd(fd, ' ', false);
         }
         nb += print_dico_key_value(nb, fd, indent, elem);
-        if ((elem == NULL) ? false : elem->next != NULL) {
+        if (elem->next != NULL) {
             nb += x_putcd(fd, ',', false);
         }
-        nb += (elem == NULL) ? 0 : x_putcd(fd, '\n', false);
-        elem = (elem == NULL) ? NULL : elem->next;
+        nb += x_putcd(fd, '\n', false);
+        elem = elem->next;
     } while (elem != NULL);
     return close_dico(fd, indent, nb, any->value.dict);
 }

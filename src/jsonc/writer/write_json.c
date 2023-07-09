@@ -11,7 +11,7 @@
 
 const int modes = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
 
-int write_json(any_t *any, char const *path)
+enum json_status_err_e write_json(any_t *any, char const *path)
 {
     int fd = 0;
 

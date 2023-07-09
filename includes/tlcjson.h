@@ -8,13 +8,15 @@
 #ifndef TLS_JSONC_H_
     #define TLS_JSONC_H_
 
-    #define JS_OK 0
-    #define JS_ERR_PATH 1
-    #define JS_ERR_MALLOC 2
-    #define JS_ERR_INPUT 3
-
     #include "tlcllists.h"
     #include "tlcdico.h"
+
+enum json_status_err_e {
+    JS_OK = 0,
+    JS_ERR_PATH = 1,
+    JS_ERR_MALLOC = 2,
+    JS_ERR_INPUT = 3
+};
 
 enum any_type_e {
     STR = 0,
@@ -125,11 +127,9 @@ any_t *dico_t_get_any(dico_t *dico, char const *key);
 ** @param any any to write
 ** @param path path to a file that will be override
 **
-** @return {
-** int : nb of char writed
-** }
+** @return status under the form of the enum
 **/
-int write_json(any_t *any, char const *path);
+enum json_status_err_e write_json(any_t *any, char const *path);
 
 /**
 ** @brief destroy any

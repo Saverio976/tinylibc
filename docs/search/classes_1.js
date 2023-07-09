@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dico_5fnode_5fs_0',['dico_node_s',['../dd/dca/structdico__node__s.html',1,'']]],
-  ['dico_5fs_1',['dico_s',['../d5/de2/structdico__s.html',1,'']]]
+  ['circ_5fbuf_5finf_5fs_0',['circ_buf_inf_s',['../da/d68/structcirc__buf__inf__s.html',1,'']]]
 ];

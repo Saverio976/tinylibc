@@ -1,0 +1,163 @@
+.TH "includes/tlccirc_buf_inf.h" 3Version 0.0.1" "(my)TinyLibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/tlccirc_buf_inf.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stddef\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include 'tlcllists\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBcirc_buf_inf_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "circ_buf_inf_t * \fBcirc_buf_inf_create\fP (const char *end_pattern)"
+.br
+.RI "create a circular buffer "
+.ti -1c
+.RI "void \fBcirc_buf_inf_destroy\fP (circ_buf_inf_t *buffer)"
+.br
+.RI "destroy a circular buffer "
+.ti -1c
+.RI "void \fBcirc_buf_inf_write\fP (circ_buf_inf_t *buffer, const char *str)"
+.br
+.RI "add a char* to the circular buffer "
+.ti -1c
+.RI "char * \fBcirc_buf_inf_read\fP (circ_buf_inf_t *buffer)"
+.br
+.RI "read a char* from the circular buffer "
+.ti -1c
+.RI "char * \fBcirc_buf_inf_read_multiple\fP (circ_buf_inf_t *buffer)"
+.br
+.RI "read a char* from the circular buffer until last \fCend_pattern\fP "
+.ti -1c
+.RI "bool \fBcirc_buf_inf_is_empty\fP (circ_buf_inf_t *buffer)"
+.br
+.RI "check if circular buffer is empty "
+.ti -1c
+.RI "bool \fBcirc_buf_inf_is_read_ready\fP (circ_buf_inf_t *buffer)"
+.br
+.RI "check if circular buffer is ready to read (=> \fCend_pattern\fP'ed) "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "circ_buf_inf_t * circ_buf_inf_create (const char * end_pattern)"
+
+.PP
+create a circular buffer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIend_pattern\fP the pattern of the end that says we can write to another
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a circular buffer 
+.RE
+.PP
+
+.SS "void circ_buf_inf_destroy (circ_buf_inf_t * buffer)"
+
+.PP
+destroy a circular buffer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP the circular buffer 
+.RE
+.PP
+
+.SS "bool circ_buf_inf_is_empty (circ_buf_inf_t * buffer)"
+
+.PP
+check if circular buffer is empty 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP the circular buffer
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if empty; false otherwise 
+.RE
+.PP
+
+.SS "bool circ_buf_inf_is_read_ready (circ_buf_inf_t * buffer)"
+
+.PP
+check if circular buffer is ready to read (=> \fCend_pattern\fP'ed) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP the circular buffer
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if ready; false otherwise 
+.RE
+.PP
+
+.SS "char * circ_buf_inf_read (circ_buf_inf_t * buffer)"
+
+.PP
+read a char* from the circular buffer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP the circular buffer
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a char* (malloc'ed); NULL if empty or not \fCend_pattern\fP'ed 
+.RE
+.PP
+
+.SS "char * circ_buf_inf_read_multiple (circ_buf_inf_t * buffer)"
+
+.PP
+read a char* from the circular buffer until last \fCend_pattern\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP the circular buffer
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a char* (malloc'ed); NULL if empty or not \fCend_pattern\fP'ed 
+.RE
+.PP
+
+.SS "void circ_buf_inf_write (circ_buf_inf_t * buffer, const char * str)"
+
+.PP
+add a char* to the circular buffer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuffer\fP the circular buffer 
+.br
+\fIstr\fP the char* to add (it will be strdup'ed) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for (my)TinyLibC from the source code\&.

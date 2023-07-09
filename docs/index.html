@@ -111,17 +111,13 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <b>just some basic functions (and why not, some non basic)</b></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Source</h1>
-<p><a href="https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml"><img src="https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml/badge.svg?branch=main" alt="Makefile Check" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/Saverio976/tinylibc">github repo</a></p>
+<p><a href="https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml"><img src="https://github.com/Saverio976/tinylibc/actions/workflows/makefile.yml/badge.svg?branch=main" alt="Makefile Check" style="pointer-events: none;" class="inline"/></a></p>
+<p><a href="https://github.com/Saverio976/tinylibc">github repo</a></p>
+<p><a href="https://saverio976.github.io/tinylibc/">docs</a> <a href="https://saverio976.github.io/tinylibc/files.html">docs headers</a></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
-DOC</h1>
-<p>use doxygen:</p><ul>
-<li>doc available at <a href="https://saverio976.github.io/tinylibc/">doc</a></li>
-<li>each function have doc with the (auto)completion of your IDE</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
 Example</h1>
 <ul>
-<li>using <b>list</b> <code>./examples/reamde.c</code> <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d8/d07/tlcllists_8h.html">tlcllists.h</a>&quot;</span></div>
+<li>using <b>list</b> <code>./examples/readme.c</code> <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d8/d07/tlcllists_8h.html">tlcllists.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dd/dc4/tlcstrings_8h.html">tlcstrings.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d9/d38/tlcutils_8h.html">tlcutils.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d0/d93/tlcstdios_8h.html">tlcstdios.h</a>&quot;</span></div>
@@ -160,21 +156,21 @@ Example</h1>
 </ul>
 <div class="fragment"><div class="line">gcc examples/readme.c -Iincludes/ -L. -ltinylibc</div>
 <div class="line">./a.out</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Install</h1>
 <div class="fragment"><div class="line">git clone https://github.com/Saverio976/tinylibc.git</div>
 <div class="line">cd tinylibc</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Build</h1>
 <div class="fragment"><div class="line">make</div>
 </div><!-- fragment --><p> this will output the file <code>libtinylibc.a</code></p>
 <p><em>object are compiled to <code>obj</code> folder (and makefile dont relink !!!) (i'm proud of that xD)</em></p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Use it</h1>
 <p>compile your c code (change value of CC to your c compiler and PATHTINYLIBC to the right value): </p><div class="fragment"><div class="line">export CC=gcc</div>
 <div class="line">export PATHTINYLIBC=path/where/libtinylibc.a/is/</div>
 <div class="line">$CC -L $PATHTINYLIBC -ltinylibc -I $PATHTINYLIBC/includes</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
 Utils</h1>
 <p>there is rule in the makefile that remove some files uneeded for use only: </p><div class="fragment"><div class="line">make release</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->

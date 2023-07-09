@@ -109,10 +109,6 @@ struct llnodesearch {
 **/
     #define L_EACH(x, list) L_DECL_FIRST(x, list); x != 0; x = L_NEXT(x)
 
-    #undef _COPY_CHECK
-    #undef _DESTROY_CHECK
-    #undef _VOID
-
 /**
 ** @brief append new data to `list`
 **

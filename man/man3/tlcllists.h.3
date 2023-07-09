@@ -39,33 +39,43 @@ includes/tlcllists.h
 .ti -1c
 .RI "#define \fBL_LEN\fP(x)   ((x != 0) ? (x)\->len : 0)"
 .br
+.RI "return the length of the list "
 .ti -1c
 .RI "#define \fBL_NEXT\fP(x)   ((x != 0) ? (x)\->next : 0)"
 .br
+.RI "return the next node "
 .ti -1c
 .RI "#define \fBL_FIRST\fP(list)   ((list != 0) ? (list)\->start : 0)"
 .br
+.RI "return the first node "
 .ti -1c
 .RI "#define \fBL_LAST\fP(list)   ((list != 0) ? (list)\->end : 0)"
 .br
+.RI "return the last node "
 .ti -1c
 .RI "#define \fBL_COPY\fP(x)   ((\fB_COPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
 .br
+.RI "return the copy of the node data "
 .ti -1c
 .RI "#define \fBL_DATA\fP(x)   ((x != 0) ? (x)\->data : 0)"
 .br
+.RI "return the data of the node "
 .ti -1c
 .RI "#define \fBL_DESTROY\fP(x)   (\fB_VOID\fP(\fB_DESTROY_CHECK\fP(x), (x)\->destroy(\fBL_DATA\fP(x))))"
 .br
+.RI "destroy the node "
 .ti -1c
 .RI "#define \fBL_DECL_FIRST\fP(x,  list)   node_t *x = \fBL_FIRST\fP(list)"
 .br
+.RI "create a variable with the first node of the list "
 .ti -1c
 .RI "#define \fBL_DECL_LAST\fP(x,  list)   node_t *x = \fBL_LAST\fP(list)"
 .br
+.RI "create a variable with the last node of the list "
 .ti -1c
 .RI "#define \fBL_EACH\fP(x,  list)   \fBL_DECL_FIRST\fP(x, list); x != 0; x = \fBL_NEXT\fP(x)"
 .br
+.RI "the for each that i like "
 .in -1c
 .SS "Functions"
 
@@ -152,43 +162,179 @@ Definition at line \fB37\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_COPY(x)   ((\fB_COPY_CHECK\fP(x)) ? (x)\->copy((x)\->data) : 0)"
 
 .PP
-Definition at line \fB43\fP of file \fBtlcllists\&.h\fP\&.
+return the copy of the node data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the node 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the copy of the node data 
+.RE
+.PP
+
+.PP
+Definition at line \fB73\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_DATA(x)   ((x != 0) ? (x)\->data : 0)"
 
 .PP
-Definition at line \fB44\fP of file \fBtlcllists\&.h\fP\&.
+return the data of the node 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the node 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the data of the node 
+.RE
+.PP
+
+.PP
+Definition at line \fB80\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_DECL_FIRST(x, list)   node_t *x = \fBL_FIRST\fP(list)"
 
 .PP
-Definition at line \fB47\fP of file \fBtlcllists\&.h\fP\&.
+create a variable with the first node of the list 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the variable name to create 
+.br
+\fIlist\fP the list 
+.RE
+.PP
+
+.PP
+Definition at line \fB95\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_DECL_LAST(x, list)   node_t *x = \fBL_LAST\fP(list)"
 
 .PP
-Definition at line \fB48\fP of file \fBtlcllists\&.h\fP\&.
+create a variable with the last node of the list 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the variable name to create 
+.br
+\fIlist\fP the list 
+.RE
+.PP
+
+.PP
+Definition at line \fB102\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_DESTROY(x)   (\fB_VOID\fP(\fB_DESTROY_CHECK\fP(x), (x)\->destroy(\fBL_DATA\fP(x))))"
 
 .PP
-Definition at line \fB45\fP of file \fBtlcllists\&.h\fP\&.
+destroy the node 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the node 
+.RE
+.PP
+\fBWarning\fP
+.RS 4
+don't use it if you don't know exactly what you are doing 
+.RE
+.PP
+
+.PP
+Definition at line \fB87\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_EACH(x, list)   \fBL_DECL_FIRST\fP(x, list); x != 0; x = \fBL_NEXT\fP(x)"
 
 .PP
-Definition at line \fB49\fP of file \fBtlcllists\&.h\fP\&.
+the for each that i like 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the variable name to create 
+.br
+\fIlist\fP the list 
+.RE
+.PP
+\fBWarning\fP
+.RS 4
+don't delete a node in the for (if you do so, it can crash) 
+.RE
+.PP
+
+.PP
+Definition at line \fB110\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_FIRST(list)   ((list != 0) ? (list)\->start : 0)"
 
 .PP
-Definition at line \fB41\fP of file \fBtlcllists\&.h\fP\&.
+return the first node 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the first node 
+.RE
+.PP
+
+.PP
+Definition at line \fB59\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_LAST(list)   ((list != 0) ? (list)\->end : 0)"
 
 .PP
-Definition at line \fB42\fP of file \fBtlcllists\&.h\fP\&.
+return the last node 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlist\fP the list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the last node 
+.RE
+.PP
+
+.PP
+Definition at line \fB66\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_LEN(x)   ((x != 0) ? (x)\->len : 0)"
 
 .PP
-Definition at line \fB39\fP of file \fBtlcllists\&.h\fP\&.
+return the length of the list 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the length 
+.RE
+.PP
+
+.PP
+Definition at line \fB45\fP of file \fBtlcllists\&.h\fP\&.
 .SS "#define L_NEXT(x)   ((x != 0) ? (x)\->next : 0)"
 
 .PP
-Definition at line \fB40\fP of file \fBtlcllists\&.h\fP\&.
+return the next node 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP current node 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the next node 
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBtlcllists\&.h\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "list_t * list_append (list_t * list, void * data, void(*)(void *data) destroy, void *(*)(void *data) copy)"

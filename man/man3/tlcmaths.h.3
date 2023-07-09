@@ -12,15 +12,18 @@ includes/tlcmaths.h
 .ti -1c
 .RI "#define \fBX_MAX\fP(x,  y)   (((x) > (y)) ? (x) : (y))"
 .br
+.RI "maximum of x and y "
 .ti -1c
 .RI "#define \fBX_MIN\fP(x,  y)   (((x) < (y)) ? (x) : (y))"
 .br
 .ti -1c
 .RI "#define \fBX_E\fP   2\&.7182818284"
 .br
+.RI "e constant "
 .ti -1c
 .RI "#define \fBX_PI\fP   3\&.1415926535"
 .br
+.RI "pi constant "
 .in -1c
 .SS "Functions"
 
@@ -87,19 +90,58 @@ includes/tlcmaths.h
 .SS "#define X_E   2\&.7182818284"
 
 .PP
-Definition at line \fB14\fP of file \fBtlcmaths\&.h\fP\&.
+e constant 
+.PP
+\fBReturns\fP
+.RS 4
+e 
+.RE
+.PP
+
+.PP
+Definition at line \fB35\fP of file \fBtlcmaths\&.h\fP\&.
 .SS "#define X_MAX(x, y)   (((x) > (y)) ? (x) : (y))"
 
 .PP
-Definition at line \fB11\fP of file \fBtlcmaths\&.h\fP\&.
+maximum of x and y 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP number 1 
+.br
+\fIy\fP number 2 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+maximum of x and y 
+.RE
+.PP
+\fBWarning\fP
+.RS 4
+it's a macro, prefer to use x_max, x_maxd, x_maxf, x_maxl 
+.RE
+.PP
+
+.PP
+Definition at line \fB19\fP of file \fBtlcmaths\&.h\fP\&.
 .SS "#define X_MIN(x, y)   (((x) < (y)) ? (x) : (y))"
 
 .PP
-Definition at line \fB12\fP of file \fBtlcmaths\&.h\fP\&.
+Definition at line \fB28\fP of file \fBtlcmaths\&.h\fP\&.
 .SS "#define X_PI   3\&.1415926535"
 
 .PP
-Definition at line \fB15\fP of file \fBtlcmaths\&.h\fP\&.
+pi constant 
+.PP
+\fBReturns\fP
+.RS 4
+pi 
+.RE
+.PP
+
+.PP
+Definition at line \fB41\fP of file \fBtlcmaths\&.h\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "int x_max (int a, int b)"

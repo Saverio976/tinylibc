@@ -8,10 +8,36 @@
 #ifndef TLS_MATHS_H_
     #define TLS_MATHS_H_
 
+/**
+** @def X_MAX(x, y)
+** @brief maximum of x and y
+** @param x number 1
+** @param y number 2
+** @return maximum of x and y
+** @warning it's a macro, prefer to use x_max, x_maxd, x_maxf, x_maxl
+**/
     #define X_MAX(x, y)   (((x) > (y)) ? (x) : (y))
+/*
+** @def X_MIN(x, y)
+** @brief minimum of x and y
+** @param x number 1
+** @param y number 2
+** @return minimum of x and y
+** @warning it's a macro, prefer to use x_min, x_mind, x_minf, x_minl
+**/
     #define X_MIN(x, y)   (((x) < (y)) ? (x) : (y))
 
+/**
+** @def X_E
+** @brief e constant
+** @return e
+**/
     #define X_E           2.7182818284
+/**
+** @def X_PI
+** @brief pi constant
+** @return pi
+**/
     #define X_PI          3.1415926535
 
 /**

@@ -36,17 +36,82 @@ struct llnodesearch {
     #define _DESTROY_CHECK(x) (x != 0 && (x)->destroy != 0)
     #define _VOID(c, e) ((c) ? e : return_void())
 
+/**
+** @def L_LEN(x)
+** @brief return the length of the list
+** @param x the list
+** @return the length
+**/
     #define L_LEN(x) ((x != 0) ? (x)->len : 0)
+/**
+** @def L_NEXT(x)
+** @brief return the next node
+** @param x current node
+** @return the next node
+**/
     #define L_NEXT(x) ((x != 0) ? (x)->next : 0)
+/**
+** @def L_FIRST(x)
+** @brief return the first node
+** @param list the list
+** @return the first node
+**/
     #define L_FIRST(list) ((list != 0) ? (list)->start : 0)
+/**
+** @def L_LAST(x)
+** @brief return the last node
+** @param list the list
+** @return the last node
+**/
     #define L_LAST(list) ((list != 0) ? (list)->end : 0)
+/**
+** @def L_COPY(x)
+** @brief return the copy of the node data
+** @param x the node
+** @return the copy of the node data
+**/
     #define L_COPY(x) ((_COPY_CHECK(x)) ? (x)->copy((x)->data) : 0)
+/**
+** @def L_DATA(x)
+** @brief return the data of the node
+** @param x the node
+** @return the data of the node
+**/
     #define L_DATA(x) ((x != 0) ? (x)->data : 0)
+/**
+** @def L_DESTROY(x)
+** @brief destroy the node
+** @param x the node
+** @warning don't use it if you don't know exactly what you are doing
+**/
     #define L_DESTROY(x) (_VOID(_DESTROY_CHECK(x), (x)->destroy(L_DATA(x))))
 
+/**
+** @def L_DECL_FIRST(x, list)
+** @brief create a variable with the first node of the list
+** @param x the variable name to create
+** @param list the list
+**/
     #define L_DECL_FIRST(x, list) node_t *x = L_FIRST(list)
+/**
+** @def L_DECL_LAST(x, list)
+** @brief create a variable with the last node of the list
+** @param x the variable name to create
+** @param list the list
+**/
     #define L_DECL_LAST(x, list) node_t *x = L_LAST(list)
+/**
+** @def L_EACH(x, list)
+** @brief the for each that i like
+** @param x the variable name to create
+** @param list the list
+** @warning don't delete a node in the for (if you do so, it can crash)
+**/
     #define L_EACH(x, list) L_DECL_FIRST(x, list); x != 0; x = L_NEXT(x)
+
+    #undef _COPY_CHECK
+    #undef _DESTROY_CHECK
+    #undef _VOID
 
 /**
 ** @brief append new data to `list`

@@ -135,24 +135,34 @@ Macros</h2></td></tr>
 <tr class="memitem:a2ed584d7e03f28f7cb98477555404deb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a2ed584d7e03f28f7cb98477555404deb">_VOID</a>(c,  e)&#160;&#160;&#160;((c) ? e : <a class="el" href="../../d9/d38/tlcutils_8h.html#a05e5e2691348903c391689f1cafb6cfd">return_void</a>())</td></tr>
 <tr class="separator:a2ed584d7e03f28f7cb98477555404deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf895b22887af180fe4ec781de273072"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#acf895b22887af180fe4ec781de273072">L_LEN</a>(x)&#160;&#160;&#160;((x != 0) ? (x)-&gt;len : 0)</td></tr>
+<tr class="memdesc:acf895b22887af180fe4ec781de273072"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the length of the list  <br /></td></tr>
 <tr class="separator:acf895b22887af180fe4ec781de273072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67024a4b8bffefa7a648d4993ae5d271"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a67024a4b8bffefa7a648d4993ae5d271">L_NEXT</a>(x)&#160;&#160;&#160;((x != 0) ? (x)-&gt;next : 0)</td></tr>
+<tr class="memdesc:a67024a4b8bffefa7a648d4993ae5d271"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the next node  <br /></td></tr>
 <tr class="separator:a67024a4b8bffefa7a648d4993ae5d271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98a1697782765a0f0bd257b5c9f8a0be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a98a1697782765a0f0bd257b5c9f8a0be">L_FIRST</a>(list)&#160;&#160;&#160;((list != 0) ? (list)-&gt;start : 0)</td></tr>
+<tr class="memdesc:a98a1697782765a0f0bd257b5c9f8a0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the first node  <br /></td></tr>
 <tr class="separator:a98a1697782765a0f0bd257b5c9f8a0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefae4f3615ddb125f0f43a386309e714"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#aefae4f3615ddb125f0f43a386309e714">L_LAST</a>(list)&#160;&#160;&#160;((list != 0) ? (list)-&gt;end : 0)</td></tr>
+<tr class="memdesc:aefae4f3615ddb125f0f43a386309e714"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the last node  <br /></td></tr>
 <tr class="separator:aefae4f3615ddb125f0f43a386309e714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b722b1d19f62ac910341c841b13199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#ac3b722b1d19f62ac910341c841b13199">L_COPY</a>(x)&#160;&#160;&#160;((<a class="el" href="../../d8/d07/tlcllists_8h.html#a3cefb7de555624b1f7522cf33fb167dc">_COPY_CHECK</a>(x)) ? (x)-&gt;copy((x)-&gt;data) : 0)</td></tr>
+<tr class="memdesc:ac3b722b1d19f62ac910341c841b13199"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the copy of the node data  <br /></td></tr>
 <tr class="separator:ac3b722b1d19f62ac910341c841b13199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58ce38cf9f0b1ea6912f96f4f4630383"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a58ce38cf9f0b1ea6912f96f4f4630383">L_DATA</a>(x)&#160;&#160;&#160;((x != 0) ? (x)-&gt;data : 0)</td></tr>
+<tr class="memdesc:a58ce38cf9f0b1ea6912f96f4f4630383"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the data of the node  <br /></td></tr>
 <tr class="separator:a58ce38cf9f0b1ea6912f96f4f4630383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f4ace4d2ad5fb2618aea66c0dbde02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a24f4ace4d2ad5fb2618aea66c0dbde02">L_DESTROY</a>(x)&#160;&#160;&#160;(<a class="el" href="../../d8/d07/tlcllists_8h.html#a2ed584d7e03f28f7cb98477555404deb">_VOID</a>(<a class="el" href="../../d8/d07/tlcllists_8h.html#a26c41b98247a18794b04abc448158094">_DESTROY_CHECK</a>(x), (x)-&gt;destroy(<a class="el" href="../../d8/d07/tlcllists_8h.html#a58ce38cf9f0b1ea6912f96f4f4630383">L_DATA</a>(x))))</td></tr>
+<tr class="memdesc:a24f4ace4d2ad5fb2618aea66c0dbde02"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy the node  <br /></td></tr>
 <tr class="separator:a24f4ace4d2ad5fb2618aea66c0dbde02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73190871b944f598f7793573a775273d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a73190871b944f598f7793573a775273d">L_DECL_FIRST</a>(x,  list)&#160;&#160;&#160;node_t *x = <a class="el" href="../../d8/d07/tlcllists_8h.html#a98a1697782765a0f0bd257b5c9f8a0be">L_FIRST</a>(list)</td></tr>
+<tr class="memdesc:a73190871b944f598f7793573a775273d"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a variable with the first node of the list  <br /></td></tr>
 <tr class="separator:a73190871b944f598f7793573a775273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af413a8e566c895daef33b8c4af9c1f71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#af413a8e566c895daef33b8c4af9c1f71">L_DECL_LAST</a>(x,  list)&#160;&#160;&#160;node_t *x = <a class="el" href="../../d8/d07/tlcllists_8h.html#aefae4f3615ddb125f0f43a386309e714">L_LAST</a>(list)</td></tr>
+<tr class="memdesc:af413a8e566c895daef33b8c4af9c1f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a variable with the last node of the list  <br /></td></tr>
 <tr class="separator:af413a8e566c895daef33b8c4af9c1f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e5bd64583d0e7fa56f7325742fcac0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d07/tlcllists_8h.html#a94e5bd64583d0e7fa56f7325742fcac0">L_EACH</a>(x,  list)&#160;&#160;&#160;<a class="el" href="../../d8/d07/tlcllists_8h.html#a73190871b944f598f7793573a775273d">L_DECL_FIRST</a>(x, list); x != 0; x = <a class="el" href="../../d8/d07/tlcllists_8h.html#a67024a4b8bffefa7a648d4993ae5d271">L_NEXT</a>(x)</td></tr>
+<tr class="memdesc:a94e5bd64583d0e7fa56f7325742fcac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">the for each that i like  <br /></td></tr>
 <tr class="separator:a94e5bd64583d0e7fa56f7325742fcac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -293,7 +303,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00043">43</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>return the copy of the node data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the copy of the node data </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00073">73</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -313,7 +332,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00044">44</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>return the data of the node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data of the node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00080">80</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -343,7 +371,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00047">47</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>create a variable with the first node of the list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the variable name to create </td></tr>
+    <tr><td class="paramname">list</td><td>the list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00095">95</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -373,7 +410,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00048">48</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>create a variable with the last node of the list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the variable name to create </td></tr>
+    <tr><td class="paramname">list</td><td>the list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00102">102</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -393,7 +439,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00045">45</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>destroy the node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>don't use it if you don't know exactly what you are doing </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00087">87</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -423,7 +478,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00049">49</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>the for each that i like </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the variable name to create </td></tr>
+    <tr><td class="paramname">list</td><td>the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>don't delete a node in the for (if you do so, it can crash) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00110">110</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -443,7 +508,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00041">41</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>return the first node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the first node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00059">59</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -463,7 +537,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00042">42</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>return the last node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the last node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00066">66</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -483,7 +566,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00039">39</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>return the length of the list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the length </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00045">45</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>
@@ -503,7 +595,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00040">40</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
+<p>return the next node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>current node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the next node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d07/tlcllists_8h_source.html#l00052">52</a> of file <a class="el" href="../../d8/d07/tlcllists_8h_source.html">tlcllists.h</a>.</p>
 
 </div>
 </div>

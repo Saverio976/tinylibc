@@ -21,7 +21,7 @@ int x_putcd(int fd, char c, bool newline)
 
     len = write(fd, &c, 1);
     if (newline == true) {
-        len += write(1, &nl, 1);
+        len += write(fd, &nl, 1);
     }
     return (len);
 }

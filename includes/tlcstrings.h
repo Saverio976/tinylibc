@@ -150,4 +150,14 @@ int x_strcontainc(char const *str, char const c);
 **/
 int x_strendswith(const char *str, const char *needle);
 
+/**
+** @brief check if `str` starts with `needle`
+**
+** @param str string where `needle` can be
+** @param needle string to check
+**
+** @return 1 if `str` starts with `needle`; else 0
+**/
+int x_strstartswith(const char *str, const char *needle);
+
 #endif

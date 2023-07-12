@@ -147,6 +147,7 @@ SRC_STRINGS			:=		memcpy.c									\
 							strndup.c									\
 							strrev.c									\
 							strsplit.c									\
+							strstartswith.c								\
 							strstr.c									\
 							strstrip.c
 SRC_STRINGS			:=		$(addprefix strings/,$(SRC_STRINGS))

@@ -9,6 +9,5 @@ Test(range, dix_1)
     for (RANGE(0, 10, 1)) {
         val++;
     }
-    printf("%d\n", val);
     cr_assert_eq(val, 10);
 }

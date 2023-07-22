@@ -228,4 +228,15 @@ any_t *creator_add_float(any_t *root, const char *key, float number);
 **/
 any_t *creator_add_string(any_t *root, const char *key, const char *string);
 
+/**
+** @brief add an array to the any dico
+**
+** @param root the root of the dico
+** @param key the key
+** @param arr the array (take ownership of this parameter)
+**
+** @return the root
+**/
+any_t *creator_add_array(any_t *root, const char *key, list_t *arr);
+
 #endif

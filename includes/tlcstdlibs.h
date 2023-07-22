@@ -8,6 +8,8 @@
 #ifndef TLS_STDLIBS_H_
     #define TLS_STDLIBS_H_
 
+    #include <stddef.h>
+
 /**
 ** @brief string (in base 10) to int
 **
@@ -36,7 +38,7 @@ int atoi_base(const char *nb, const char *base);
 **
 ** @return ptr to the first n allocated
 **/
-char *x_calloc(int n);
+char *x_calloc(size_t n);
 
 /**
 ** @brief malloc n char * and fill with 0
@@ -45,7 +47,7 @@ char *x_calloc(int n);
 **
 ** @return ptr to the first n allocated
 **/
-char **x_ccalloc(int n);
+char **x_ccalloc(size_t n);
 
 /**
 ** @brief int to string (malloc'd) in base 10 (0123456789)

@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include "tlcstrings.h"
+#include "tlcstdlibs.h"
 
 static const char end_char[] = "\n \v\f\t";
 
@@ -23,7 +24,7 @@ int atoi_base(const char *nb, const char *base)
     }
     is_neg = (nb[0] == '-') ? 1 : 0;
     for (i = is_neg; nb[i] != '\0' && x_strchr(end_char, nb[i]) == NULL; i++) {
-        result = result * x_strlen(base);
+        result = result * (int) x_strlen(base);
         index = x_strchr(base, nb[i]);
         if (index == NULL) {
             return (0);

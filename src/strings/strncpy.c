@@ -6,6 +6,7 @@
 */
 
 #include <stddef.h>
+#include "tlcstrings.h"
 
 char *x_strncpy(char *dest, const char *src, size_t n)
 {

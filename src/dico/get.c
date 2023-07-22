@@ -23,7 +23,7 @@ void *dico_get_value(dico_t *dico, char const *key)
     return NULL;
 }
 
-dico_node_t *dico_get_elem(dico_t *dico, char const *key)
+dico_node_t *dico_get(dico_t *dico, char const *key)
 {
     dico_node_t *elem = NULL;
 

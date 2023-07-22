@@ -11,7 +11,7 @@
 
 char *x_strdup(const char *s)
 {
-    int len = 0;
+    size_t len = 0;
     char *new = NULL;
 
     if (s == NULL) {

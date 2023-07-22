@@ -12,6 +12,7 @@
 #include "tlcstrings.h"
 #include "tlcutils.h"
 #include "utils/utils.h"
+#include "tlcstdios.h"
 
 static const char key[][5] = {
     "%%",
@@ -25,7 +26,7 @@ static const char key[][5] = {
     "",
 };
 
-static char *(*fptrs[])(va_list ap, const char *rest, int *index) = {
+static char *(*fptrs[])(va_list ap, const char *rest, size_t *index) = {
     mod_specifier,
     i_specifier,
     i_specifier,
@@ -38,7 +39,7 @@ static char *(*fptrs[])(va_list ap, const char *rest, int *index) = {
 
 static char *convert_list(list_t *list)
 {
-    int len = 0;
+    size_t len = 0;
     char *str = NULL;
     int index = 0;
 
@@ -54,7 +55,8 @@ static char *convert_list(list_t *list)
     return (str);
 }
 
-static char *transform_index_to_str(va_list ap, const char *format, int *index)
+static char *transform_index_to_str(va_list ap, const char *format,
+    size_t *index)
 {
     char tab[2] = {0, 0};
     char *str = NULL;
@@ -83,7 +85,7 @@ char *x_vsprintf(const char *format, va_list ap)
     if (list == NULL) {
         return (NULL);
     }
-    for (int i = 0; (size_t) i < x_strlen(format); i++) {
+    for (size_t i = 0; i < x_strlen(format); i++) {
         list_append(list, transform_index_to_str(ap, format, &i),
             free_ifnotnull, NULL);
     }

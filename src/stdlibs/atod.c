@@ -7,7 +7,7 @@
 
 #include "tlcstdlibs.h"
 
-double x_atodf(char const *str)
+double x_atod(char const *str)
 {
     int is_error = 0;
 

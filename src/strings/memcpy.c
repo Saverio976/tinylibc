@@ -6,6 +6,7 @@
 */
 
 #include <stddef.h>
+#include "tlcstrings.h"
 
 void *x_memcpy(void *dest, const void *src, size_t n)
 {

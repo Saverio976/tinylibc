@@ -6,6 +6,7 @@
 */
 
 #include <stddef.h>
+#include "tlcstrings.h"
 
 char *x_strchr(const char *s, int c)
 {

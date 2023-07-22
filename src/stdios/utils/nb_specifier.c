@@ -10,8 +10,9 @@
 #include "tlcstdlibs.h"
 #include "tlcstrings.h"
 #include "tlcutils.h"
+#include "utils.h"
 
-char *i_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
+char *i_specifier(va_list ap, UNUSED const char *rest, UNUSED size_t *index)
 {
     int nb = 0;
     char *str = NULL;
@@ -21,7 +22,7 @@ char *i_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
     return (str);
 }
 
-char *x_up_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
+char *x_up_specifier(va_list ap, UNUSED const char *rest, UNUSED size_t *index)
 {
     int nb = 0;
     char *tmp = NULL;
@@ -43,7 +44,8 @@ char *x_up_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
     return (str);
 }
 
-char *x_low_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
+char *x_low_specifier(va_list ap, UNUSED const char *rest,
+    UNUSED size_t *index)
 {
     int nb = 0;
     char *tmp = NULL;

@@ -33,7 +33,7 @@ any_t *creator_add_int(any_t *root, const char *key, int number)
     if (root == NULL || key == NULL || root->type != DICT) {
         return root;
     }
-    number_any = create_any_number(number);
+    number_any = create_any_number((double) number);
     if (number_any == NULL) {
         return root;
     }

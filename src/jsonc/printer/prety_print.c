@@ -10,11 +10,7 @@
 #include "tlcjson.h"
 #include "tlcllists.h"
 #include "tlcstdios.h"
-
-int do_print_dico(int fd, any_t *any, int indent);
-int do_print_array(int fd, any_t *any, int indent);
-int do_print_string(int fd, any_t *any, int indent);
-int do_print_number(int fd, any_t *any, int indent);
+#include "internal.h"
 
 int prety_print_rec(int fd, any_t *any, int indent)
 {

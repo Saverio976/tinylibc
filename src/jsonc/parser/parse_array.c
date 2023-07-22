@@ -10,10 +10,7 @@
 #include <stdlib.h>
 #include "tlcjson.h"
 #include "tlcllists.h"
-
-any_t *parse_unknow(const char *str, int *global_index);
-bool is_tokken(const char *str, char tokken, int global_index, char escape);
-bool parse_array_is_empty(const char **str, int *global_index);
+#include "internal.h"
 
 static bool parse_array_index(const char *str, int *global_index,
     list_t *list)

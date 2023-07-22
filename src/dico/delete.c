@@ -9,8 +9,9 @@
 #include <stdlib.h>
 #include "tlcdico.h"
 #include "tlcllists.h"
+#include "internal.h"
 
-void dico_detroy_ptr(void *dico_node)
+void dico_destroy_ptr(void *dico_node)
 {
     dico_node_t *dico = dico_node;
 

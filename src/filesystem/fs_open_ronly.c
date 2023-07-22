@@ -6,6 +6,7 @@
 */
 
 #include <fcntl.h>
+#include "tlcfs.h"
 
 /**
 ** @brief open file path with read only

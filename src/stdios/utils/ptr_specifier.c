@@ -10,8 +10,9 @@
 #include "tlcstdlibs.h"
 #include "tlcstrings.h"
 #include "tlcutils.h"
+#include "utils.h"
 
-static const int size_max = 30;
+static const size_t size_max = 30;
 
 char *ptrtohexa(void *ptr, const char *base_16)
 {
@@ -32,7 +33,7 @@ char *ptrtohexa(void *ptr, const char *base_16)
     return (result);
 }
 
-char *ptr_specifier(va_list ap, UNUSED char *res, UNUSED int *index)
+char *ptr_specifier(va_list ap, UNUSED const char *res, UNUSED size_t *index)
 {
     void *ptr = NULL;
     char *str = NULL;

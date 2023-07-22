@@ -9,8 +9,7 @@
 #include <stdlib.h>
 #include "tlcjson.h"
 #include "tlcstrings.h"
-
-bool is_tokken(const char *str, char tokken, int global_index, char escape);
+#include "internal.h"
 
 static any_t *create_any_string(char *str, int *global_index, int i,
     int offset)
@@ -41,11 +40,11 @@ any_t *parse_string(const char *str, int *global_index)
         return NULL;
     }
     for (; is_tokken(str + i, '"', *global_index + i, '\\') == false; i++);
-    new = calloc(i + 1, sizeof(char));
+    new = calloc((size_t) i + 1, sizeof(char));
     if (new == NULL) {
         return NULL;
     }
-    if (x_strncpy(new, str + offset, i - offset) == NULL) {
+    if (x_strncpy(new, str + offset, (size_t) (i - offset)) == NULL) {
         free(new);
         return NULL;
     }

@@ -5,6 +5,8 @@
 ** function that to nothing and return void
 */
 
+#include "tlcutils.h"
+
 void return_void(void)
 {
     return;

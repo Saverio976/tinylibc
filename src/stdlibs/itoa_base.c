@@ -5,13 +5,14 @@
 ** int to string in custom base
 */
 
+#include <stddef.h>
 #include <stdlib.h>
 #include "tlcstdlibs.h"
 #include "tlcstrings.h"
 
-static char *dup_and_cat(char *dest, char c, int *cap)
+static char *dup_and_cat(char *dest, int c, size_t *cap)
 {
-    int len = x_strlen(dest);
+    size_t len = x_strlen(dest);
     char *new = NULL;
 
     if (len + 2 >= *cap) {
@@ -19,16 +20,16 @@ static char *dup_and_cat(char *dest, char c, int *cap)
         new = x_calloc(*cap);
         if (!new)
             return (NULL);
-        for (int i = 0; i < len; i++)
+        for (size_t i = 0; i < len; i++)
             new[i] = dest[i];
         free(dest);
         dest = new;
     }
-    dest[len] = c;
+    dest[len] = (char) c;
     return (dest);
 }
 
-static void do_zero_special_case(int nb, char *result, const char *base)
+static void do_zero_special_case(size_t nb, char *result, const char *base)
 {
     if (nb == 0 && result != NULL) {
         result[0] = base[0];
@@ -38,18 +39,19 @@ static void do_zero_special_case(int nb, char *result, const char *base)
 char *itoa_base(int nb, char const *base)
 {
     int i = 0;
-    int max_cap = 12;
+    size_t max_cap = 12;
     int is_neg = nb < 0;
     char *result = x_calloc(max_cap);
+    size_t nb_pos = 0;
 
     if (x_strlen(base) <= 1) {
         return (NULL);
     }
-    nb = (nb < 0) ? nb * -1 : nb;
-    do_zero_special_case(nb, result, base);
-    for (; nb != 0 && base != NULL && result != NULL; i++) {
-        result = dup_and_cat(result, base[nb % x_strlen(base)], &max_cap);
-        nb /= x_strlen(base);
+    nb_pos = (size_t) ((nb < 0) ? nb * -1 : nb);
+    do_zero_special_case(nb_pos, result, base);
+    for (; nb_pos != 0 && base != NULL && result != NULL; i++) {
+        result = dup_and_cat(result, base[nb_pos % x_strlen(base)], &max_cap);
+        nb_pos /= x_strlen(base);
     }
     if (is_neg && result != NULL && base != NULL) {
         result[i] = '-';

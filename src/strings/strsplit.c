@@ -37,7 +37,7 @@ static int fill_arr(char **arr, const char *s, const char *delim)
         if (match == NULL) {
             arr[cur_arr] = x_strdup(s);
         } else {
-            arr[cur_arr] = x_strndup(s, match - s);
+            arr[cur_arr] = x_strndup(s, (size_t) (match - s));
         }
         len_delim = (len_delim == 0) ? x_strlen(delim) : len_delim;
         cur_arr += 1;
@@ -68,7 +68,7 @@ char **x_strsplit(const char *s, const char *delim)
         return (NULL);
     }
     nb_split = count_nb_split(s, delim);
-    arr = x_ccalloc(sizeof(char **) * (nb_split + 1));
+    arr = x_ccalloc(sizeof(char **) * (size_t) (nb_split + 1));
     if (arr == NULL) {
         return (NULL);
     }

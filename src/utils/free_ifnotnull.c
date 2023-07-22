@@ -7,6 +7,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include "tlcutils.h"
 
 void free_ifnotnull(void *ptr)
 {

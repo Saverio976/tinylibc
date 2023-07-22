@@ -7,6 +7,7 @@
 
 #include <stddef.h>
 #include "tlcstrings.h"
+#include "tlcstdlibs.h"
 
 static int get_out_of_noise(char const *str, int *is_error)
 {

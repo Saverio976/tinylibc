@@ -5,6 +5,7 @@
 ** return the nbyte of a file
 */
 
+#include <stddef.h>
 #include <unistd.h>
 #include "tlcfs.h"
 
@@ -13,22 +14,22 @@
 ** @param path
 ** @return -1 if stat cant get size; the size else
 **/
-int fs_get_size(char const *path)
+size_t fs_get_size(char const *path)
 {
     int fd = 0;
-    int ret = 0;
-    int buf_ret = 0;
+    size_t ret = 0;
+    ssize_t buf_ret = 0;
     char buffer[512];
 
     fd = fs_open_ronly(path);
     if (fd <= 0) {
-        return (-1);
+        return ((size_t) -1);
     }
-    buf_ret = read(fd, buffer, 512);
+    buf_ret = read(fd, buffer, (unsigned long) 512);
     while (buf_ret > 0) {
-        ret += buf_ret;
-        buf_ret = read(fd, buffer, 512);
+        ret += (size_t) buf_ret;
+        buf_ret = read(fd, buffer, (unsigned long) 512);
     }
-    ret += buf_ret;
+    close(fd);
     return (ret);
 }

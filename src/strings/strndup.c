@@ -9,12 +9,12 @@
 #include <stdlib.h>
 #include "tlcstrings.h"
 
-char *x_strndup(const char *s, int n)
+char *x_strndup(const char *s, size_t n)
 {
-    int len = 0;
+    size_t len = 0;
     char *new = NULL;
 
-    if (s == NULL || n < 0) {
+    if (s == NULL) {
         return (NULL);
     }
     len = x_strlen(s);

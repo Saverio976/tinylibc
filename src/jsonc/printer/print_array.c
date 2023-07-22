@@ -7,8 +7,7 @@
 
 #include "tlcstdios.h"
 #include "tlcjson.h"
-
-int prety_print_rec(int fd, any_t *any, int indent);
+#include "internal.h"
 
 int do_print_array(int fd, any_t *any, int indent)
 {

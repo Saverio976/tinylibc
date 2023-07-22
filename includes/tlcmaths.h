@@ -8,6 +8,8 @@
 #ifndef TLS_MATHS_H_
     #define TLS_MATHS_H_
 
+    #include <stddef.h>
+
 /**
 ** @def X_MAX(x, y)
 ** @brief maximum of x and y
@@ -126,31 +128,31 @@ long double x_minl(long double a, long double b);
 ** @brief `x` raise to the power of `y`
 **
 ** @param x double
-** @param y double
+** @param y size_t
 **
 ** @return `x` raise to the power of `y`
 **/
-double x_pow(double x, double y);
+double x_pow(double x, size_t y);
 
 /**
 ** @brief `x` raise to the power of `y`
 **
 ** @param x float
-** @param y float
+** @param y size_t
 **
 ** @return `x` raise to the power of `y`
 **/
-float x_powf(float x, float y);
+float x_powf(float x, size_t y);
 
 /**
 ** @brief `x` raise to the power of `y`
 **
 ** @param x long double
-** @param y long double
+** @param y size_t
 **
 ** @return `x` raise to the power of `y`
 **/
-long double x_powl(long double x, long double y);
+long double x_powl(long double x, size_t y);
 
 /**
 ** @brief compute the square root of `x`

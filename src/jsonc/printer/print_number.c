@@ -8,12 +8,13 @@
 #include <stddef.h>
 #include "tlcjson.h"
 #include "tlcstdios.h"
+#include "internal.h"
 
-int my_putfloat(int fd, float val)
+static int my_putfloat(int fd, float val)
 {
     int entire_parts = (int) val;
     int nb = 0;
-    int float_parts = (val - entire_parts) * 1000000;
+    int float_parts = (int) ((val - (float) entire_parts) * 1000000);
 
     nb += x_dprintf(fd, "%d", entire_parts);
     nb += x_putcd(fd, '.', false);

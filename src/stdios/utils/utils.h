@@ -8,22 +8,23 @@
 #ifndef TLS_UTILS_H_STDIOS_H_
     #define TLS_UTILS_H_STDIOS_H_
 
+    #include <stddef.h>
     #include <stdarg.h>
 
 char *ptrtohexa(void *ptr, const char *base_16);
 
-char *ptr_specifier(va_list ap, const char *res, int *index);
+char *ptr_specifier(va_list ap, const char *res, size_t *index);
 
-char *i_specifier(va_list ap, const char *rest, int *index);
+char *i_specifier(va_list ap, const char *rest, size_t *index);
 
-char *x_low_specifier(va_list ap, const char *rest, int *index);
+char *x_low_specifier(va_list ap, const char *rest, size_t *index);
 
-char *x_up_specifier(va_list ap, const char *rest, int *index);
+char *x_up_specifier(va_list ap, const char *rest, size_t *index);
 
-char *c_specifier(va_list ap, const char *rest, int *index);
+char *c_specifier(va_list ap, const char *rest, size_t *index);
 
-char *s_specifier(va_list ap, const char *rest, int *index);
+char *s_specifier(va_list ap, const char *rest, size_t *index);
 
-char *mod_specifier(va_list ap, const char *rest, int *index);
+char *mod_specifier(va_list ap, const char *rest, size_t *index);
 
 #endif

@@ -9,20 +9,21 @@
 #include <stdarg.h>
 #include "tlcstrings.h"
 #include "tlcutils.h"
+#include "utils.h"
 
-char *c_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
+char *c_specifier(va_list ap, UNUSED const char *rest, UNUSED size_t *index)
 {
     char c = '\0';
     char tab[2] = {0, 0};
     char *str = NULL;
 
-    c = va_arg(ap, int);
+    c = (char) va_arg(ap, int);
     tab[0] = c;
     str = x_strdup(tab);
     return (str);
 }
 
-char *s_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
+char *s_specifier(va_list ap, UNUSED const char *rest, UNUSED size_t *index)
 {
     char *s = NULL;
     char *str = NULL;
@@ -33,7 +34,7 @@ char *s_specifier(va_list ap, UNUSED const char *rest, UNUSED int *index)
 }
 
 char *mod_specifier(UNUSED va_list ap, UNUSED const char *rest,
-    UNUSED int *index)
+    UNUSED size_t *index)
 {
     char *str = NULL;
 

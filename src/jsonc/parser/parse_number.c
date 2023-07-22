@@ -5,10 +5,11 @@
 ** parse number json
 */
 
+#include <stdlib.h>
 #include "tlcjson.h"
 #include "tlcstrings.h"
 #include "tlcstdlibs.h"
-#include <stdlib.h>
+#include "internal.h"
 
 static any_t *create_any_number(double f)
 {

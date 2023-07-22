@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "tlcllists.h"
+#include "tlcutils.h"
 
 int list_remove_start(list_t *list)
 {
@@ -44,7 +45,7 @@ int list_remove_end(list_t *list)
         last = list_index(list, list->len - 2);
         list->end = last;
     }
-    last->next = NULL;
+    (last != NULL) ? last->next = NULL : NULL;
     L_DESTROY(node);
     free(node);
     list->len -= 1;

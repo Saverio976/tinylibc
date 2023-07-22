@@ -10,8 +10,8 @@
 
 int x_strendswith(const char *str, const char *needle)
 {
-    int len_str = 0;
-    int len_needle = 0;
+    size_t len_str = 0;
+    size_t len_needle = 0;
 
     if (str == NULL || needle == NULL) {
         return 0;

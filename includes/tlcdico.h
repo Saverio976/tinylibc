@@ -97,7 +97,7 @@ void *dico_get_value(dico_t *dico, char const *key);
 **
 ** @return node
 **/
-dico_node_t *dico_get_elem(dico_t *dico, char const *key);
+dico_node_t *dico_get(dico_t *dico, char const *key);
 
 /**
 ** @brief Get node where value equal value in node
@@ -107,7 +107,7 @@ dico_node_t *dico_get_elem(dico_t *dico, char const *key);
 **
 ** @return node
 **/
-dico_node_t *dico_get_elem_ptr(dico_t *dico, void *value);
+dico_node_t *dico_get_ptr(dico_t *dico, void *value);
 
 /**
 ** @brief Rem a key and its value

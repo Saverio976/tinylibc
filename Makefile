@@ -40,7 +40,50 @@ RESET				:=		'\033[0m'
 ## Flags
 ###################
 
-CFLAGS				:=		-Wall -Wextra -Wpedantic -I./includes/
+CFLAGS				:=		-Wall \
+							-Wextra \
+							-Wpedantic \
+							-Wdouble-promotion \
+							-Wformat=2 \
+							-Wformat-overflow=2 \
+							-Wformat-truncation=2 \
+							-Wnull-dereference \
+							-ftabstop=4 \
+							-Wmissing-include-dirs \
+							-Wreturn-local-addr \
+							-Wunused \
+							-Wunused-const-variable=2 \
+							-Wsuggest-attribute=noreturn \
+							-Wsuggest-attribute=const \
+							-Wduplicated-branches \
+							-Wduplicated-cond \
+							-Warray-bounds \
+							-Wtrampolines \
+							-Wshadow \
+							-Wunsafe-loop-optimizations \
+							-Wabsolute-value \
+							-Wundef \
+							-Wunused-macros \
+							-Wbad-function-cast \
+							-Wcast-align \
+							-Wconversion \
+							-Wdangling-else \
+							-Wjump-misses-init \
+							-Wmissing-prototypes \
+							-Wnormalized=id \
+							-Wredundant-decls \
+							-Wnested-externs \
+							-Wint-in-bool-context \
+							-Winvalid-utf8 \
+							-Wvla \
+							-Wdisabled-optimization \
+							-Wstack-protector \
+							-fanalyzer \
+							-O2 \
+							-march=native \
+							-mtune=native \
+							-fdelete-null-pointer-checks \
+							-I./includes/
 
 ###################
 ## SRC

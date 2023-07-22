@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include "tlcjson.h"
 #include "tlcstdios.h"
+#include "internal.h"
 
 int do_print_string(int fd, any_t *any, __attribute__((unused)) int indent)
 {

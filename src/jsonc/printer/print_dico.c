@@ -11,8 +11,7 @@
 #include "tlcjson.h"
 #include "tlcllists.h"
 #include "tlcstdios.h"
-
-int prety_print_rec(int fd, any_t *any, int indent);
+#include "internal.h"
 
 static int close_dico(int fd, int indent, int nb, const dico_t *dict)
 {

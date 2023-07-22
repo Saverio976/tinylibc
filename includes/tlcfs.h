@@ -20,7 +20,7 @@ char *fs_get_content(char const *path);
 ** @param path
 ** @return -1 if stat cant get size; the size else
 **/
-int fs_get_size(char const *path);
+unsigned long fs_get_size(char const *path);
 
 /**
 ** @brief open file path with read only

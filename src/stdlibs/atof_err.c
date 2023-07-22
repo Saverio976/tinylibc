@@ -68,12 +68,12 @@ float x_atof_err(char const *str, int *is_error)
     }
     i = get_after_decimal(str);
     if (str[i] != '.') {
-        return (nb_part);
+        return (float) (nb_part);
     }
     float_part = x_atoi(str + i + 1);
     if (*is_error) {
         return (0.0);
     }
     result = ((float_part * 1.0) / compute_power(10, get_int_len(float_part)));
-    return (nb_part + result);
+    return (float) (nb_part + result);
 }

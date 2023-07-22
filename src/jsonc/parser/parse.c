@@ -12,8 +12,7 @@
 #include "tlcstrings.h"
 #include "tlcjson.h"
 #include "tlcfs.h"
-
-any_t *parse_unknow(const char *str, int *global_index);
+#include "internal.h"
 
 any_t *parse_json_file(char const path[])
 {

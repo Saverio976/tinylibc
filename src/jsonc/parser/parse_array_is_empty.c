@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include "tlcjson.h"
 #include "tlcstrings.h"
+#include "internal.h"
 
 bool parse_array_is_empty(const char **str, int *global_index)
 {

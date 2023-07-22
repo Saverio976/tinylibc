@@ -13,7 +13,7 @@
 ** @param c
 ** @return 1 if c is in str; 0 otherwise
 **/
-int x_strcontainc(char const *str, char const c)
+int x_strcontainc(char const *str, int const c)
 {
     int is_found = 0;
 

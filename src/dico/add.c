@@ -11,8 +11,7 @@
 #include <tlcstrings.h>
 #include "tlcdico.h"
 #include "tlcllists.h"
-
-void dico_detroy_ptr(void *dico_node);
+#include "internal.h"
 
 dico_t *dico_add(dico_t *dico, char const *key, void *value,
     void (*destroy)(void *value))
@@ -28,7 +27,7 @@ dico_t *dico_add(dico_t *dico, char const *key, void *value,
     }
     elem->destroy = destroy;
     memset(elem->key, 0, sizeof(elem->key));
-    x_strncpy(elem->key, key, 255);
+    x_strncpy(elem->key, key, (unsigned long) 255);
     elem->value = value;
     return (dico_add_elem(dico, elem));
 }
@@ -41,6 +40,6 @@ dico_t *dico_add_elem(dico_t *dico, dico_node_t *elem)
     if (elem == NULL) {
         return (NULL);
     }
-    dico->interns = list_append(dico->interns, elem, dico_detroy_ptr, NULL);
+    dico->interns = list_append(dico->interns, elem, dico_destroy_ptr, NULL);
     return (dico);
 }

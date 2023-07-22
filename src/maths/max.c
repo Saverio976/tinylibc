@@ -7,22 +7,22 @@
 
 #include "tlcmaths.h"
 
-int x_max(int a, int b)
+__attribute__((const)) int x_max(int a, int b)
 {
     return (X_MAX(a, b));
 }
 
-double x_maxd(double a, double b)
+__attribute__((const)) double x_maxd(double a, double b)
 {
     return (X_MAX(a, b));
 }
 
-float x_maxf(float a, float b)
+__attribute__((const)) float x_maxf(float a, float b)
 {
     return (X_MAX(a, b));
 }
 
-long double x_maxl(long double a, long double b)
+__attribute__((const)) long double x_maxl(long double a, long double b)
 {
     return (X_MAX(a, b));
 }

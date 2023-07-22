@@ -88,7 +88,7 @@ char *x_strncpy(char *dest, const char *src, size_t n);
 **
 ** @return NULL if (`s` = 0)|(`n` < 0);; ptr to the duplicate
 **/
-char *x_strndup(const char *s, int n);
+char *x_strndup(const char *s, size_t n);
 
 /**
 ** @brief reverse a string
@@ -138,7 +138,7 @@ char *x_strstrip(const char *s, const char *chars);
 **
 ** @return 1 if c is in str; 0 otherwise
 **/
-int x_strcontainc(char const *str, char const c);
+int x_strcontainc(char const *str, int const c);
 
 /**
 ** @brief check if `str` ends with `needle`

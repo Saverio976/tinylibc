@@ -17,14 +17,14 @@ int x_puts(const char *str, bool newline)
 
 int x_putsd(int fd, const char *str, bool newline)
 {
-    int len = 0;
+    ssize_t len = 0;
 
     if (str == NULL) {
         return (0);
     }
     len = write(fd, str, x_strlen(str));
     if (newline == true) {
-        len += x_putc('\n', false);
+        len += x_putc('\n', (int) false);
     }
-    return (len);
+    return (int) (len);
 }

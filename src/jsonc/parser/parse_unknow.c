@@ -8,11 +8,7 @@
 #include <stddef.h>
 #include "tlcjson.h"
 #include "tlcstrings.h"
-
-any_t *parse_dico(const char *str, int *global_index);
-any_t *parse_array(const char *str, int *global_index);
-any_t *parse_string(const char *str, int *global_index);
-any_t *parse_number(const char *str, int *global_index);
+#include "internal.h"
 
 any_t *parse_unknow(const char *str, int *global_index)
 {

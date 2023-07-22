@@ -11,8 +11,8 @@
 
 char *x_strstrip(const char *s, const char *chars)
 {
-    int start = 0;
-    int end = 0;
+    size_t start = 0;
+    size_t end = 0;
     char *new = NULL;
 
     if (s == NULL || chars == NULL) {
@@ -26,6 +26,6 @@ char *x_strstrip(const char *s, const char *chars)
         return (NULL);
     }
     new[end - start] = '\0';
-    new = x_strncpy(new, s + start, (end - start) + 1);
+    new = x_strncpy(new, s + start, (unsigned long) (end - start) + 1);
     return (new);
 }

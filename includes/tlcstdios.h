@@ -19,7 +19,7 @@
 **
 ** @return number of character put
 **/
-int x_putc(char c, bool newline);
+int x_putc(int c, bool newline);
 
 /**
 ** @brief put `str` to stdout (nothing if `str` = 0)
@@ -95,7 +95,7 @@ int x_putsd(int fd, const char *str, bool newline);
 **
 ** @return number of character put
 **/
-int x_putcd(int fd, char c, bool newline);
+int x_putcd(int fd, int c, bool newline);
 
 /**
 ** @brief Print to fd the str format and put newline if bool true

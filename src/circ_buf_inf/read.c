@@ -26,11 +26,11 @@ static char *copy_until_pattern(char *str, const char *pattern)
         return NULL;
     }
     tmp += strlen(pattern);
-    new = calloc(tmp - str + 1, sizeof(char));
+    new = calloc((unsigned long) (tmp - str + 1), sizeof(char));
     if (new == NULL) {
         return NULL;
     }
-    strncpy(new, str, tmp - str);
+    strncpy(new, str, (unsigned long) (tmp - str));
     return new;
 }
 

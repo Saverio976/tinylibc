@@ -9,11 +9,7 @@
 #include <stdlib.h>
 #include "tlcjson.h"
 #include "tlcdico.h"
-
-bool is_tokken(const char *str, char tokken, int global_index, char escape);
-any_t *parse_string(const char *str, int *global_index);
-any_t *parse_unknow(const char *str, int *global_index);
-bool parse_dico_is_empty(const char **str, int *global_index);
+#include "internal.h"
 
 static any_t *get_key(const char **str, int *global_index)
 {

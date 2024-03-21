@@ -74,7 +74,6 @@ CFLAGS				:=		-Wall \
 							-Wredundant-decls \
 							-Wnested-externs \
 							-Wint-in-bool-context \
-							-Winvalid-utf8 \
 							-Wvla \
 							-Wdisabled-optimization \
 							-Wstack-protector \
